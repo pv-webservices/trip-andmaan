@@ -1,0 +1,5 @@
+# playwright-cli run-code expects a function expression without leading/trailing semicolons.
+scripts/browser-*.cjs
+dist/
+output/
+public/

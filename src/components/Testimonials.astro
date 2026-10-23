@@ -1,0 +1,56 @@
+---
+import { testimonials } from '../data/testimonials';
+import SectionHeading from './SectionHeading.astro';
+const approved = testimonials.filter((review) => review.approved);
+---
+
+{approved.length > 0 && (
+  <section class="section soft-section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="TRAVELLER STORIES"
+        title="Our Happy"
+        accent="Travellers"
+      />
+      <div class="steps-grid">
+        {approved.map((review) => (
+          <figure class="step-card" style="margin:0" data-reveal>
+            {review.photo && (
+              <img
+                src={review.photo}
+                alt=""
+                width="44"
+                height="44"
+                loading="lazy"
+                style="border-radius:50%;object-fit:cover;margin-bottom:12px"
+              />
+            )}
+            <blockquote style="margin:0 0 16px">
+              <p>{review.text}</p>
+            </blockquote>
+            <figcaption>
+              <strong>{review.name}</strong>
+            </figcaption>
+            {review.rating !== undefined &&
+              review.rating >= 1 &&
+              review.rating <= 5 && (
+                <p aria-label={`${review.rating} out of 5 stars`}>
+                  {review.rating} / 5
+                </p>
+              )}
+            {review.source && (
+              <a
+                class="text-link"
+                href={review.source}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read original review ↗
+              </a>
+            )}
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,965 @@
+{
+  "Havelock aerial": {
+    "batchcomplete": "",
+    "continue": {
+      "gsroffset": 4,
+      "continue": "gsroffset||"
+    },
+    "query": {
+      "pages": {
+        "6292825": {
+          "pageid": 6292825,
+          "ns": 6,
+          "title": "File:Havelock With Marina At Low Tide.jpg",
+          "index": 1,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Havelock_With_Marina_At_Low_Tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Havelock_With_Marina_At_Low_Tide.jpg",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=6292825",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2009-03-21 06:31:22",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "Havelock With Marina At Low Tide",
+                  "source": "mediawiki-metadata"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Marinas in New Zealand|Havelock, New Zealand|Self-published work|PD-self|Low tide in New Zealand|March 2009 New Zealand photographs|Mudflats in New Zealand|Files with coordinates missing SDC location of creation|Aerial photographs of ports and harbours|Aerial photographs of the Marlborough Sounds|Photos taken by Ingolfson",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "GPSLatitude": {
+                  "value": "-41.301926",
+                  "source": "commons-desc-page"
+                },
+                "GPSLongitude": {
+                  "value": "173.775558",
+                  "source": "commons-desc-page"
+                },
+                "GPSMapDatum": {
+                  "value": "WGS-84",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "<a href=\"https://en.wikipedia.org/wiki/Havelock,_New_Zealand\" class=\"extiw\" title=\"en:Havelock, New Zealand\">Havelock</a>, a village in the <a href=\"https://en.wikipedia.org/wiki/Marlborough_Sounds\" class=\"extiw\" title=\"en:Marlborough Sounds\">Marlborough Sounds</a>, <a href=\"https://en.wikipedia.org/wiki/New_Zealand\" class=\"extiw\" title=\"en:New Zealand\">New Zealand</a>. Seen from an airplane between Westport and Wellington looking north, the port / marina can be seen, effectively landlocked during the low tide.",
+                  "source": "commons-desc-page"
+                },
+                "DateTimeOriginal": {
+                  "value": "2009-03",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<span class=\"int-own-work\">Self-photographed</span>",
+                  "source": "commons-desc-page"
+                },
+                "Artist": {
+                  "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ingolfson\" title=\"User:Ingolfson\">Ingolfson</a>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "95852541": {
+          "pageid": 95852541,
+          "ns": 6,
+          "title": "File:Nero & other plays; (IA neroandotherplay00portiala).pdf",
+          "index": 3,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Nero_%26_other_plays%3B_%28IA_neroandotherplay00portiala%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nero_%26_other_plays;_(IA_neroandotherplay00portiala).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95852541",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-11-06 09:23:04",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nNero &amp; other plays;</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Books from New York (state)|Scans from the Internet Archive/unverified|PD US expired|Scans from the Internet Archive|Books uploaded by F\u00e6|Books without Wikidata item|California Digital Library|1893 books from London|Books from the United States PDF files|Nero and other plays (book)",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Artist": {
+                  "value": "<div class=\"fn value\">\n<dl><dd>Porter, Henry, fl. 1599</dd>\n<dd>Day, John, 1574-1640?</dd>\n<dd>Field, Nathan, 1587-1620?</dd>\n<dd>Horne, Herbert Percy, 1864-1916</dd>\n<dd>Ellis, Havelock, 1859-1939</dd>\n<dd>Symons, Arthur, 1865-1945</dd>\n<dd>Verity, A. W. (Arthur Wilson), 1863-1937</dd></dl></div>",
+                  "source": "commons-desc-page"
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\n<p>Preface.--Nero, ed. by H.P. Horne.--The two angry women of Abington [by Henry Porter] ed. by Havelock Ellis.--The parliament of bees; Humour out of breath [by John Day] ed. by Arthur Symons.--Woman is a weathercock; Amends for ladies [by Nathaniel Field] ed. by A.W. Verity\n</p>\n<br>Subjects:</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a href=\"//archive.org/details/neroandotherplay00portiala\" class=\"extiw\" title=\"iarchive:neroandotherplay00portiala\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: neroandotherplay00portiala</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/neroandotherplay00portiala/neroandotherplay00portiala.pdf\">https://archive.org/download/neroandotherplay00portiala/neroandotherplay00portiala.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "40304592": {
+          "pageid": 40304592,
+          "ns": 6,
+          "title": "File:Sunday skydive, Wing Marines send MARSOC soaring into Midwest 120930-M-XK427-009.jpg",
+          "index": 4,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Sunday_skydive%2C_Wing_Marines_send_MARSOC_soaring_into_Midwest_120930-M-XK427-009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sunday_skydive,_Wing_Marines_send_MARSOC_soaring_into_Midwest_120930-M-XK427-009.jpg",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=40304592",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2015-05-19 05:14:11",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "Sunday skydive, Wing Marines send MARSOC soaring into Midwest 120930-M-XK427-009",
+                  "source": "mediawiki-metadata"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Camp Atterbury|United States Marine Corps Forces Special Operations Command|PD US Marines|Files created by the United States Marine Corps with known IDs|Taken on missing SDC inception|Images from DoD uploaded by F\u00e6|United States photographs taken on 2012-09-30",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "Marines with 2nd Marine Special Operations Battalion, Marine Corps Forces Special Operations Command, plunge into the scenic landscape of Camp Atterbury Training Center in Indiana Sept. 30. Marine Aerial Refueler Transport Squadron 252 transported the Marines to Indiana to conduct urban environment training for two weeks.",
+                  "source": "commons-desc-page"
+                },
+                "DateTimeOriginal": {
+                  "value": "Taken on\u00a030 September 2012",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.dvidshub.net/image/702197\">https://www.dvidshub.net/image/702197</a>",
+                  "source": "commons-desc-page"
+                },
+                "Artist": {
+                  "value": "Cpl. Tyler J. Bolken",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "151944375": {
+          "pageid": 151944375,
+          "ns": 6,
+          "title": "File:Te mata peak and over view of Hawkes Bay Area.jpg",
+          "index": 2,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Te_mata_peak_and_over_view_of_Hawkes_Bay_Area.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Te_mata_peak_and_over_view_of_Hawkes_Bay_Area.jpg",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=151944375",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2024-08-29 09:36:27",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "Te mata peak and over view of Hawkes Bay Area",
+                  "source": "mediawiki-metadata"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "CC-Zero|Landscape photography|Self-published work|Files with coordinates missing SDC location of creation|New Zealand photographs taken on 2024-08-21|Views of Te Mata Peak",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "GPSLatitude": {
+                  "value": "-39.703333",
+                  "source": "commons-desc-page"
+                },
+                "GPSLongitude": {
+                  "value": "176.910000",
+                  "source": "commons-desc-page"
+                },
+                "GPSMapDatum": {
+                  "value": "WGS-84",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "Aerial photograph taken from a DJI air 2 drone of the Te Mata Peak Range and the greater Hawkes Bay Area consisting mainly of Havelock North, Hastings, Clive, and Napier. Tukituki river and craggy range estate can also be seen to the bottom right of the photo.",
+                  "source": "commons-desc-page"
+                },
+                "DateTimeOriginal": {
+                  "value": "2024-08-21 17:17:25",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                  "source": "commons-desc-page"
+                },
+                "Artist": {
+                  "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:HuntaWaerea&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:HuntaWaerea (page does not exist)\">HuntaWaerea</a>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "CC0",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Creative Commons Zero, Public Domain Dedication",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "LicenseUrl": {
+                  "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                  "source": "commons-desc-page"
+                },
+                "Copyrighted": {
+                  "value": "True",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "cc0",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Andaman turquoise aerial": {
+    "batchcomplete": "",
+    "query": {
+      "pages": {
+        "148300906": {
+          "pageid": 148300906,
+          "ns": 6,
+          "title": "File:Behar Herald 7-03-2022 & 15-03-2022.pdf",
+          "index": 2,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Behar_Herald_7-03-2022_%26_15-03-2022.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Behar_Herald_7-03-2022_%26_15-03-2022.pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148300906",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2024-05-13 09:08:37",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nBehar Herald</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Files with no machine-readable author|Uploaded with pattypan|Behar Herald|Supported by West Bengal Wikimedians User Group|Items with VRTS permission confirmed|Books without Wikidata item|Files generated by WBG equipment|Media contributed by Bengalee Association, Bihar|Scanned with WBG equipment CZUR ET18 Pro",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Credit": {
+                  "value": "This file was generated using CZUR ET18 Pro scanner,  a equipment belonging to the <a href=\"https://meta.wikimedia.org/wiki/West_Bengal_Wikimedians\" class=\"extiw\" title=\"meta:West Bengal Wikimedians\">West Bengal Wikimedians User Group</a>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "CC BY-SA 4.0",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Creative Commons Attribution-Share Alike 4.0",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "true",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Attribution": {
+                  "value": "Behar Herald",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "LicenseUrl": {
+                  "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                  "source": "commons-desc-page"
+                },
+                "Copyrighted": {
+                  "value": "True",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "cc-by-sa-4.0",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "92107300": {
+          "pageid": 92107300,
+          "ns": 6,
+          "title": "File:The Avicultural magazine (IA aviculturalmagaz3345unse).pdf",
+          "index": 3,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/The_Avicultural_magazine_%28IA_aviculturalmagaz3345unse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_Avicultural_magazine_(IA_aviculturalmagaz3345unse).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=92107300",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-07-11 04:29:11",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nThe Avicultural magazine</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Files with no machine-readable author|Scans from the Internet Archive/unverified|PD US expired|Files from the Biodiversity Heritage Library|Scans from the Internet Archive|Books uploaded by F\u00e6|Books without Wikidata item|Books from the Biodiversity Heritage Library|PD-US missing SDC copyright status",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\n<dl><dd>v. 22 cm</dd>\n<dd>Old vol. enumeration resumed with v. 52</dd>\n<dd>Journal of the Avicultural Society</dd>\n<dd>Nov. 1894-1930</dd></dl>\n<br>Subjects: Birds -- Periodicals; Cage birds -- Periodicals</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a href=\"//archive.org/details/aviculturalmagaz3345unse\" class=\"extiw\" title=\"iarchive:aviculturalmagaz3345unse\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: aviculturalmagaz3345unse</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/aviculturalmagaz3345unse/aviculturalmagaz3345unse.pdf\">https://archive.org/download/aviculturalmagaz3345unse/aviculturalmagaz3345unse.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "93682111": {
+          "pageid": 93682111,
+          "ns": 6,
+          "title": "File:Webster's New illustrated dictionary of the English language, based upon the unabridged dictionary of Noah Webster, L. L. D. (IA webstersnewillus00phil).pdf",
+          "index": 1,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Webster%27s_New_illustrated_dictionary_of_the_English_language%2C_based_upon_the_unabridged_dictionary_of_Noah_Webster%2C_L._L._D._%28IA_webstersnewillus00phil%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Webster%27s_New_illustrated_dictionary_of_the_English_language,_based_upon_the_unabridged_dictionary_of_Noah_Webster,_L._L._D._(IA_webstersnewillus00phil).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93682111",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-08-30 15:29:35",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nWebster's New illustrated dictionary of the English language, based upon the unabridged dictionary of Noah Webster, L. L. D.</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Files with no machine-readable author|Scans from the Internet Archive/unverified|PD US expired|Scans from the Internet Archive|1908 books from the United States|Books uploaded by F\u00e6|Books without Wikidata item|Books in the Library of Congress|PD-US missing SDC copyright status|Webster's Dictionary",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\nSubjects: English language</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a rel=\"mw:WikiLink/Interwiki\" href=\"//archive.org/details/webstersnewillus00phil\" title=\"iarchive:webstersnewillus00phil\" class=\"extiw\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: webstersnewillus00phil</a><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive#Webster's%20New%20illustrated%20dictionary%20of%20the%20English%20language,%20based%20upon%20the%20unabridged%20dictionary%20of%20Noah%20Webster,%20L.%20L.%20D.%20(IA%20webstersnewillus00phil).pdf\" about=\"#mwt4\" typeof=\"mw:ExpandedAttrs\" data-mw=\"{&quot;attribs&quot;:[[{&quot;txt&quot;:&quot;mw:sortKey&quot;},{&quot;html&quot;:&quot;Webster&lt;span typeof=\\&quot;mw:Entity\\&quot; id=\\&quot;mwBQ\\&quot;&gt;'&lt;/span&gt;s New illustrated dictionary of the English language, based upon the unabridged dictionary of Noah Webster, L. L. D. (IA webstersnewillus00phil).pdf&quot;}]]}\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive/unverified#Webster's%20New%20illustrated%20dictionary%20of%20the%20English%20language,%20based%20upon%20the%20unabridged%20dictionary%20of%20Noah%20Webster,%20L.%20L.%20D.%20(IA%20webstersnewillus00phil).pdf\" about=\"#mwt5\" typeof=\"mw:ExpandedAttrs\" data-mw=\"{&quot;attribs&quot;:[[{&quot;txt&quot;:&quot;mw:sortKey&quot;},{&quot;html&quot;:&quot;Webster&lt;span typeof=\\&quot;mw:Entity\\&quot; id=\\&quot;mwBg\\&quot;&gt;'&lt;/span&gt;s New illustrated dictionary of the English language, based upon the unabridged dictionary of Noah Webster, L. L. D. (IA webstersnewillus00phil).pdf&quot;}]]}\"></dd>\n<dd><a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/download/webstersnewillus00phil/webstersnewillus00phil.pdf\" class=\"external free\">https://archive.org/download/webstersnewillus00phil/webstersnewillus00phil.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Havelock island aerial beach": {
+    "batchcomplete": "",
+    "continue": {
+      "gsroffset": 4,
+      "continue": "gsroffset||"
+    },
+    "query": {
+      "pages": {
+        "94881227": {
+          "pageid": 94881227,
+          "ns": 6,
+          "title": "File:Buying list of books for small libraries (IA buyinglistofbook00browrich).pdf",
+          "index": 4,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Buying_list_of_books_for_small_libraries_%28IA_buyinglistofbook00browrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Buying_list_of_books_for_small_libraries_(IA_buyinglistofbook00browrich).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94881227",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-10-09 05:02:27",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nBuying list of books for small libraries</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Books from New York (state)|Scans from the Internet Archive/unverified|PD US expired|Scans from the Internet Archive|Books about library and information science|Books uploaded by F\u00e6|Books without Wikidata item|California Digital Library|Books from the United States PDF files|League of Library Commissions",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Artist": {
+                  "value": "<div class=\"fn value\">\n<dl><dd>Brown, Zaidee Mabel, 1875-1950</dd>\n<dd>Webster, Caroline Farr</dd></dl></div>",
+                  "source": "commons-desc-page"
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\nSubjects: Bibliogrpahy -- Best books</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a rel=\"mw:WikiLink/Interwiki\" href=\"//archive.org/details/buyinglistofbook00browrich\" title=\"iarchive:buyinglistofbook00browrich\" class=\"extiw\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: buyinglistofbook00browrich</a><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive#Buying%20list%20of%20books%20for%20small%20libraries%20(IA%20buyinglistofbook00browrich).pdf\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Scans_from_the_Internet_Archive/unverified#Buying%20list%20of%20books%20for%20small%20libraries%20(IA%20buyinglistofbook00browrich).pdf\"></dd>\n<dd><a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/download/buyinglistofbook00browrich/buyinglistofbook00browrich.pdf\" class=\"external free\">https://archive.org/download/buyinglistofbook00browrich/buyinglistofbook00browrich.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "97540775": {
+          "pageid": 97540775,
+          "ns": 6,
+          "title": "File:Coast watch (IA coastwatch00uncs 14).pdf",
+          "index": 3,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Coast_watch_%28IA_coastwatch00uncs_14%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Coast_watch_(IA_coastwatch00uncs_14).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97540775",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-12-14 00:38:31",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nCoast watch</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "PD US Government|License review needed|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by F\u00e6|Books without Wikidata item|IA books harmonization|Internet Archive document coastwatch00uncs 14",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Artist": {
+                  "value": "<div class=\"fn value\">\nUNC Sea Grant College Program</div>",
+                  "source": "commons-desc-page"
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\n<dl><dd>Title from cover</dd>\n<dd>Number ceased with vol. 18, no. 3 (Mar. 1991); no April issue; began bimonthly with May/June 1991</dd></dl>\n<br>Subjects: Marine resources; Oceanography; Coastal zone management; Coastal ecology</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a href=\"//archive.org/details/coastwatch00uncs_14\" class=\"extiw\" title=\"iarchive:coastwatch00uncs 14\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: coastwatch00uncs_14</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/coastwatch00uncs_14/coastwatch00uncs_14.pdf\">https://archive.org/download/coastwatch00uncs_14/coastwatch00uncs_14.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "92529100": {
+          "pageid": 92529100,
+          "ns": 6,
+          "title": "File:Ocean venture '92- an assessment of a maritime prepositioning force-joint logistics over the shore instream offload exercise (IA oceanventure92as00barr).pdf",
+          "index": 2,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ocean_venture_%2792-_an_assessment_of_a_maritime_prepositioning_force-joint_logistics_over_the_shore_instream_offload_exercise_%28IA_oceanventure92as00barr%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ocean_venture_%2792-_an_assessment_of_a_maritime_prepositioning_force-joint_logistics_over_the_shore_instream_offload_exercise_(IA_oceanventure92as00barr).pdf",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=92529100",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2020-07-23 12:41:13",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "<div class=\"fn\">\nOcean venture '92: an assessment of a maritime prepositioning force/joint logistics over the shore instream offload exercise</div>",
+                  "source": "commons-desc-page"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "PD US Government|Landing craft mechanized|FEDLINK - United States Federal Collection|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by F\u00e6|Books without Wikidata item",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Artist": {
+                  "value": "<div class=\"fn value\">\nBarrett, Sharon.;Janet, Wiley.;Boger, Dan C.;Brown, David G.</div>",
+                  "source": "commons-desc-page"
+                },
+                "ImageDescription": {
+                  "value": "<div class=\"description\">\n<dl><dd>Thesis advisors, Dan C. Boger and David G. Brown</dd>\n<dd>Thesis (M.S. in Management) Naval Postgraduate School, June 1993</dd>\n<dd>Includes bibliographical references</dd>\n<dd>The movement of supplies from ship to shore to support military forces in or near combat areas has historically been difficult and time consuming. The Marine Corps and the Army have developed their own systems for satisfying their logistical needs. The Marine Corps has embraced the prepositioning concept, while the Army has relied on moving forces and utilizing logistics over the shore capabilities. Regardless of the offload method used, the efficient delivery of containerized cargo and equipment is critical to the establishment of forces ashore. During May 1992, a Maritime Prepositioning Force (MPF) and Joint Logistics Over the Shore (JLOTS) exercise was conducted at Onslow Beach, North Carolina, to test these delivery systems. Ocean Venture '92 provided a low- to mid-intensity platform for examining MPF and JLOTS capabilities. This thesis presents the organizations and equipment requirements for MPF and JLOTS operations and assesses the effectiveness of Ocean Venture '92 with respect to accomplishing key objectives, problem identification, lessons learned and recommendations for improving future MPF and JLOTS operations. Maritime prepositioning force, Joint logistics over the shore, Logistics, JLOTS</dd>\n<dd>System requirements: Adobe Acrobat reader</dd></dl>\n<br>Subjects:</div>",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<dl><dd><a href=\"//archive.org/details/oceanventure92as00barr\" class=\"extiw\" title=\"iarchive:oceanventure92as00barr\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: oceanventure92as00barr</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/oceanventure92as00barr/oceanventure92as00barr.pdf\">https://archive.org/download/oceanventure92as00barr/oceanventure92as00barr.pdf</a></dd></dl>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Public domain",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Copyrighted": {
+                  "value": "False",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "pd",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        },
+        "185230767": {
+          "pageid": 185230767,
+          "ns": 6,
+          "title": "File:US Military bases map.svg",
+          "index": 1,
+          "imagerepository": "local",
+          "imageinfo": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/US_Military_bases_map.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "descriptionurl": "https://commons.wikimedia.org/wiki/File:US_Military_bases_map.svg",
+              "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=185230767",
+              "extmetadata": {
+                "DateTime": {
+                  "value": "2026-02-28 21:08:04",
+                  "source": "mediawiki-metadata",
+                  "hidden": ""
+                },
+                "ObjectName": {
+                  "value": "US Military bases map",
+                  "source": "mediawiki-metadata"
+                },
+                "CommonsMetadataExtension": {
+                  "value": 1.2,
+                  "source": "extension",
+                  "hidden": ""
+                },
+                "Categories": {
+                  "value": "Military bases of the United States|Pages using multiple image with auto scaled images|CC-Zero|Military bases|Self-published work",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "Assessments": {
+                  "value": "",
+                  "source": "commons-categories",
+                  "hidden": ""
+                },
+                "ImageDescription": {
+                  "value": "US Military bases map",
+                  "source": "commons-desc-page"
+                },
+                "DateTimeOriginal": {
+                  "value": "2026-02-28",
+                  "source": "commons-desc-page"
+                },
+                "Credit": {
+                  "value": "<p><span class=\"int-own-work\" lang=\"en\">Own work</span> made with <a href=\"https://en.wikipedia.org/wiki/QGIS\" class=\"extiw\" title=\"w:QGIS\">QGIS</a> and data from <br> \n<a rel=\"nofollow\" class=\"external free\" href=\"https://data-usdot.opendata.arcgis.com/datasets/usdot::military-bases/explore?filters=eyJzaXRlUmVwb3J0aW5nQ29tcG9uZW50IjpbInVzbiIsImFybXlOYXRpb25hbEd1YXJkIiwidXNhZiIsInVzYSIsImFpck5hdGlvbmFsR3VhcmQiLCJ1c2FyIiwidXNtYyIsImFmciIsInVzbWNyIiwidXNuciIsIndocyIsIm90aGVyIl19&amp;location=38.274782%2C-93.230911%2C5\">https://data-usdot.opendata.arcgis.com/datasets/usdot::military-bases/explore?filters=eyJzaXRlUmVwb3J0aW5nQ29tcG9uZW50IjpbInVzbiIsImFybXlOYXRpb25hbEd1YXJkIiwidXNhZiIsInVzYSIsImFpck5hdGlvbmFsR3VhcmQiLCJ1c2FyIiwidXNtYyIsImFmciIsInVzbWNyIiwidXNuciIsIndocyIsIm90aGVyIl19&amp;location=38.274782%2C-93.230911%2C5</a> <br>\n</p>\nLakes map - <a rel=\"nofollow\" class=\"external free\" href=\"https://www.hydrosheds.org/products/hydrolakes\">https://www.hydrosheds.org/products/hydrolakes</a>",
+                  "source": "commons-desc-page"
+                },
+                "Artist": {
+                  "value": "<a href=\"//commons.wikimedia.org/wiki/User:Wikideas1\" title=\"User:Wikideas1\">Wikideas1</a>",
+                  "source": "commons-desc-page"
+                },
+                "LicenseShortName": {
+                  "value": "CC0",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "UsageTerms": {
+                  "value": "Creative Commons Zero, Public Domain Dedication",
+                  "source": "commons-desc-page"
+                },
+                "AttributionRequired": {
+                  "value": "false",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "LicenseUrl": {
+                  "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                  "source": "commons-desc-page"
+                },
+                "Copyrighted": {
+                  "value": "True",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "Restrictions": {
+                  "value": "",
+                  "source": "commons-desc-page",
+                  "hidden": ""
+                },
+                "License": {
+                  "value": "cc0",
+                  "source": "commons-templates",
+                  "hidden": ""
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

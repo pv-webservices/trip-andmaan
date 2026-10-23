@@ -1,0 +1,10 @@
+{
+  "name": "ai-beach-walk",
+  "placement": "Trip styles → “A trip that feels like you”; About page",
+  "alt": "Two travellers walking barefoot along a quiet tropical beach at golden hour",
+  "model": "gpt-image-2.5-sunburst",
+  "quality": "high",
+  "size": "1024x1536",
+  "reason": "multiple people",
+  "prompt": "Two adult travellers seen from behind, walking hand in hand barefoot along the wet sand of a quiet tropical beach at golden hour, gentle waves washing in, a line of tall tropical forest and a few palms along the shore, warm low sunlight, long soft shadows, footprints in the sand. Faces not visible. Relaxed holiday clothing in white and soft blue. Natural editorial travel photography, true-to-life colour, soft natural light, shallow depth of field where appropriate. No text, no logos, no watermarks, no borders."
+}

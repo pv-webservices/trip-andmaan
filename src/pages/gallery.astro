@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Gallery from '../components/Gallery.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import EnquiryBanner from '../components/EnquiryBanner.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout
+  title="Andaman Photo Gallery — Island Scenery & Travel Moments"
+  description="Explore an Andaman photo gallery of beaches, island landscapes, heritage and supplied travel moments. Find inspiration for your own island journey."
+>
+  <PageHero
+    title="Postcards from the islands"
+    eyebrow="The Andaman gallery"
+    description="A collection of coastal colours, quiet corners and moments of discovery."
+    image="bridge"
+    alt="Rocky coastline and natural arch on Shaheed Dweep (Neil Island)"
+  />
+  <section class="section">
+    <div class="wrap">
+      <Gallery />
+      <p class="note" style="margin-top:12px">
+        Scenic photographs are credited to their creators. Supplied travel
+        moments are labelled separately.{' '}
+        <a class="text-link" href="/image-credits/">
+          View photo credits <Icon size={14} />
+        </a>
+      </p>
+    </div>
+  </section>
+  <section class="section bg-ocean">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Take a closer look"
+        title="Beneath the"
+        accent="blue"
+        text="Silent footage from the supplied travel collection. Press play to watch."
+      />
+      <div class="film-pair">
+        <figure data-reveal>
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster="/images/underwater-640.webp"
+            aria-label="Silent film of fish swimming underwater"
+          >
+            <source src="/underwater-film.mp4" type="video/mp4" />
+          </video>
+          <figcaption>
+            <strong>Fish in turquoise water</strong>
+            20 seconds · silent
+          </figcaption>
+        </figure>
+        <figure data-reveal style="--i:1">
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster="/images/client-scuba-848.webp"
+            aria-label="Silent clip of scuba divers above a coral reef"
+          >
+            <source src="/scuba-film.mp4" type="video/mp4" />
+          </video>
+          <figcaption>
+            <strong>A scuba dive above the coral</strong>
+            12 seconds · silent
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <EnquiryBanner />
+</BaseLayout>

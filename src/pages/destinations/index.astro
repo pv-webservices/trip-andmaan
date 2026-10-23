@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import DestinationCard from '../../components/DestinationCard.astro';
+import EnquiryBanner from '../../components/EnquiryBanner.astro';
+import { destinations } from '../../data/destinations';
+---
+
+<BaseLayout
+  title="Andaman Destinations — Havelock, Neil, Ross, North Bay & Baratang"
+  description="Explore Havelock, Neil, Ross, North Bay and Baratang in our Andaman destination guides. Find island inspiration and enquire about your travel plans."
+>
+  <PageHero
+    title="Find your island"
+    eyebrow="Five places. So many possibilities."
+    description="From white-sand shores to stories held in the forest — discover a different side of Andaman."
+    image="havelock"
+    alt="Forest meeting the white sand of Radhanagar Beach, Havelock Island"
+  />
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="The island edit"
+        title="Where will your journey"
+        accent="take you?"
+        text="Explore the places below, then ask about current access and travel arrangements for your dates."
+      />
+      <div class="dest-grid">
+        {destinations.map((d, i) => (
+          <DestinationCard
+            destination={d}
+            index={i}
+            sizes={
+              i < 2
+                ? '(max-width: 760px) 100vw, 50vw'
+                : '(max-width: 760px) 100vw, 33vw'
+            }
+          />
+        ))}
+      </div>
+      <p class="note" style="margin-top:24px">
+        Destination guides are inspiration for your enquiry. Travel routes,
+        activities and access must be confirmed before travel.
+      </p>
+    </div>
+  </section>
+  <EnquiryBanner />
+</BaseLayout>

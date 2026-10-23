@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import EnquiryForm from '../../components/EnquiryForm.astro';
+import Picture from '../../components/Picture.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../data/site';
+const next = [
+  'We talk through suitable destinations, experiences and pace.',
+  'Ask for a written itinerary and quotation.',
+  'Confirm the services and applicable terms before booking.',
+];
+---
+
+<BaseLayout
+  title="Plan a Customised Andaman Trip"
+  description="Tell Trip Andaman about your dates, group and interests. Start an enquiry for an Andaman holiday shaped around your preferences."
+>
+  <PageHero
+    title="A trip that feels like you"
+    eyebrow="Your own island story"
+    description="Start with a wish list. Let’s talk about bringing your Andaman plans together."
+    image="ai-trip-planning"
+    alt="Travel planning flat lay with a notebook, sun hat, sunglasses and seashells"
+    crumbs={[['Tours & Packages', '/tour-packages/']]}
+  />
+  <section class="section bg-mist">
+    <div class="wrap contact-grid">
+      <div class="contact-panel" data-reveal>
+        <p class="eyebrow">Let’s start planning</p>
+        <h2>
+          Your dates. Your pace. <span class="accent">Your Andaman.</span>
+        </h2>
+        <p class="lead">
+          Whether you’re dreaming of a beach-focused break, island sightseeing
+          or exploring the marine world, tell us what interests you.
+        </p>
+        <div class="media-frame">
+          <Picture
+            name="ai-beach-walk"
+            alt="Two travellers walking along a quiet tropical beach at golden hour"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+          />
+        </div>
+        <h3 style="font-size:var(--fs-h3);margin-top:32px">
+          What happens next?
+        </h3>
+        <ul class="check-list">
+          {next.map((item) => (
+            <li>
+              <Icon name="check" size={20} />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p class="note" style="margin-top:20px">
+          This is a trip-planning enquiry, with no fixed price, duration or
+          guaranteed availability. Prefer to talk?{' '}
+          <a
+            href={`tel:${site.tel}`}
+            style="color:var(--brand);font-weight:700"
+          >
+            Call {site.phone}
+          </a>
+          .
+        </p>
+      </div>
+      <div data-reveal style="--i:1">
+        <EnquiryForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

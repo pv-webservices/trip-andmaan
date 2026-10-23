@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  eyebrow: string;
+  title: string;
+  accent?: string;
+  text?: string;
+  href?: string;
+  label?: string;
+  center?: boolean;
+}
+const {
+  eyebrow,
+  title,
+  accent,
+  text,
+  href,
+  label,
+  center = false,
+} = Astro.props;
+---
+
+<div class:list={['section-head', { center }]} data-reveal>
+  <div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>
+      {title} {accent && <span class="accent">{accent}</span>}
+    </h2>
+    {text && <p class="lead">{text}</p>}
+  </div>
+  {href && (
+    <a class="btn btn-ghost" href={href}>
+      {label} <Icon size={18} />
+    </a>
+  )}
+</div>

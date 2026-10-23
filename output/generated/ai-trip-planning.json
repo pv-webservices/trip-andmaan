@@ -1,0 +1,10 @@
+{
+  "name": "ai-trip-planning",
+  "placement": "Customized trip page; homepage “How planning works” section",
+  "alt": "Travel planning flat lay with a notebook, sun hat, sunglasses and seashells on a light wooden table",
+  "model": "gpt-image-2.5-flare",
+  "quality": "high",
+  "size": "1536x1024",
+  "reason": "standard imagery",
+  "prompt": "Overhead flat lay on a pale natural wooden table: an open blank travel notebook with a pen, a woven straw sun hat, sunglasses, a few seashells, a sprig of tropical green leaf, a camera and a cup of coconut water, arranged with generous empty space on the left side. Bright, airy morning light with soft shadows, ocean-blue and sand tones. Notebook pages are blank with no writing. Natural editorial travel photography, true-to-life colour, soft natural light, shallow depth of field where appropriate. No text, no logos, no watermarks, no borders."
+}

@@ -1,0 +1,124 @@
+---
+import { site } from '../data/site';
+const configured = import.meta.env.PUBLIC_ENQUIRY_ENDPOINT || '';
+const endpoint = configured.startsWith('https://') ? configured : '';
+---
+
+<form class="enquiry-form" data-endpoint={endpoint} data-email={site.email}>
+  <h2>Tell us about your dream trip</h2>
+  <p>
+    {endpoint
+      ? 'Share a few details to send a travel enquiry.'
+      : 'Prepare an enquiry to send from your email app. You can also call or email us directly.'}
+  </p>
+  <div class="form-grid">
+    <div class="field">
+      <label for="full-name">Full name</label>
+      <input
+        id="full-name"
+        name="fullName"
+        autocomplete="name"
+        required
+        maxlength="100"
+      />
+    </div>
+    <div class="field">
+      <label for="mobile">Mobile number</label>
+      <input
+        id="mobile"
+        name="mobile"
+        type="tel"
+        autocomplete="tel"
+        inputmode="tel"
+        pattern="(?=(?:\D*\d){7,15}\D*$)[+0-9\s\(\)\-]{7,25}"
+        title="Enter 7–25 characters using numbers, spaces, +, brackets or hyphens."
+        required
+        maxlength="25"
+      />
+    </div>
+    <div class="field full">
+      <label for="email">Email address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="180"
+      />
+    </div>
+    <div class="field">
+      <label for="travel-date">
+        Travel date <span>(optional)</span>
+      </label>
+      <input id="travel-date" name="travelDate" type="date" />
+    </div>
+    <div class="field">
+      <label for="travellers">
+        Number of travellers <span>(optional)</span>
+      </label>
+      <input
+        id="travellers"
+        name="travellers"
+        type="number"
+        min="1"
+        max="100"
+        inputmode="numeric"
+      />
+    </div>
+    <div class="field full">
+      <label for="interest">
+        Destination or travel interests <span>(optional)</span>
+      </label>
+      <input
+        id="interest"
+        name="interest"
+        maxlength="180"
+        placeholder="An island, an experience, a little of everything…"
+      />
+    </div>
+    <div class="field full">
+      <label for="message">What do you have in mind?</label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        minlength="10"
+        maxlength="3000"
+        rows="4"
+        placeholder="Tell us about your group, preferred pace and any places on your wish list."
+      ></textarea>
+    </div>
+  </div>
+  <div class="honeypot" aria-hidden="true">
+    <label for="website">Leave this field empty</label>
+    <input id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  <label class="consent">
+    <input name="consent" type="checkbox" required value="agreed" />
+    <span>
+      I agree to share these details to discuss my travel enquiry. Read{' '}
+      <a href="/privacy/">privacy & enquiries</a>.
+    </span>
+  </label>
+  <button class="btn" type="submit">
+    {endpoint ? 'Send Enquiry' : 'Prepare Email Enquiry'}{' '}
+    <span aria-hidden="true">→</span>
+  </button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+  <a data-draft-link class="btn btn-sun on-light" hidden>
+    Open Email Draft <span aria-hidden="true">↗</span>
+  </a>
+  <p class="form-note">
+    {endpoint
+      ? 'Please avoid sending passport, payment or other sensitive information.'
+      : 'Direct form delivery is not enabled. An email app is required to send the prepared enquiry.'}
+  </p>
+  <noscript>
+    <p>
+      To send an enquiry,{' '}
+      <a href={`mailto:${site.email}`}>email {site.email}</a> or{' '}
+      <a href={`tel:${site.tel}`}>call {site.phone}</a>.
+    </p>
+  </noscript>
+</form>

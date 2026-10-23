@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import PlanningCards from '../../components/PlanningCards.astro';
+import EnquiryBanner from '../../components/EnquiryBanner.astro';
+import Picture from '../../components/Picture.astro';
+import Icon from '../../components/Icon.astro';
+import { packages } from '../../data/packages';
+const published = packages.filter((p) => p.published);
+const checks = [
+  {
+    q: 'Ask for the complete itinerary',
+    a: 'Confirm the destinations, travel dates, transport arrangements and proposed accommodation in writing.',
+  },
+  {
+    q: 'Check what the quotation includes',
+    a: 'Ask for a clear total, all inclusions and exclusions, and any separately payable charges.',
+  },
+  {
+    q: 'Read the applicable booking terms',
+    a: 'Request payment, amendment and cancellation terms for the specific arrangements before you agree to a booking.',
+  },
+];
+---
+
+<BaseLayout
+  title="Andaman Tour Packages & Customised Holidays"
+  description="Find inspiration for an Andaman holiday and request a customised travel proposal. Share your dates, island preferences and travel interests with Trip Andaman."
+>
+  <PageHero
+    title="Your kind of Andaman"
+    eyebrow="Tours, packages & possibilities"
+    description="A little inspiration. A few favourite places. A holiday conversation that starts with you."
+    image="ai-island-hopping"
+    alt="View from the bow of a boat crossing turquoise water towards forested islands"
+  />
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Let your island story begin"
+        title="Dream a little."
+        accent="Then let’s plan."
+        text="Pick a travel theme to start your enquiry. Each trip is tailored to your dates, group and interests, with arrangements confirmed in a written proposal."
+      />
+      {published.length > 0 && (
+        <div class="value-cards" style="margin-bottom:40px">
+          {published.map((p) => (
+            <a
+              class="value-card"
+              href={`/tour-packages/${p.slug}/`}
+              style="text-decoration:none"
+            >
+              <h3>{p.title}</h3>
+              <p>{p.overview}</p>
+              <span class="text-link" style="margin-top:16px">
+                View package details <Icon size={16} />
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+      <PlanningCards />
+      <div class="notice" style="margin-top:32px" data-reveal>
+        <Icon name="bag" size={22} />
+        <p>
+          For current packages, prices, durations and inclusions, please request
+          a written proposal. No fixed tour or activity availability is
+          advertised here.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section bg-sand">
+    <div class="wrap split top">
+      <div data-reveal>
+        <p class="eyebrow">What would your perfect trip feel like?</p>
+        <h2>
+          A few details. <span class="accent">A world of possibilities.</span>
+        </h2>
+        <p class="lead">
+          Let us know your intended dates, number of travellers and preferred
+          destinations. Mention any interests or practical needs you’d like to
+          discuss.
+        </p>
+        <div class="media-frame" style="margin:32px 0">
+          <Picture
+            name="ai-trip-planning"
+            alt="Travel planning flat lay with a notebook, sun hat and seashells"
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
+        </div>
+        <a class="btn" href="/tour-packages/customized-trip/">
+          Plan a Customised Trip <Icon size={18} />
+        </a>
+      </div>
+      <div data-reveal style="--i:1">
+        <h3 style="font-size:var(--fs-h3);margin-bottom:8px">
+          Before confirming any booking
+        </h3>
+        <div class="faq">
+          {checks.map((c, i) => (
+            <details open={i === 0}>
+              <summary>{c.q}</summary>
+              <p>{c.a}</p>
+            </details>
+          ))}
+        </div>
+        <a
+          class="text-link"
+          href="/travel-information/"
+          style="margin-top:24px"
+        >
+          Read our travel information <Icon size={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+  <EnquiryBanner />
+</BaseLayout>

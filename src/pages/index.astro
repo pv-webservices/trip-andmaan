@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import DestinationCard from '../components/DestinationCard.astro';
+import PlanningCards from '../components/PlanningCards.astro';
+import EnquiryBanner from '../components/EnquiryBanner.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { destinations } from '../data/destinations';
+import { experiences, promises, site } from '../data/site';
+const pillars = [
+  ['pin', 'Local expertise'],
+  ['route', 'Personalised itineraries'],
+  ['headset', 'Reliable support'],
+  ['compass', 'Island inspiration'],
+];
+const steps = [
+  {
+    title: 'Tell us your island wish list',
+    text: 'Share your dates, travel group and the places you’d love to see.',
+  },
+  {
+    title: 'Explore the possibilities',
+    text: 'Talk through destinations, experiences and the pace that suits you.',
+  },
+  {
+    title: 'Bring your plans together',
+    text: 'Request a written proposal and confirm every detail before booking.',
+  },
+];
+---
+
+<BaseLayout
+  title="Andaman Holidays, Island Escapes & Customised Trips"
+  description="Discover the Andaman Islands with Trip Andaman, based in Haddo, Sri Vijaya Puram. Explore Havelock, Neil, Ross, North Bay and Baratang, then plan a trip around you."
+>
+  <section class="hero">
+    <div class="hero-media">
+      <Picture
+        name="hero"
+        alt="Driftwood on the white sand of a turquoise lagoon, Havelock Island"
+        eager
+        sizes="100vw"
+      />
+    </div>
+    <p class="hero-script" aria-hidden="true">
+      Discover
+      <br />
+      Explore
+      <br />
+      Experience
+    </p>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Explore the unseen</p>
+        <h1>Andaman</h1>
+        <p class="hero-tagline">
+          Your next <span class="script">Paradise</span> awaits
+        </p>
+        <p class="hero-copy">
+          Crystal-clear waters, white sandy beaches, breathtaking islands and
+          unforgettable experiences — discover the real Andaman with Trip
+          Andaman.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-sun" href="/tour-packages/customized-trip/">
+            Plan My Trip <Icon size={18} />
+          </a>
+          <a class="btn btn-glass" href="/underwater-film.mp4" data-open-film>
+            <span class="play-dot">
+              <Icon name="play" size={13} />
+            </span>
+            Watch the Ocean
+          </a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Moments from the islands">
+        <div class="hero-card">
+          <Picture
+            name="client-kayak"
+            alt="Two travellers kayaking on calm Andaman water — supplied photograph"
+            sizes="330px"
+          />
+          <div class="hero-card-body">
+            <div>
+              <strong>Based in Sri Vijaya Puram</strong>
+              <span>Talk to a local team today</span>
+            </div>
+            <a
+              class="circle-btn"
+              href={`tel:${site.tel}`}
+              aria-label={`Call Trip Andaman on ${site.phone}`}
+            >
+              <Icon name="phone" size={18} />
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <a class="hero-scroll" href="#promise">
+      Scroll
+    </a>
+  </section>
+
+  <div class="wrap promise-strip" id="promise">
+    {promises.map((p, i) => (
+      <div class="promise" data-reveal style={`--i:${i}`}>
+        <span class="promise-icon">
+          <Icon name={p.icon} size={26} />
+        </span>
+        <div>
+          <h2>{p.title}</h2>
+          <p>{p.text}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <section class="section">
+    <div class="wrap story-grid">
+      <div class="story-copy" data-reveal>
+        <p class="eyebrow">Why travel with Trip Andaman</p>
+        <h2>
+          Your trusted travel partner <span class="accent">in Andaman</span>
+        </h2>
+        <p class="lead">
+          We are a locally based travel and tourism business in Haddo, Sri
+          Vijaya Puram. From turquoise beaches to island heritage and the reefs
+          beneath the blue, we help you shape an Andaman holiday around your
+          dates, your group and the way you like to travel.
+        </p>
+        <ul class="pillars">
+          {pillars.map(([icon, label]) => (
+            <li>
+              <Icon name={icon} size={22} />
+              {label}
+            </li>
+          ))}
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="/about/">
+            About Trip Andaman <Icon size={18} />
+          </a>
+          <a class="btn btn-ghost" href={`tel:${site.tel}`}>
+            <Icon name="phone" size={18} /> {site.phone}
+          </a>
+        </div>
+      </div>
+      <div class="story-collage" data-reveal style="--i:1">
+        <figure class="tall">
+          <Picture
+            name="client-neil"
+            alt="Travellers at the natural rock bridge on Neil Island — supplied photograph"
+            sizes="(max-width: 1024px) 50vw, 26vw"
+          />
+        </figure>
+        <figure class="wide">
+          <Picture
+            name="havelock"
+            alt="Forest meeting the white sand of Radhanagar Beach, Havelock Island"
+            sizes="(max-width: 1024px) 45vw, 22vw"
+          />
+        </figure>
+        <figure class="wide">
+          <Picture
+            name="sunset"
+            alt="Evening light over the sea at Elephant Beach"
+            sizes="(max-width: 1024px) 45vw, 22vw"
+          />
+        </figure>
+        <p class="story-badge">
+          <span>
+            <Icon name="pin" size={20} />
+          </span>
+          <span>
+            Haddo, Sri Vijaya Puram
+            <small>Andaman & Nicobar Islands</small>
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-mist">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Most loved places"
+        title="Top destinations in"
+        accent="Andaman"
+        text="From iconic beaches to limestone caves and island heritage — find the places that speak to you."
+        href="/destinations/"
+        label="All Destinations"
+      />
+      <div class="dest-bento">
+        {destinations.map((d, i) => (
+          <DestinationCard
+            destination={d}
+            index={i}
+            sizes={
+              i === 0
+                ? '(max-width: 1024px) 80vw, 50vw'
+                : '(max-width: 1024px) 80vw, 25vw'
+            }
+          />
+        ))}
+      </div>
+      <p class="rail-hint" aria-hidden="true">
+        Swipe to explore <Icon size={16} />
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-ocean" aria-labelledby="xp-title">
+    <div class="wrap xp-grid">
+      <div data-reveal>
+        <p class="eyebrow">Unforgettable experiences</p>
+        <h2 id="xp-title" style="font-size:var(--fs-h2)">
+          More than just a <span class="accent">vacation</span>
+        </h2>
+        <p class="lead" style="margin-top:20px;max-width:48ch">
+          Relax on white sand, explore vibrant marine life or hop between
+          islands. Choose what you love — we’ll help you plan around it.
+        </p>
+        <div class="xp-tabs" role="tablist" aria-label="Experiences">
+          {experiences.map((e, i) => (
+            <button
+              class="xp-tab"
+              role="tab"
+              id={`xp-tab-${i}`}
+              aria-controls={`xp-panel-${i}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              tabindex={i === 0 ? 0 : -1}
+            >
+              <span class="num">0{i + 1}</span>
+              <span>{e.title}</span>
+              <Icon size={20} />
+            </button>
+          ))}
+        </div>
+      </div>
+      <div class="xp-stage" data-reveal style="--i:1">
+        {experiences.map((e, i) => (
+          <div
+            class:list={['xp-panel', { 'is-active': i === 0 }]}
+            role="tabpanel"
+            id={`xp-panel-${i}`}
+            aria-labelledby={`xp-tab-${i}`}
+            inert={i !== 0}
+            aria-hidden={i !== 0 ? 'true' : undefined}
+          >
+            <Picture
+              name={e.image}
+              alt={e.alt}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+            />
+            <div class="xp-caption">
+              <div>
+                <h3>{e.title}</h3>
+                <p>{e.text}</p>
+              </div>
+              <a
+                class="circle-btn"
+                href={`/experiences/#${e.icon}`}
+                aria-label={`Read more about ${e.title}`}
+              >
+                <Icon name="arrow-up-right" size={20} />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Handpicked for you"
+        title="Your island holiday,"
+        accent="your way"
+        text="Start with what you love. Every Trip Andaman itinerary is shaped around your enquiry — no fixed templates."
+        href="/tour-packages/"
+        label="Tours & Packages"
+      />
+      <PlanningCards />
+    </div>
+  </section>
+
+  <section class="film-band" aria-labelledby="film-title-band">
+    <video
+      data-autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      poster="/images/underwater-640.webp"
+      aria-hidden="true"
+    >
+      <source src="/underwater-film.mp4" type="video/mp4" />
+    </video>
+    <div data-reveal>
+      <p class="eyebrow">Beneath the blue</p>
+      <h2 id="film-title-band">
+        A whole other world <span class="script">awaits</span>
+      </h2>
+      <p class="lead">
+        Snorkelling, diving and coral viewing are some of the most memorable
+        parts of an Andaman holiday. Ask about suitable options for your dates.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-glass" href="/underwater-film.mp4" data-open-film>
+          <span class="play-dot">
+            <Icon name="play" size={13} />
+          </span>
+          Watch the Film
+        </a>
+        <a
+          class="btn btn-sun"
+          href={`/contact/?interest=${encodeURIComponent('Snorkeling & scuba diving')}`}
+        >
+          Ask About Diving <Icon size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Real moments"
+        title="Moments from"
+        accent="the islands"
+        text="Photographs and footage from our supplied travel collection — kayaking at dusk, a famous natural bridge and a first dive beneath the waves."
+        href="/gallery/"
+        label="View Gallery"
+      />
+      <div class="moments">
+        <figure class="moment tall" data-reveal>
+          <Picture
+            name="client-neil"
+            alt="Travellers at the natural rock bridge on Neil Island"
+            sizes="(max-width: 760px) 100vw, 30vw"
+          />
+          <figcaption>Natural bridge, Neil Island</figcaption>
+        </figure>
+        <figure class="moment tall" data-reveal style="--i:1">
+          <video
+            data-autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="/images/client-scuba-848.webp"
+            aria-label="Silent clip of scuba divers above a coral reef"
+          >
+            <source src="/scuba-film.mp4" type="video/mp4" />
+          </video>
+          <figcaption>
+            <span class="live-dot"></span> Scuba diving
+          </figcaption>
+        </figure>
+        <figure class="moment" data-reveal style="--i:2">
+          <Picture
+            name="client-kayak"
+            alt="Two travellers kayaking on calm water at dusk"
+            sizes="(max-width: 760px) 50vw, 30vw"
+          />
+          <figcaption>Kayaking at dusk</figcaption>
+        </figure>
+        <figure class="moment" data-reveal style="--i:3">
+          <Picture
+            name="client-arrival"
+            alt="A travel group gathered together on arrival"
+            sizes="(max-width: 760px) 50vw, 30vw"
+          />
+          <figcaption>Arrival day</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-sand">
+    <div class="wrap steps-grid-wrap">
+      <div class="steps-visual" data-reveal>
+        <Picture
+          name="ai-trip-planning"
+          alt="Travel planning flat lay with a notebook, sun hat, sunglasses and seashells"
+          sizes="(max-width: 1024px) 100vw, 45vw"
+        />
+        <span class="script" aria-hidden="true">
+          Let’s plan!
+        </span>
+      </div>
+      <div>
+        <div data-reveal>
+          <p class="eyebrow">From daydream to island days</p>
+          <h2 style="font-size:var(--fs-h2);max-width:14ch">
+            Planning made <span class="accent">simple</span>
+          </h2>
+          <p class="lead" style="margin-top:18px">
+            A few details are all it takes to start the conversation.
+          </p>
+        </div>
+        <ol class="steps" style="list-style:none;padding:0">
+          {steps.map((s, i) => (
+            <li class="step" data-reveal style={`--i:${i}`}>
+              <span class="step-num">0{i + 1}</span>
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <div class="btn-row" style="margin-top:32px" data-reveal>
+          <a
+            class="btn btn-sun on-light"
+            href="/tour-packages/customized-trip/"
+          >
+            Start Planning <Icon size={18} />
+          </a>
+          <a class="btn btn-ghost" href="/travel-information/">
+            Travel Information
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Glimpses of Andaman"
+        title="Photo"
+        accent="gallery"
+        text="Coastal colours, island textures and moments by the sea."
+        href="/gallery/"
+        label="Full Gallery"
+      />
+      <Gallery compact />
+    </div>
+  </section>
+
+  <EnquiryBanner />
+
+  <dialog class="film-dialog" aria-labelledby="film-title">
+    <div class="dialog-top">
+      <h2 id="film-title">Beneath the Andaman blue</h2>
+      <button class="icon-button" data-close-film aria-label="Close film">
+        <Icon name="close" size={20} />
+      </button>
+    </div>
+    <video
+      controls
+      playsinline
+      preload="none"
+      poster="/images/underwater-640.webp"
+      aria-label="Silent underwater film showing fish swimming in turquoise water"
+    >
+      <source src="/underwater-film.mp4" type="video/mp4" />
+    </video>
+    <p>Silent underwater footage from the supplied travel collection.</p>
+  </dialog>
+</BaseLayout>

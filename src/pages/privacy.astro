@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../data/site';
+const configured = Boolean(
+  import.meta.env.PUBLIC_ENQUIRY_ENDPOINT?.startsWith('https://'),
+);
+---
+
+<BaseLayout
+  title="Privacy & Travel Enquiries"
+  description="How the Trip Andaman website handles enquiry details, local interactions and links to external services."
+>
+  <PageHero
+    title="Privacy & Enquiries"
+    eyebrow="CLEAR INFORMATION"
+    description="A practical explanation of how this website’s enquiry tools work."
+    image="north-bay"
+    alt="North Bay lighthouse among tropical trees"
+  />
+  <section class="section">
+    <div class="legal-layout prose">
+      <h2>
+        Your Enquiry <span class="accent">Details</span>
+      </h2>
+      <p>
+        The enquiry fields ask for your name, phone number, email address,
+        travel preferences and a message. Please share only the information
+        needed to discuss your holiday. Do not include passport details, payment
+        information or sensitive personal documents.
+      </p>
+      {configured ? (
+        <p>
+          When you submit the form, your details are sent to the configured
+          external enquiry service. Submission status reflects the service
+          response. Contact TRIP ANDAMAN if you need to confirm receipt.
+        </p>
+      ) : (
+        <p>
+          The form prepares an email draft in your browser. It does not submit
+          your details to TRIP ANDAMAN. Use the “Open Email Draft” link to
+          review and send the message from your own email app. Your email
+          provider handles the message when you send it.
+        </p>
+      )}
+      <h2>
+        Website <span class="accent">Storage</span>
+      </h2>
+      <p>
+        This website’s code does not add analytics, advertising cookies or
+        browser storage. Form fields and gallery controls operate locally in
+        your browser until you choose to send an enquiry.
+      </p>
+      <p>
+        Hosting providers and external services can process technical request
+        information under their own terms. This website does not control those
+        services.
+      </p>
+      <h2>
+        External <span class="accent">Links</span>
+      </h2>
+      <p>
+        Email, phone, WhatsApp and map links open the relevant app or external service. WhatsApp chats are handled by WhatsApp under its own terms.
+        Destination references and photo-credit links lead to third-party
+        websites with their own privacy practices.
+      </p>
+      <h2>
+        Questions About <span class="accent">Your Information?</span>
+      </h2>
+      <p>
+        Contact <a href={`mailto:${site.email}`}>{site.email}</a> or call{' '}
+        <a href={`tel:${site.tel}`}>{site.phone}</a> to discuss your enquiry or
+        ask about information you have shared.
+      </p>
+      <p>
+        This page describes the website’s current functionality. For business
+        data-handling terms or a formal privacy policy, please contact TRIP
+        ANDAMAN.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

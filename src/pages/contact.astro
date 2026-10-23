@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import Icon from '../components/Icon.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import { site } from '../data/site';
+const cards = [
+  {
+    icon: 'phone',
+    label: 'Call us',
+    value: site.phone,
+    href: `tel:${site.tel}`,
+  },
+  {
+    icon: 'whatsapp',
+    label: 'WhatsApp',
+    value: 'Chat with us on WhatsApp',
+    href: site.whatsapp,
+    external: true,
+  },
+  {
+    icon: 'mail',
+    label: 'Email us',
+    value: site.email,
+    href: `mailto:${site.email}`,
+  },
+  {
+    icon: 'pin',
+    label: 'Find us',
+    value: site.address,
+    href: site.map,
+    external: true,
+  },
+];
+---
+
+<BaseLayout
+  title="Contact Trip Andaman — Plan Your Island Holiday"
+  description="Call 9646 96 9646 or email tripandamanin2026@gmail.com to discuss your Andaman holiday. Trip Andaman is based in Haddo, Sri Vijaya Puram."
+>
+  <PageHero
+    title="Let’s talk about your trip"
+    eyebrow="Your next adventure starts here"
+    description="A question, a wish list or the beginnings of a plan — we’d love to hear from you."
+    image="sunset"
+    alt="Evening light over the sea at Elephant Beach"
+  />
+  <section class="section bg-mist">
+    <div class="wrap contact-grid">
+      <div class="contact-panel" data-reveal>
+        <p class="eyebrow">Say hello to Trip Andaman</p>
+        <h2>
+          A real conversation.{' '}
+          <span class="accent">An island of possibilities.</span>
+        </h2>
+        <p class="lead">
+          Planning a visit to the Andaman Islands? Call, email or send your
+          details and we’ll talk through your travel requirements.
+        </p>
+        <div class="contact-cards">
+          {cards.map((c) => (
+            <a
+              class="contact-card"
+              href={c.href}
+              {...(c.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+            >
+              <span
+                class:list={['contact-icon', { wa: c.icon === 'whatsapp' }]}
+              >
+                {c.icon === 'whatsapp' ? (
+                  <WhatsAppIcon size={22} />
+                ) : (
+                  <Icon name={c.icon} size={22} />
+                )}
+              </span>
+              <span>
+                <small>{c.label}</small>
+                <strong>{c.value}</strong>
+              </span>
+              <Icon name="arrow-up-right" size={18} />
+            </a>
+          ))}
+        </div>
+        <p class="note" style="margin-top:16px">
+          The map searches the Haddo locality. Contact us for directions to the
+          office.
+        </p>
+      </div>
+      <div data-reveal style="--i:1">
+        <EnquiryForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

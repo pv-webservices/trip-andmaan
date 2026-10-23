@@ -1,0 +1,246 @@
+---
+import '@fontsource/manrope/400.css';
+import '@fontsource/manrope/500.css';
+import '@fontsource/manrope/600.css';
+import '@fontsource/manrope/700.css';
+import '@fontsource/manrope/800.css';
+import '@fontsource/caveat/500.css';
+import '../styles/global.css';
+import { navigation, site } from '../data/site';
+import ContactDetails from '../components/ContactDetails.astro';
+import Icon from '../components/Icon.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import { destinations } from '../data/destinations';
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+const publicUrl = import.meta.env.PUBLIC_SITE_URL;
+const canonical = publicUrl ? new URL(path, publicUrl).href : undefined;
+const active = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'TravelAgency',
+  name: site.name,
+  telephone: site.tel,
+  email: site.email,
+  ...(publicUrl ? { url: publicUrl } : {}),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Haddo',
+    addressLocality: 'Sri Vijaya Puram',
+    addressRegion: 'Andaman and Nicobar Islands',
+    postalCode: '744102',
+    addressCountry: 'IN',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Trip Andaman</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0865b2" />
+    <meta
+      name="robots"
+      content={noindex || !publicUrl ? 'noindex, follow' : 'index, follow'}
+    />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={`${title} | Trip Andaman`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta
+      property="og:image"
+      content={
+        publicUrl
+          ? new URL('/images/hero-1200.webp', publicUrl).href
+          : '/images/hero-1200.webp'
+      }
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/images/logo-hd.webp"
+      as="image"
+      type="image/webp"
+    />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="/" aria-label="Trip Andaman home">
+          <img
+            src="/images/logo-hd.webp"
+            width="600"
+            height="305"
+            alt="Trip Andaman"
+          />
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          {navigation.map(([label, href]) => (
+            <a href={href} aria-current={active(href) ? 'page' : undefined}>
+              {label}
+            </a>
+          ))}
+        </nav>
+        <div class="header-actions">
+          <a class="header-call" href={`tel:${site.tel}`}>
+            <span>
+              <Icon name="phone" size={17} />
+            </span>
+            <span>
+              <small>Call us</small>
+              {site.phone}
+            </span>
+          </a>
+          <a
+            class="btn btn-sun on-light btn-sm header-cta"
+            href="/tour-packages/customized-trip/"
+          >
+            Plan My Trip <Icon size={16} />
+          </a>
+          <button
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
+      <div class="mobile-menu-top">
+        <img
+          src="/images/logo-hd.webp"
+          width="600"
+          height="305"
+          alt="Trip Andaman"
+        />
+        <button class="menu-close icon-button" aria-label="Close navigation">
+          <Icon name="close" size={20} />
+        </button>
+      </div>
+      <nav aria-label="Mobile navigation">
+        {navigation.map(([label, href], i) => (
+          <a href={href} aria-current={active(href) ? 'page' : undefined}>
+            <small>0{i + 1}</small>
+            {label}
+            <Icon name="arrow-up-right" size={18} />
+          </a>
+        ))}
+      </nav>
+      <div class="mobile-menu-foot">
+        <a class="btn btn-sun" href="/tour-packages/customized-trip/">
+          Plan My Trip <Icon size={18} />
+        </a>
+        <a class="btn btn-glass" href={`tel:${site.tel}`}>
+          <Icon name="phone" size={18} /> Call {site.phone}
+        </a>
+        <p>Your next island story starts here.</p>
+      </div>
+    </dialog>
+    <noscript>
+      <nav class="no-js-nav" aria-label="Site navigation">
+        {navigation.map(([label, href]) => (
+          <a href={href}>{label}</a>
+        ))}
+      </nav>
+    </noscript>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a href="/" aria-label="Trip Andaman home">
+            <img
+              src="/images/logo-hd.webp"
+              width="600"
+              height="305"
+              alt="Trip Andaman"
+              loading="lazy"
+            />
+          </a>
+          <p>
+            A travel and tourism business based in Haddo, Sri Vijaya Puram —
+            helping you discover the beaches, reefs, heritage and island nature
+            of Andaman.
+          </p>
+          <span class="script">Discover · Explore · Experience</span>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            {navigation.slice(1).map(([label, href]) => (
+              <li>
+                <a href={href}>{label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>The islands</h2>
+          <ul>
+            {destinations.map((d) => (
+              <li>
+                <a href={`/destinations/${d.slug}/`}>{d.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="on-dark">
+          <h2>Get in touch</h2>
+          <ContactDetails />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrap">
+          <p>© {new Date().getFullYear()} Trip Andaman. All rights reserved.</p>
+          <nav aria-label="Legal and information">
+            <a href="/privacy/">Privacy & enquiries</a>
+            <a href="/travel-information/">Travel information</a>
+            <a href="/image-credits/">Photo credits</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <WhatsAppWidget />
+    <nav class="quick-actions" aria-label="Quick contact">
+      <a class="btn btn-glass" href={`tel:${site.tel}`}>
+        <Icon name="phone" size={17} /> Call
+      </a>
+      <a
+        class="btn btn-whatsapp"
+        href={site.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <WhatsAppIcon size={18} /> WhatsApp
+      </a>
+      <a class="btn btn-sun" href="/tour-packages/customized-trip/">
+        Plan My Trip
+      </a>
+    </nav>
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

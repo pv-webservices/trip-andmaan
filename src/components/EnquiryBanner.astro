@@ -1,0 +1,39 @@
+---
+import Picture from './Picture.astro';
+import ContactDetails from './ContactDetails.astro';
+import Icon from './Icon.astro';
+interface Props {
+  image?: string;
+}
+const { image = 'sunset' } = Astro.props;
+---
+
+<section class="cta-band">
+  <Picture name={image} alt="" sizes="100vw" />
+  <div class="wrap cta-grid">
+    <div data-reveal>
+      <p class="eyebrow" style="color:var(--sun)">
+        Ready for your Andaman adventure?
+      </p>
+      <h2>
+        Let’s plan your <span class="script">dream trip</span>
+      </h2>
+      <p class="lead" style="color:rgb(255 255 255 / .82)">
+        Tell us your dates, who’s travelling and what you’d love to see. We’ll
+        talk through the islands, experiences and arrangements that suit you.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-sun" href="/tour-packages/customized-trip/">
+          Plan My Trip <Icon size={18} />
+        </a>
+        <a class="btn btn-glass" href="/contact/">
+          Contact Us <Icon size={18} />
+        </a>
+      </div>
+    </div>
+    <div class="cta-card on-dark" data-reveal style="--i:1">
+      <h3>Talk to our Sri Vijaya Puram team</h3>
+      <ContactDetails />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import EnquiryBanner from '../../components/EnquiryBanner.astro';
+import { packages } from '../../data/packages';
+export function getStaticPaths() {
+  return packages
+    .filter((p) => p.published)
+    .map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
+}
+const { tour } = Astro.props;
+---
+
+<BaseLayout title={tour.title} description={tour.overview}>
+  <PageHero
+    title={tour.title}
+    description={tour.overview}
+    eyebrow="EXPLORE ANDAMAN"
+    image={tour.image}
+  />
+  <section class="section">
+    <div class="wrap detail-grid">
+      <div class="prose">
+        <h2>
+          Your <span class="accent">Journey</span>
+        </h2>
+        <p>{tour.overview}</p>
+        {tour.destinations?.length && (
+          <p>Destinations: {tour.destinations.join(', ')}</p>
+        )}
+        {tour.itinerary?.length && (
+          <>
+            <h2>The Itinerary</h2>
+            {tour.itinerary.map((day) => (
+              <details>
+                <summary>{day.day}</summary>
+                <p>{day.description}</p>
+              </details>
+            ))}
+          </>
+        )}
+        {tour.inclusions?.length && (
+          <>
+            <h2>Inclusions</h2>
+            <ul>
+              {tour.inclusions.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        {tour.exclusions?.length && (
+          <>
+            <h2>Exclusions</h2>
+            <ul>
+              {tour.exclusions.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+      <aside class="info-panel">
+        <h2>Make an Enquiry</h2>
+        {tour.duration && <p>{tour.duration}</p>}
+        {tour.price && <p>{tour.price}</p>}
+        <p>
+          Discuss your preferred dates and confirm the arrangements before
+          booking.
+        </p>
+        <a
+          class="btn"
+          href={`/contact/?interest=${encodeURIComponent(tour.title)}`}
+        >
+          Enquire About This Tour →
+        </a>
+      </aside>
+    </div>
+  </section>
+  <EnquiryBanner />
+</BaseLayout>

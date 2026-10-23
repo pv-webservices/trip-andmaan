@@ -1,0 +1,10 @@
+{
+  "name": "ai-island-hopping",
+  "placement": "Experiences → Island hopping; homepage experience showcase",
+  "alt": "View from the bow of a boat crossing turquoise water towards forested tropical islands",
+  "model": "gpt-image-2.5-flare",
+  "quality": "high",
+  "size": "1536x1024",
+  "reason": "standard imagery",
+  "prompt": "View from the front deck of a small passenger boat crossing calm turquoise tropical sea towards low, densely forested green islands under a bright sky with soft white clouds. Gentle wake, sunlight glinting on the water, a coiled rope and white railing in the near foreground. Natural editorial travel photography, true-to-life colour, soft natural light, shallow depth of field where appropriate. No text, no logos, no watermarks, no borders."
+}

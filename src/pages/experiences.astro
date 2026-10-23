@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Picture from '../components/Picture.astro';
+import Icon from '../components/Icon.astro';
+import EnquiryBanner from '../components/EnquiryBanner.astro';
+import { experiences } from '../data/site';
+---
+
+<BaseLayout
+  title="Andaman Experiences — Snorkelling, Island Hopping & Beach Days"
+  description="Discover snorkelling, island hopping, beach relaxation, water activities, heritage sightseeing and nature in the Andamans. Enquire about options for your travel dates."
+>
+  <PageHero
+    title="A little more wonder"
+    eyebrow="Experiences in the Andamans"
+    description="Some memories begin on the shore. Others begin beneath the surface."
+    image="ai-snorkel-reef"
+    alt="A snorkeller floating above a colourful coral reef"
+  >
+    <nav class="xp-jump" aria-label="Jump to an experience">
+      {experiences.map((e) => (
+        <a href={`#${e.icon}`}>
+          <Icon name={e.icon} size={16} /> {e.title}
+        </a>
+      ))}
+    </nav>
+  </PageHero>
+  <section class="section">
+    <div class="wrap">
+      <div class="notice" data-reveal>
+        <Icon name="compass" size={22} />
+        <p>
+          These are destination experiences to explore, rather than a list of
+          activities operated by TRIP ANDAMAN. Ask about availability, providers
+          and conditions for your dates.
+        </p>
+      </div>
+      <div class="xp-list">
+        {experiences.map((e, i) => (
+          <article class="xp-row" id={e.icon}>
+            <div class="media-frame" data-reveal>
+              <Picture
+                name={e.image}
+                alt={e.alt}
+                sizes="(max-width: 1024px) 100vw, 55vw"
+              />
+            </div>
+            <div data-reveal style="--i:1">
+              <span class="xp-index" aria-hidden="true">
+                0{i + 1}
+              </span>
+              <p class="eyebrow">Find your kind of day</p>
+              <h2>{e.title}</h2>
+              <p class="lead">{e.text}</p>
+              <p class="note">
+                Confirm local availability, access, charges and any suitability
+                requirements before making arrangements.
+              </p>
+              <a
+                class="btn"
+                href={`/contact/?interest=${encodeURIComponent(e.title)}`}
+              >
+                Ask About This <Icon size={18} />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <EnquiryBanner image="havelock" />
+</BaseLayout>

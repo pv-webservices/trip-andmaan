@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Picture from '../components/Picture.astro';
+import Icon from '../components/Icon.astro';
+import EnquiryBanner from '../components/EnquiryBanner.astro';
+import DestinationCard from '../components/DestinationCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { destinations } from '../data/destinations';
+import { promises, site } from '../data/site';
+const values = [
+  {
+    title: 'The way you like to travel',
+    text: 'A family holiday, time for two or a journey with friends. Tell us what would make the trip feel right.',
+  },
+  {
+    title: 'The places on your wish list',
+    text: 'Explore our island guides, then let us know which destinations have captured your imagination.',
+  },
+  {
+    title: 'The details before you go',
+    text: 'Ask for a written proposal with confirmed arrangements, charges and applicable booking terms.',
+  },
+];
+---
+
+<BaseLayout
+  title="About Us — Your Local Andaman Travel Partner"
+  description="Meet Trip Andaman, a travel and tourism business in Haddo, Sri Vijaya Puram. Customised Andaman trips, local knowledge and support from first call to final details."
+>
+  <PageHero
+    eyebrow="A hello from the islands"
+    title="A little closer to Andaman"
+    description="We’re a locally based travel and tourism business helping visitors discover the beaches, reefs, heritage and island nature of Andaman."
+    image="neil"
+    alt="Sandy shore and forest on Shaheed Dweep (Neil Island)"
+  />
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="media-stack" data-reveal>
+        <div class="media-frame portrait">
+          <Picture
+            name="ai-beach-walk"
+            alt="Two travellers walking along a quiet tropical beach at golden hour"
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
+        </div>
+        <div class="inset">
+          <Picture
+            name="client-kayak"
+            alt="Two travellers kayaking on calm water — supplied photograph"
+            sizes="240px"
+          />
+        </div>
+      </div>
+      <div data-reveal style="--i:1">
+        <p class="eyebrow">Meet Trip Andaman</p>
+        <h2>
+          The islands are calling.{' '}
+          <span class="accent">Let’s talk travel.</span>
+        </h2>
+        <p class="lead">
+          TRIP ANDAMAN is a travel and tourism business based in Haddo, Sri
+          Vijaya Puram, in the Andaman and Nicobar Islands.
+        </p>
+        <p class="lead">
+          Maybe you’re picturing days beside the sea. Perhaps you’re curious
+          about the islands’ heritage, coastal landscapes or marine experiences.
+          Share your travel dates, group size and interests — we’ll discuss
+          destinations, travel options and the details you need before making
+          your plans.
+        </p>
+        <ul class="check-list">
+          {promises.map((p) => (
+            <li>
+              <Icon name="check" size={20} />
+              <span>
+                <strong>{p.title}.</strong> {p.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <div class="btn-row" style="margin-top:32px">
+          <a class="btn" href="/contact/">
+            Say Hello <Icon size={18} />
+          </a>
+          <a class="btn btn-ghost" href={`tel:${site.tel}`}>
+            <Icon name="phone" size={18} /> {site.phone}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ocean">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Your holiday, thoughtfully considered"
+        title="Start with what"
+        accent="matters to you"
+      />
+      <div class="value-cards">
+        {values.map((v, i) => (
+          <article class="value-card" data-reveal style={`--i:${i}`}>
+            <span class="num">0{i + 1}</span>
+            <h3>{v.title}</h3>
+            <p>{v.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Find your island"
+        title="So many ways to"
+        accent="explore"
+        href="/destinations/"
+        label="All Destinations"
+      />
+      <div class="card-grid-3">
+        {destinations.slice(0, 3).map((d, i) => (
+          <DestinationCard destination={d} index={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+  <EnquiryBanner />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+---
+
+<!-- Desktop/tablet chat widget. The button is a real link, so it still opens WhatsApp without JavaScript. -->
+<div class="wa-widget">
+  <div
+    class="wa-panel"
+    id="wa-panel"
+    role="dialog"
+    aria-labelledby="wa-panel-title"
+    hidden
+  >
+    <div class="wa-panel-head">
+      <span class="wa-avatar">
+        <WhatsAppIcon size={22} />
+      </span>
+      <div>
+        <p id="wa-panel-title">Trip Andaman</p>
+        <span>Sri Vijaya Puram, Andaman</span>
+      </div>
+      <button class="wa-close" type="button" aria-label="Close WhatsApp chat">
+        <Icon name="close" size={18} />
+      </button>
+    </div>
+    <div class="wa-panel-body">
+      <p class="wa-bubble">
+        Hello! Tell us your travel dates, group size and the islands you’d love
+        to visit — we’ll help you plan your Andaman trip.
+      </p>
+    </div>
+    <a
+      class="wa-start"
+      href={site.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <WhatsAppIcon size={20} /> Start chat on WhatsApp
+    </a>
+  </div>
+  <a
+    class="wa-fab"
+    href={site.whatsapp}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-controls="wa-panel"
+    aria-expanded="false"
+    aria-label="Chat with Trip Andaman on WhatsApp"
+  >
+    <span class="wa-fab-label" aria-hidden="true">
+      Chat with us
+    </span>
+    <span class="wa-fab-icon">
+      <WhatsAppIcon size={30} />
+    </span>
+  </a>
+</div>

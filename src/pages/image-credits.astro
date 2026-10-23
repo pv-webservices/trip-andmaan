@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import credits from '../data/credits.json';
+---
+
+<BaseLayout
+  title="Photography Credits & Sources"
+  description="Sources, creators and licences for scenic photographs used on the Trip Andaman website."
+>
+  <PageHero
+    title="Behind the Photographs"
+    eyebrow="CREATORS & SOURCES"
+    description="A thank you to the photographers who help bring these islands into view."
+    image="baratang"
+    alt="Limestone cave formations at Baratang"
+  />
+  <section class="section">
+    <div class="legal-layout">
+      <ul class="credit-list">
+        {credits.map((c) => (
+          <li>
+            <strong>{c.title}</strong>
+            <span>{c.author} · </span>
+            <a href={c.licenseUrl} target="_blank" rel="noopener noreferrer">
+              {c.license}
+            </a>{' '}
+            ·{' '}
+            <a href={c.source} target="_blank" rel="noopener noreferrer">
+              Original photograph ↗
+            </a>
+            <p>{c.changes} Derivative image files retain the source licence.</p>
+          </li>
+        ))}
+      </ul>
+      <div class="prose">
+        <h2>
+          Supplied <span class="accent">Travel Collection</span>
+        </h2>
+        <p>
+          The kayaking photograph, natural bridge visit photograph, arrival-day
+          group photograph, underwater footage and scuba diving clip were
+          supplied for this project. They are presented as supplied travel
+          media, without attributing reviews or endorsements to the people
+          shown.
+        </p>
+        <h2>
+          Illustrative <span class="accent">Imagery</span>
+        </h2>
+        <p>
+          A small number of illustrative images were created with AI image
+          generation: the boat-deck island view, the snorkeller above a coral
+          reef, the travel-planning flat lay and the couple walking on a beach.
+          They illustrate types of experiences and are not photographs of a
+          specific Andaman location, traveller or service.
+        </p>
+        <p>
+          The TRIP ANDAMAN logo is supplied brand artwork. The version shown on
+          this website is a high-resolution restoration of the supplied logo,
+          preserving its design. It remains the property of its owner.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

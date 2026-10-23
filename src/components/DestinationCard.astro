@@ -1,0 +1,32 @@
+---
+import Picture from './Picture.astro';
+import Icon from './Icon.astro';
+import type { destinations } from '../data/destinations';
+interface Props {
+  destination: (typeof destinations)[number];
+  sizes?: string;
+  index?: number;
+}
+const {
+  destination: d,
+  sizes = '(max-width: 760px) 80vw, 33vw',
+  index = 0,
+} = Astro.props;
+---
+
+<a
+  class="destination-card"
+  href={`/destinations/${d.slug}/`}
+  data-reveal
+  style={`--i:${index}`}
+>
+  <Picture name={d.image} alt={`${d.name} — ${d.short}`} sizes={sizes} />
+  <div class="destination-label">
+    <p class="island-name">{d.official}</p>
+    <h3>{d.name}</h3>
+    <p>{d.short}</p>
+  </div>
+  <span class="card-arrow" aria-hidden="true">
+    <Icon size={20} />
+  </span>
+</a>

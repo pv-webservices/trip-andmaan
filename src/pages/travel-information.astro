@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Travel & Booking Information"
+  description="Useful questions to discuss before confirming an Andaman holiday, including itineraries, quotations, availability and booking terms."
+>
+  <PageHero
+    title="Before Your Island Escape"
+    eyebrow="A FEW USEFUL DETAILS"
+    description="Make space for the dreaming. Take a moment for the practical details, too."
+    image="ai-island-hopping"
+    alt="View from a boat crossing turquoise water towards forested islands"
+  />
+  <section class="section">
+    <div class="legal-layout prose">
+      <h2>
+        Inspiration to <span class="accent">Start a Conversation</span>
+      </h2>
+      <p>
+        The destination guides, photographs and travel themes on this website
+        provide inspiration for an enquiry. They do not confirm a package,
+        departure date, activity or booking.
+      </p>
+      <h2>
+        Confirm the <span class="accent">Details</span>
+      </h2>
+      <p>
+        Before booking, request a written itinerary and quotation that
+        identifies your travel dates, destinations, accommodation and transport
+        arrangements, inclusions, exclusions and total charges.
+      </p>
+      <h2>
+        Access & <span class="accent">Activities</span>
+      </h2>
+      <p>
+        Discuss current island access, transport schedules, local restrictions,
+        weather and sea conditions. For water activities, confirm the provider,
+        suitability requirements and applicable arrangements directly before
+        committing.
+      </p>
+      <h2>
+        Payment & <span class="accent">Booking Terms</span>
+      </h2>
+      <p>
+        Request the terms that apply to your specific proposed booking,
+        including payment arrangements, changes, cancellations and refunds. This
+        website does not publish a standard cancellation or refund policy and
+        does not take online payments.
+      </p>
+      <h2>
+        Plan With <span class="accent">Current Information</span>
+      </h2>
+      <p>
+        Check{' '}
+        <a
+          href="https://tourism.andamannicobar.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          official Andaman tourism information
+        </a>{' '}
+        and confirm practical details close to your travel date.
+      </p>
+      <a class="btn" href="/contact/">
+        Discuss Your Travel Plans →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

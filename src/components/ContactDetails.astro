@@ -1,0 +1,36 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+---
+
+<ul class="contact-details">
+  <li>
+    <span class="contact-icon">
+      <Icon name="phone" size={18} />
+    </span>
+    <a href={`tel:${site.tel}`}>{site.phone}</a>
+  </li>
+  <li>
+    <span class="contact-icon wa">
+      <WhatsAppIcon size={18} />
+    </span>
+    <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+      Chat on WhatsApp
+    </a>
+  </li>
+  <li>
+    <span class="contact-icon">
+      <Icon name="mail" size={18} />
+    </span>
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+  </li>
+  <li>
+    <span class="contact-icon">
+      <Icon name="pin" size={18} />
+    </span>
+    <a href={site.map} target="_blank" rel="noopener noreferrer">
+      {site.address}
+    </a>
+  </li>
+</ul>

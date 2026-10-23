@@ -1,0 +1,114 @@
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Generated 11ms","label":"types","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":" astro  v7.4.2 ready in 2067 ms\n┃ Local    http://127.0.0.1:4321/","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}
+{"message":"[200] / 87ms","label":null,"level":"info"}
+{"message":"[200] / 14ms","label":null,"level":"info"}
+{"message":"[200] / 14ms","label":null,"level":"info"}
+{"message":"[200] / 11ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] / 270ms","label":null,"level":"info"}
+{"message":"[200] / 153ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] /about/ 71ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 234ms","label":null,"level":"info"}
+{"message":"[200] /destinations/ 50ms","label":null,"level":"info"}
+{"message":"[200] /destinations/neil-island/ 31ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/ 56ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 66ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 46ms","label":null,"level":"info"}
+{"message":"[200] /gallery/ 49ms","label":null,"level":"info"}
+{"message":"[200] /travel-information/ 33ms","label":null,"level":"info"}
+{"message":"[200] /image-credits/ 45ms","label":null,"level":"info"}
+{"message":"[404] /nope-404/ 59ms","label":null,"level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"[200] / 58ms","label":null,"level":"info"}
+{"message":"[200] /gallery/ 21ms","label":null,"level":"info"}
+{"message":"[200] / 14ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 10ms","label":null,"level":"info"}
+{"message":"[200] / 20ms","label":null,"level":"info"}
+{"message":"[200] /about/ 11ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/ 12ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 16ms","label":null,"level":"info"}
+{"message":"[200] /destinations/ 17ms","label":null,"level":"info"}
+{"message":"[200] /destinations/havelock-island/ 43ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 27ms","label":null,"level":"info"}
+{"message":"[200] /gallery/ 16ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 21ms","label":null,"level":"info"}
+{"message":"[200] /privacy/ 131ms","label":null,"level":"info"}
+{"message":"[200] /travel-information/ 15ms","label":null,"level":"info"}
+{"message":"[200] /image-credits/ 8ms","label":null,"level":"info"}
+{"message":"[200] / 24ms","label":null,"level":"info"}
+{"message":"[200] /about/ 13ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/ 9ms","label":null,"level":"info"}
+{"message":"[200] /destinations/ 5ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 6ms","label":null,"level":"info"}
+{"message":"[200] /gallery/ 6ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 5ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 6ms","label":null,"level":"info"}
+{"message":"[200] /destinations/havelock-island/ 7ms","label":null,"level":"info"}
+{"message":"[200] /destinations/neil-island/ 6ms","label":null,"level":"info"}
+{"message":"[200] /destinations/ross-island/ 6ms","label":null,"level":"info"}
+{"message":"[200] /destinations/north-bay-island/ 7ms","label":null,"level":"info"}
+{"message":"[200] /destinations/baratang-island/ 6ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 7ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 7ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 5ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 5ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 6ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 5ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 7ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 4ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 6ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 9ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 8ms","label":null,"level":"info"}
+{"message":"[200] /travel-information/ 7ms","label":null,"level":"info"}
+{"message":"[200] /privacy/ 6ms","label":null,"level":"info"}
+{"message":"[200] /image-credits/ 5ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 6ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 5ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 5ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 5ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 5ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 6ms","label":null,"level":"info"}
+{"message":"Configuration file updated. Restarting...","label":null,"level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"server restarted.","label":"vite","level":"info"}
+{"message":"[200] / 121ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 41ms","label":null,"level":"info"}
+{"message":"[200] /destinations/neil-island/ 43ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 108ms","label":null,"level":"info"}
+{"message":"[200] / 15ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 7ms","label":null,"level":"info"}
+{"message":"[200] /destinations/neil-island/ 11ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 10ms","label":null,"level":"info"}
+{"message":"[200] / 12ms","label":null,"level":"info"}
+{"message":"[200] /contact/ 10ms","label":null,"level":"info"}
+{"message":"[200] /destinations/neil-island/ 5ms","label":null,"level":"info"}
+{"message":"[200] /experiences/ 4ms","label":null,"level":"info"}
+{"message":"[200] / 26ms","label":null,"level":"info"}
+{"message":"[200] / 7ms","label":null,"level":"info"}
+{"message":"[200] / 10ms","label":null,"level":"info"}
+{"message":"[200] / 57ms","label":null,"level":"info"}
+{"message":"[200] /tour-packages/customized-trip/ 142ms","label":null,"level":"info"}
+{"message":"src/layouts/BaseLayout.astro","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"src/scripts/site.ts","label":"watch","level":"info"}
+{"message":"src/scripts/site.ts","label":"watch","level":"info"}
+{"message":"src/scripts/site.ts","label":"watch","level":"info"}
+{"message":"/src/styles/global.css","label":"watch","level":"info"}
+{"message":"src/layouts/BaseLayout.astro","label":"watch","level":"info"}
+{"message":"[200] / 91ms","label":null,"level":"info"}
+{"message":"[200] / 7ms","label":null,"level":"info"}
+{"message":"[200] / 17ms","label":null,"level":"info"}
+{"message":"[200] / 7ms","label":null,"level":"info"}
+{"message":"[200] / 5ms","label":null,"level":"info"}
+{"message":"[200] / 65ms","label":null,"level":"info"}

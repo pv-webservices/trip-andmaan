@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Picture from '../components/Picture.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="This page has drifted off course. Return to Trip Andaman or explore the island destinations."
+  noindex
+>
+  <section class="not-found">
+    <Picture name="neil" alt="" eager sizes="100vw" />
+    <div>
+      <p class="eyebrow" style="color:var(--sun)">
+        A little off the island trail
+      </p>
+      <p class="error-number">404</p>
+      <h1>Let’s get you back to paradise.</h1>
+      <p>
+        We couldn’t find this page. There’s still a whole island story waiting
+        to be explored.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-sun" href="/">
+          Back to Home <Icon size={18} />
+        </a>
+        <a class="btn btn-glass" href="/destinations/">
+          Explore the Islands <Icon size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

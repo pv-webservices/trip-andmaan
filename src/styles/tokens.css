@@ -1,0 +1,58 @@
+/* Trip Andaman design tokens — evolved from the logo's ocean blues and sun yellow. */
+:root {
+  --ink: #0b2239;
+  --ink-soft: #33485e;
+  --muted: #5b6d80;
+  --ocean-950: #041c33;
+  --ocean-900: #062a4a;
+  --ocean-800: #0a3a66;
+  --brand: #0865b2;
+  --brand-600: #06559a;
+  --brand-100: #dcecfa;
+  --lagoon: #14a9bd;
+  --lagoon-100: #dff5f7;
+  --sun: #f7b928;
+  --sun-600: #e3a30d;
+  --sun-100: #fff4d6;
+  --sand: #f6f1e8;
+  --paper: #fbfaf7;
+  --white: #ffffff;
+  --line: #e2e8ef;
+  --line-dark: rgb(255 255 255 / 0.14);
+
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', cursive;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --fs-h2: clamp(2rem, 1.35rem + 2.6vw, 3.6rem);
+  --fs-h1: clamp(2.6rem, 1.6rem + 4.4vw, 5.4rem);
+  --fs-display: clamp(4rem, 1.5rem + 11vw, 11.5rem);
+
+  --gutter: clamp(16px, 4.5vw, 72px);
+  --wrap: min(1440px, 100% - 2 * var(--gutter));
+  --wrap-narrow: min(860px, 100% - 2 * var(--gutter));
+  --section: clamp(72px, 9vw, 140px);
+
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 26px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(6 42 74 / 0.06), 0 4px 12px rgb(6 42 74 / 0.06);
+  --shadow-md:
+    0 2px 6px rgb(6 42 74 / 0.06), 0 18px 40px -12px rgb(6 42 74 / 0.18);
+  --shadow-lg: 0 30px 70px -24px rgb(6 42 74 / 0.35);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 180ms;
+  --t-med: 380ms;
+  --t-slow: 900ms;
+  --header-h: 76px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "trip-andaman",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build && node scripts/finalize-build.mjs",
+    "preview": "astro preview --host 0.0.0.0",
+    "check": "astro check",
+    "verify": "node scripts/verify.mjs",
+    "images": "node --env-file=.env scripts/generate-images.mjs",
+    "images:plan": "node scripts/generate-images.mjs --dry-run"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "^5.2.8",
+    "@fontsource/manrope": "^5.2.8",
+    "astro": "^7.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "axe-core": "^4.14.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "^5.9.3"
+  }
+}

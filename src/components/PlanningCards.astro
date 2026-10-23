@@ -1,0 +1,34 @@
+---
+import { planning } from '../data/site';
+import Picture from './Picture.astro';
+import Icon from './Icon.astro';
+---
+
+<div class="style-rail">
+  {planning.map((p, i) => (
+    <a
+      class="style-card"
+      href={`/tour-packages/customized-trip/?interest=${encodeURIComponent(p.interest)}`}
+      data-reveal
+      style={`--i:${i}`}
+    >
+      <Picture
+        name={p.image}
+        alt=""
+        sizes="(max-width: 760px) 78vw, (max-width: 1120px) 50vw, 25vw"
+      />
+      <span class="tag">{p.tag}</span>
+      <div class="body">
+        <h3>{p.title}</h3>
+        <div class="more">
+          <div>
+            <p>{p.text}</p>
+          </div>
+        </div>
+        <span class="cta">
+          Make it your trip <Icon size={16} />
+        </span>
+      </div>
+    </a>
+  ))}
+</div>

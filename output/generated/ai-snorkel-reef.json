@@ -1,0 +1,10 @@
+{
+  "name": "ai-snorkel-reef",
+  "placement": "Experiences → Snorkeling & scuba diving; homepage experience showcase",
+  "alt": "A snorkeller floating above a colourful coral reef in clear blue water",
+  "model": "gpt-image-2.5-flare",
+  "quality": "high",
+  "size": "1536x1024",
+  "reason": "standard imagery",
+  "prompt": "Underwater photograph of a single snorkeller in a mask and fins floating at the surface above a healthy shallow coral reef with hard corals, sea fans and small schools of colourful reef fish, clear turquoise water, sun rays streaming down. The snorkeller is seen from below and slightly behind, face not visible. Natural editorial travel photography, true-to-life colour, soft natural light, shallow depth of field where appropriate. No text, no logos, no watermarks, no borders."
+}

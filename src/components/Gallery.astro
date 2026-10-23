@@ -1,0 +1,139 @@
+---
+import Picture from './Picture.astro';
+import Icon from './Icon.astro';
+import { largestImage } from '../data/images';
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+const images = [
+  {
+    image: 'hero',
+    title: 'Sandy lagoon, Havelock Island',
+    category: 'Beaches',
+  },
+  { image: 'sunset', title: 'Evening at Elephant Beach', category: 'Beaches' },
+  {
+    image: 'underwater',
+    title: 'Beneath the surface — supplied travel film',
+    category: 'Underwater',
+  },
+  {
+    image: 'neil',
+    title: 'Coastal scenery, Shaheed Dweep',
+    category: 'Islands',
+  },
+  { image: 'north-bay', title: 'North Bay lighthouse', category: 'Islands' },
+  {
+    image: 'ross',
+    title: 'Historic remains on Ross Island',
+    category: 'Heritage',
+  },
+  {
+    image: 'baratang',
+    title: 'Limestone formations, Baratang',
+    category: 'Nature',
+  },
+  {
+    image: 'bridge',
+    title: 'Rocky coastline, Shaheed Dweep',
+    category: 'Nature',
+  },
+  {
+    image: 'client-kayak',
+    title: 'A moment on the water — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-neil',
+    title: 'Natural bridge visit — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-arrival',
+    title: 'A travel group on arrival — supplied photograph',
+    category: 'Travel moments',
+  },
+];
+const shown = compact
+  ? ['hero', 'sunset', 'bridge', 'client-neil', 'ross', 'baratang'].map(
+      (name) => images.find((i) => i.image === name)!,
+    )
+  : images;
+---
+
+{!compact && (
+  <div class="gallery-filters" aria-label="Filter gallery">
+    {['All', ...new Set(images.map((i) => i.category))].map((category, i) => (
+      <button
+        type="button"
+        class:list={['filter-button', { 'is-active': i === 0 }]}
+        aria-pressed={i === 0}
+        data-filter={category}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+)}
+<div class:list={['gallery-grid', { compact }]}>
+  {shown.map((i) => (
+    <figure data-category={i.category}>
+      <a
+        class="gallery-item"
+        href={largestImage(i.image)}
+        data-gallery
+        data-caption={i.title}
+      >
+        <Picture
+          name={i.image}
+          alt={i.title}
+          sizes="(max-width: 760px) 50vw, 33vw"
+        />
+        <span class="gallery-hover">
+          <span>{i.title}</span>
+          <Icon name="arrow-up-right" size={18} />
+        </span>
+      </a>
+      {!compact && <figcaption>{i.title}</figcaption>}
+    </figure>
+  ))}
+</div>
+<dialog class="lightbox" aria-label="Photo gallery viewer">
+  <div class="lightbox-top">
+    <p class="lightbox-counter" aria-live="polite"></p>
+    <button
+      class="icon-button"
+      data-gallery-close
+      aria-label="Close photo viewer"
+    >
+      <Icon name="close" size={20} />
+    </button>
+  </div>
+  <div class="lightbox-stage">
+    <button
+      class="icon-button"
+      data-gallery-prev
+      aria-label="Previous photograph"
+    >
+      <Icon name="arrow-left" size={20} />
+    </button>
+    <img src="/images/hero-1920.webp" alt="" width="1200" height="800" />
+    <button class="icon-button" data-gallery-next aria-label="Next photograph">
+      <Icon size={20} />
+    </button>
+  </div>
+  <div class="lightbox-nav-mobile">
+    <button
+      class="icon-button"
+      data-gallery-prev
+      aria-label="Previous photograph"
+    >
+      <Icon name="arrow-left" size={20} />
+    </button>
+    <button class="icon-button" data-gallery-next aria-label="Next photograph">
+      <Icon size={20} />
+    </button>
+  </div>
+  <p class="lightbox-caption" aria-live="polite"></p>
+</dialog>
