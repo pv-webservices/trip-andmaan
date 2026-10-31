@@ -48,7 +48,7 @@ Do not run a blanket rewrite to `index.html`: this is a static multipage site. H
 - Confirmed tour products, itineraries, inclusions/exclusions, pricing and booking terms.
 - Formal privacy, terms, cancellation/refund policies; none have been fabricated.
 - Approved testimonials with permissions/source URLs, if desired.
-- Original vector/high-resolution logo. The site uses an AI restoration (`logo-hd`) of the 109 px supplied crop; replace it with the client's master file when available.
+- Vector logo. The site uses `logo-light` / `logo-dark`, cut from the supplied `public/trip-andaman-new-logo.jpeg` (1427 × 714); swap in a vector master when available.
 - Confirmation of public-use rights and participant consent for supplied travel media.
 - Confirmed domain and optional form-service configuration; WhatsApp/social URLs if wanted.
 
@@ -68,7 +68,7 @@ npm run images -- ai-island-hopping --premium=ai-island-hopping --force  # retry
 - `scripts/image-gen/manifest.mjs`: each asset's purpose, placement, alt text and prompt.
 - Raw PNGs and per-asset generation records go to `output/generated/`; optimised WebP files go to `public/images/`.
 
-Current generated assets: `ai-island-hopping`, `ai-snorkel-reef`, `ai-trip-planning` (Flare, high) and `ai-beach-walk` (Sunburst, high — two people), plus `logo-hd` (Sunburst reference edit restoring the 109 px supplied logo at high resolution on a transparent background). Generated scenes are disclosed on `/image-credits/` and are never captioned as a specific Andaman place.
+Current generated assets: `ai-island-hopping`, `ai-snorkel-reef`, `ai-trip-planning` (Flare, high) and `ai-beach-walk` (Sunburst, high — two people). Generated scenes are disclosed on `/image-credits/` and are never captioned as a specific Andaman place.
 
 ## Media
 

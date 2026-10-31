@@ -177,7 +177,7 @@
   border: 1px solid rgb(255 255 255 / 0.6);
   border-radius: var(--r-pill);
   background: rgb(255 255 255 / 0.9);
-  box-shadow: 0 10px 40px -18px rgb(4 28 51 / 0.45);
+  box-shadow: 0 10px 40px -18px rgb(4 32 58 / 0.45);
   backdrop-filter: blur(16px) saturate(1.4);
   pointer-events: auto;
   transition:
@@ -189,7 +189,7 @@
 }
 .site-header.scrolled .header-bar {
   height: 66px;
-  box-shadow: 0 14px 40px -16px rgb(4 28 51 / 0.35);
+  box-shadow: 0 14px 40px -16px rgb(4 32 58 / 0.35);
 }
 .brand {
   display: block;
@@ -197,11 +197,11 @@
 }
 .brand img {
   width: auto;
-  height: 50px;
+  height: 54px;
   transition: height var(--t-med) var(--ease);
 }
 .scrolled .brand img {
-  height: 44px;
+  height: 46px;
 }
 .desktop-nav {
   display: flex;
@@ -319,7 +319,7 @@
   animation: menu-in 420ms var(--ease-out);
 }
 .mobile-menu::backdrop {
-  background: rgb(4 28 51 / 0.55);
+  background: rgb(4 32 58 / 0.55);
   backdrop-filter: blur(4px);
 }
 @keyframes menu-in {
@@ -335,12 +335,8 @@
   margin-bottom: 28px;
 }
 .mobile-menu-top img {
-  height: 50px;
+  height: 56px;
   width: auto;
-  padding: 6px 12px;
-  border-radius: var(--r-md);
-  background: var(--white);
-  box-sizing: content-box;
 }
 .mobile-menu nav {
   display: grid;
@@ -471,8 +467,8 @@
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgb(4 28 51 / 0) 35%,
-    rgb(4 28 51 / 0.82) 100%
+    rgb(4 32 58 / 0) 35%,
+    rgb(4 32 58 / 0.82) 100%
   );
   transition: opacity var(--t-med) var(--ease);
 }
@@ -563,8 +559,8 @@
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgb(4 28 51 / 0.05) 30%,
-    rgb(4 28 51 / 0.9) 100%
+    rgb(4 32 58 / 0.05) 30%,
+    rgb(4 32 58 / 0.9) 100%
   );
 }
 .style-card .tag {
@@ -651,11 +647,11 @@
   background:
     linear-gradient(
       90deg,
-      rgb(4 28 51 / 0.78) 0%,
-      rgb(4 28 51 / 0.35) 55%,
-      rgb(4 28 51 / 0.1) 100%
+      rgb(4 32 58 / 0.78) 0%,
+      rgb(4 32 58 / 0.35) 55%,
+      rgb(4 32 58 / 0.1) 100%
     ),
-    linear-gradient(0deg, rgb(4 28 51 / 0.6) 0%, rgb(4 28 51 / 0) 45%);
+    linear-gradient(0deg, rgb(4 32 58 / 0.6) 0%, rgb(4 32 58 / 0) 45%);
 }
 .page-hero h1 {
   max-width: 15ch;
@@ -761,9 +757,9 @@
   z-index: -1;
   background: linear-gradient(
     100deg,
-    rgb(4 28 51 / 0.92) 0%,
-    rgb(4 28 51 / 0.7) 50%,
-    rgb(4 28 51 / 0.3) 100%
+    rgb(4 32 58 / 0.92) 0%,
+    rgb(4 32 58 / 0.7) 50%,
+    rgb(4 32 58 / 0.3) 100%
   );
 }
 .cta-grid {
@@ -790,7 +786,7 @@
   padding: clamp(24px, 3vw, 38px);
   border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: var(--r-lg);
-  background: rgb(4 28 51 / 0.45);
+  background: rgb(4 32 58 / 0.45);
   backdrop-filter: blur(14px);
 }
 .cta-card h3 {
@@ -806,6 +802,13 @@
   background: var(--ocean-950);
   color: rgb(255 255 255 / 0.75);
 }
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--gold-gradient);
+}
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
@@ -813,12 +816,8 @@
   padding-bottom: clamp(48px, 6vw, 80px);
 }
 .footer-brand img {
-  width: 170px;
+  width: 240px;
   height: auto;
-  padding: 10px 16px;
-  border-radius: var(--r-md);
-  background: var(--white);
-  box-sizing: content-box;
 }
 .footer-brand p {
   max-width: 34ch;
@@ -889,7 +888,7 @@
 }
 .film-dialog::backdrop,
 .lightbox::backdrop {
-  background: rgb(2 14 26 / 0.82);
+  background: rgb(2 16 30 / 0.82);
   backdrop-filter: blur(6px);
 }
 @keyframes dialog-in {
@@ -985,7 +984,7 @@
   padding: 13px 16px;
   border: 1.5px solid var(--line);
   border-radius: var(--r-md);
-  background: #f8fafc;
+  background: #fdfbf7;
   font-size: 1rem;
   transition:
     border-color var(--t-fast) var(--ease),
@@ -1113,7 +1112,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 40px 18px 16px;
-  background: linear-gradient(0deg, rgb(4 28 51 / 0.85), transparent);
+  background: linear-gradient(0deg, rgb(4 32 58 / 0.85), transparent);
   color: var(--white);
   font-size: var(--fs-sm);
   font-weight: 700;

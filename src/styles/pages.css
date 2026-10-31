@@ -439,7 +439,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgb(4 28 51 / 0.72);
+  background: rgb(4 32 58 / 0.72);
 }
 .not-found .error-number {
   font-size: clamp(6rem, 3rem + 14vw, 14rem);

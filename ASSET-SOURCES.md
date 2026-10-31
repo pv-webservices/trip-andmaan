@@ -2,8 +2,7 @@
 
 The client's four JPEGs and eight MP4s were already in `public/`; originals remain untouched. The supplied PNG design reference lives outside the checkout at the path given in the chat.
 
-- `/images/logo-hd.webp` / `logo-hd.png`: high-resolution restoration of the supplied logo made with gpt-image-2.5-sunburst (reference-image edit, transparent background), trimmed and compressed. The original 109 × 57 crop is kept at `output/media/logo-original-crop.png`. Replace with the client's master artwork when supplied.
-- Original crop: supplied logo artwork cropped from the top left of that design reference, preserving colours/proportions; source resolution 109 × 57. Request the original transparent high-resolution asset before a high-resolution launch.
+- `/images/logo-light.webp|png` (navy + gold, for light backgrounds) and `/images/logo-dark.webp|png` (ivory + gold, for dark backgrounds): cut from the supplied `/trip-andaman-new-logo.jpeg`, cropped, white background removed, resized to 800 × 221. The site palette in `src/styles/tokens.css` is sampled from this logo (navy `#0e2f4b`, gold `#b9873e` / `#deaa61`).
 - `/images/client-kayak-*`: resized WebP derivatives of `image-2.jpeg`.
 - `/images/client-neil-*`: resized WebP derivatives of `image-1.jpeg`, cropped to remove the overlaid caption text.
 - `/images/client-arrival-*`: cropped WebP derivatives of `image-3.jpeg` (travel group on arrival).

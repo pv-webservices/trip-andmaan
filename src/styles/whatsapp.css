@@ -82,7 +82,7 @@
   overflow: hidden;
   border-radius: var(--r-lg);
   background: var(--white);
-  box-shadow: 0 30px 70px -20px rgb(4 28 51 / 0.45);
+  box-shadow: 0 30px 70px -20px rgb(4 32 58 / 0.45);
   transform-origin: bottom right;
 }
 .wa-panel:not([hidden]) {

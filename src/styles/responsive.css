@@ -228,9 +228,9 @@
   .hero::after {
     background: linear-gradient(
       0deg,
-      rgb(4 28 51 / 0.92) 0%,
-      rgb(4 28 51 / 0.55) 50%,
-      rgb(4 28 51 / 0.25) 100%
+      rgb(4 32 58 / 0.92) 0%,
+      rgb(4 32 58 / 0.55) 50%,
+      rgb(4 32 58 / 0.25) 100%
     );
   }
   .hero h1 {
@@ -412,9 +412,9 @@
     gap: 6px;
     padding: 7px;
     border-radius: var(--r-pill);
-    background: rgb(4 28 51 / 0.92);
+    background: rgb(4 32 58 / 0.92);
     backdrop-filter: blur(12px);
-    box-shadow: 0 16px 40px -10px rgb(4 28 51 / 0.6);
+    box-shadow: 0 16px 40px -10px rgb(4 32 58 / 0.6);
     animation: rise 600ms 800ms var(--ease-out) both;
   }
   .quick-actions .btn {
