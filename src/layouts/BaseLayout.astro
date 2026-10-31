@@ -5,6 +5,9 @@ import '@fontsource/manrope/600.css';
 import '@fontsource/manrope/700.css';
 import '@fontsource/manrope/800.css';
 import '@fontsource/caveat/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource/cormorant-garamond/600-italic.css';
 import '../styles/global.css';
 import { navigation, site } from '../data/site';
 import ContactDetails from '../components/ContactDetails.astro';
@@ -69,7 +72,7 @@ const schema = {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
-      href="/images/logo-hd.webp"
+      href="/images/logo-light.webp"
       as="image"
       type="image/webp"
     />
@@ -86,9 +89,9 @@ const schema = {
       <div class="header-bar">
         <a class="brand" href="/" aria-label="Trip Andaman home">
           <img
-            src="/images/logo-hd.webp"
-            width="600"
-            height="305"
+            src="/images/logo-light.webp"
+            width="800"
+            height="221"
             alt="Trip Andaman"
           />
         </a>
@@ -131,9 +134,9 @@ const schema = {
     <dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
       <div class="mobile-menu-top">
         <img
-          src="/images/logo-hd.webp"
-          width="600"
-          height="305"
+          src="/images/logo-dark.webp"
+          width="800"
+          height="221"
           alt="Trip Andaman"
         />
         <button class="menu-close icon-button" aria-label="Close navigation">
@@ -174,9 +177,9 @@ const schema = {
         <div class="footer-brand">
           <a href="/" aria-label="Trip Andaman home">
             <img
-              src="/images/logo-hd.webp"
-              width="600"
-              height="305"
+              src="/images/logo-dark.webp"
+              width="800"
+              height="221"
               alt="Trip Andaman"
               loading="lazy"
             />

@@ -1,25 +1,28 @@
-/* Trip Andaman design tokens — evolved from the logo's ocean blues and sun yellow. */
+/* Trip Andaman design tokens — drawn from the logo's deep navy lettering and burnished gold arcs. */
 :root {
-  --ink: #0b2239;
-  --ink-soft: #33485e;
-  --muted: #5b6d80;
-  --ocean-950: #041c33;
-  --ocean-900: #062a4a;
-  --ocean-800: #0a3a66;
-  --brand: #0865b2;
-  --brand-600: #06559a;
-  --brand-100: #dcecfa;
-  --lagoon: #14a9bd;
-  --lagoon-100: #dff5f7;
-  --sun: #f7b928;
-  --sun-600: #e3a30d;
-  --sun-100: #fff4d6;
-  --sand: #f6f1e8;
-  --paper: #fbfaf7;
+  --ink: #0c2740;
+  --ink-soft: #384a5d;
+  --muted: #5f6d7c;
+  --ocean-950: #04203a;
+  --ocean-900: #082c4c;
+  --ocean-800: #0e3a62;
+  --brand: #0f3d66;
+  --brand-600: #0a2f52;
+  --brand-100: #e3ebf3;
+  --lagoon: #2f6f9a;
+  --lagoon-100: #e4eef5;
+  --sun: #d6a556;
+  --sun-600: #b9873e;
+  --sun-100: #f7ecd9;
+  --gold-ink: #8a6121;
+  --gold-gradient: linear-gradient(100deg, #97671e 0%, #deaa61 48%, #b9873e 100%);
+  --sand: #f4ede0;
+  --paper: #fbf9f4;
   --white: #ffffff;
-  --line: #e2e8ef;
+  --line: #e6e0d4;
   --line-dark: rgb(255 255 255 / 0.14);
 
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
   --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-script: 'Caveat', 'Segoe Script', cursive;
 
@@ -44,10 +47,10 @@
   --r-xl: 36px;
   --r-pill: 999px;
 
-  --shadow-sm: 0 1px 2px rgb(6 42 74 / 0.06), 0 4px 12px rgb(6 42 74 / 0.06);
+  --shadow-sm: 0 1px 2px rgb(8 44 76 / 0.06), 0 4px 12px rgb(8 44 76 / 0.06);
   --shadow-md:
-    0 2px 6px rgb(6 42 74 / 0.06), 0 18px 40px -12px rgb(6 42 74 / 0.18);
-  --shadow-lg: 0 30px 70px -24px rgb(6 42 74 / 0.35);
+    0 2px 6px rgb(8 44 76 / 0.06), 0 18px 40px -12px rgb(8 44 76 / 0.18);
+  --shadow-lg: 0 30px 70px -24px rgb(8 44 76 / 0.35);
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
