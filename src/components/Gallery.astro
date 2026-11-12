@@ -54,9 +54,96 @@ const images = [
     title: 'A travel group on arrival — supplied photograph',
     category: 'Travel moments',
   },
+  {
+    image: 'cellular-jail-wing',
+    title: 'A wing of the Cellular Jail — supplied photograph',
+    category: 'Heritage',
+  },
+  {
+    image: 'cellular-jail-corridor',
+    title: 'Sunlit corridor of cells, Cellular Jail — supplied photograph',
+    category: 'Heritage',
+  },
+  {
+    image: 'cellular-jail-view',
+    title: 'Sea view from the Cellular Jail tower — supplied photograph',
+    category: 'Heritage',
+  },
+  {
+    image: 'resort-palms',
+    title: 'Palm-fringed shore beside a resort — supplied photograph',
+    category: 'Beaches',
+  },
+  {
+    image: 'neil-reef-flats',
+    title: 'Reef flats at low tide — supplied photograph',
+    category: 'Nature',
+  },
+  {
+    image: 'coastal-rocks',
+    title: 'Forest-backed rocky coast — supplied photograph',
+    category: 'Nature',
+  },
+  {
+    image: 'client-group-beach',
+    title: 'A beach day with friends — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-airport-welcome',
+    title: 'Garland welcome at Port Blair airport — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-jetty-group',
+    title: 'Ready to board the island cruise — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-reef-shore',
+    title: 'Exploring the shore at low tide — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-rocky-cove',
+    title: 'A rest on the rocks by the sea — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-lagoon',
+    title: 'Wading in a shallow lagoon — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-boat-ride',
+    title: 'Life jackets on for the boat ride — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'client-beach-huts',
+    title: 'Under the beach huts — supplied photograph',
+    category: 'Travel moments',
+  },
+  {
+    image: 'handicraft-elephant',
+    title: 'Carved wooden elephant, local handicraft — supplied photograph',
+    category: 'Shopping',
+  },
+  {
+    image: 'handicraft-butterfly',
+    title: 'Wooden butterfly wall art, local handicraft — supplied photograph',
+    category: 'Shopping',
+  },
 ];
 const shown = compact
-  ? ['hero', 'sunset', 'bridge', 'client-neil', 'ross', 'baratang'].map(
+  ? [
+      'hero',
+      'cellular-jail-view',
+      'bridge',
+      'client-group-beach',
+      'ross',
+      'neil-reef-flats',
+    ].map(
       (name) => images.find((i) => i.image === name)!,
     )
   : images;

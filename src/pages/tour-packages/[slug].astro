@@ -1,80 +1,205 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import Picture from '../../components/Picture.astro';
+import Icon from '../../components/Icon.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import PackageCard from '../../components/PackageCard.astro';
 import EnquiryBanner from '../../components/EnquiryBanner.astro';
-import { packages } from '../../data/packages';
+import WhatsAppIcon from '../../components/WhatsAppIcon.astro';
+import {
+  durationLabel,
+  publishedPackages,
+  routeLabel,
+  type TourPackage,
+} from '../../data/packages';
+import { site } from '../../data/site';
 export function getStaticPaths() {
-  return packages
-    .filter((p) => p.published)
-    .map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
+  return publishedPackages.map((tour) => ({
+    params: { slug: tour.slug },
+    props: { tour },
+  }));
 }
-const { tour } = Astro.props;
+const { tour } = Astro.props as { tour: TourPackage };
+const momentCaptions: Record<string, string> = {
+  'client-group-beach': 'A group day on the white sand',
+  'client-jetty-group': 'Ready to board the island cruise',
+  'client-natural-bridge': 'At the Natural Bridge, Neil Island',
+  'client-reef-shore': 'Low tide on Neil’s reef flats',
+  'client-rocky-cove': 'Rest stop on the rocky shore',
+  'client-lagoon': 'Wading in a shallow lagoon',
+  'client-beach-shade': 'Beach shade, Havelock',
+  'client-boat-ride': 'Life jackets on for the boat ride',
+  'client-speedboat': 'Speed boat to the islands',
+  'client-hotel-welcome': 'A garland welcome at the hotel',
+  'cellular-jail-gate': 'Cellular Jail entrance',
+  'cellular-jail-corridor': 'Inside the Cellular Jail',
+  'cellular-jail-cell': 'Veer Savarkar’s cell',
+  'cellular-jail-view': 'View from the Cellular Jail tower',
+  'resort-palms': 'Palms by the sea at the resort',
+  'neil-reef-flats': 'Reef flats, Neil Island',
+  'coastal-rocks': 'Forest meets the rocky coast',
+  'handicraft-elephant': 'Island woodcraft to take home',
+};
+const notes = [
+  'Prices depend on your dates, hotel category and group size. Ask for a written quotation.',
+  'Water activities at North Bay, Elephant Beach and Neil are at your own cost unless your quotation includes them.',
+  'Cruise timings, sea conditions and local permits can change the order of days. We will keep you informed.',
+];
+if (tour.itinerary.some((d) => d.title.includes('Baratang')))
+  notes.push(
+    'For Baratang, departure is very early to join the first convoy from Jirkatang at 6 am.',
+  );
+const related = publishedPackages
+  .filter((p) => p.slug !== tour.slug)
+  .sort(
+    (a, b) =>
+      Math.abs(a.nights - tour.nights) - Math.abs(b.nights - tour.nights),
+  )
+  .slice(0, 3);
+const interest = `${tour.title} (${durationLabel(tour)})`;
+const whatsapp = `https://wa.me/${site.tel.replace('+', '')}?text=${encodeURIComponent(
+  `Hi Trip Andaman, I'm interested in the ${interest} package.`,
+)}`;
 ---
 
-<BaseLayout title={tour.title} description={tour.overview}>
+<BaseLayout
+  title={`${tour.title} — ${durationLabel(tour)} Andaman Tour`}
+  description={`${durationLabel(tour)}: ${routeLabel(tour)}. ${tour.overview}`}
+>
   <PageHero
     title={tour.title}
     description={tour.overview}
-    eyebrow="EXPLORE ANDAMAN"
+    eyebrow={durationLabel(tour)}
     image={tour.image}
-  />
+    alt={tour.alt}
+    crumbs={[['Tours & Packages', '/tour-packages/']]}
+  >
+    <ul class="route-chips" aria-label="Where you stay">
+      {tour.stays.map((s) => (
+        <li>
+          <strong>{s.nights}N</strong> {s.place}
+        </li>
+      ))}
+    </ul>
+  </PageHero>
   <section class="section">
     <div class="wrap detail-grid">
-      <div class="prose">
-        <h2>
-          Your <span class="accent">Journey</span>
-        </h2>
-        <p>{tour.overview}</p>
-        {tour.destinations?.length && (
-          <p>Destinations: {tour.destinations.join(', ')}</p>
-        )}
-        {tour.itinerary?.length && (
-          <>
-            <h2>The Itinerary</h2>
-            {tour.itinerary.map((day) => (
-              <details>
-                <summary>{day.day}</summary>
-                <p>{day.description}</p>
+      <div>
+        <div data-reveal>
+          <p class="eyebrow">Day by day</p>
+          <h2 style="font-size:var(--fs-h2)">
+            Your <span class="accent">itinerary</span>
+          </h2>
+        </div>
+        <ol class="itinerary">
+          {tour.itinerary.map((d, i) => (
+            <li class="itinerary-day">
+              <details open={i === 0}>
+                <summary>
+                  <span class="itinerary-num">Day {i + 1}</span>
+                  <span class="itinerary-title">{d.title}</span>
+                </summary>
+                <div class="itinerary-body">
+                  {d.description.map((para) => (
+                    <p>{para}</p>
+                  ))}
+                </div>
               </details>
-            ))}
-          </>
-        )}
-        {tour.inclusions?.length && (
-          <>
-            <h2>Inclusions</h2>
-            <ul>
-              {tour.inclusions.map((i) => (
-                <li>{i}</li>
+            </li>
+          ))}
+        </ol>
+        <div class="notice" style="margin-top:36px" data-reveal>
+          <Icon name="compass" size={22} />
+          <div>
+            <p>
+              <strong>Good to know</strong>
+            </p>
+            <ul class="notice-list">
+              {notes.map((n) => (
+                <li>{n}</li>
               ))}
             </ul>
-          </>
-        )}
-        {tour.exclusions?.length && (
-          <>
-            <h2>Exclusions</h2>
-            <ul>
-              {tour.exclusions.map((i) => (
-                <li>{i}</li>
+          </div>
+        </div>
+        {tour.moments.length > 0 && (
+          <div style="margin-top:48px" data-reveal>
+            <h2 style="font-size:clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem)">
+              Moments from <span class="accent">this route</span>
+            </h2>
+            <p class="note" style="margin-top:8px">
+              Photographs from trips we have arranged.
+            </p>
+            <div class="route-moments">
+              {tour.moments.map((m) => (
+                <figure>
+                  <Picture
+                    name={m}
+                    alt={momentCaptions[m] ?? 'A Trip Andaman travel moment'}
+                    sizes="(max-width: 760px) 50vw, 20vw"
+                  />
+                  <figcaption>{momentCaptions[m]}</figcaption>
+                </figure>
               ))}
-            </ul>
-          </>
+            </div>
+          </div>
         )}
       </div>
       <aside class="info-panel">
-        <h2>Make an Enquiry</h2>
-        {tour.duration && <p>{tour.duration}</p>}
-        {tour.price && <p>{tour.price}</p>}
-        <p>
-          Discuss your preferred dates and confirm the arrangements before
-          booking.
-        </p>
+        <p class="eyebrow">{durationLabel(tour)}</p>
+        <h2>Enquire about this tour</h2>
+        <dl class="package-facts">
+          <div>
+            <dt>Route</dt>
+            <dd>{routeLabel(tour)}</dd>
+          </div>
+          <div>
+            <dt>Price</dt>
+            <dd>On request, for your dates and hotel choice</dd>
+          </div>
+        </dl>
         <a
-          class="btn"
-          href={`/contact/?interest=${encodeURIComponent(tour.title)}`}
+          class="btn btn-sun"
+          href={`/contact/?interest=${encodeURIComponent(interest)}`}
         >
-          Enquire About This Tour →
+          Get a Quote <Icon size={18} />
+        </a>
+        <a
+          class="btn btn-ghost"
+          href={whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-top:10px"
+        >
+          <WhatsAppIcon size={18} /> Ask on WhatsApp
+        </a>
+        <div class="divider"></div>
+        <a class="call" href={`tel:${site.tel}`}>
+          <span>
+            <Icon name="phone" size={18} />
+          </span>
+          {site.phone}
+        </a>
+        <a class="text-link" href="/tour-packages/">
+          See all packages <Icon size={16} />
         </a>
       </aside>
+    </div>
+  </section>
+  <section class="section bg-mist">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Compare options"
+        title="Similar"
+        accent="packages"
+        href="/tour-packages/"
+        label="All Packages"
+      />
+      <div class="package-grid">
+        {related.map((p, i) => (
+          <PackageCard tour={p} index={i} />
+        ))}
+      </div>
     </div>
   </section>
   <EnquiryBanner />

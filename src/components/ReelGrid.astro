@@ -1,0 +1,35 @@
+---
+import { reels, reelPoster, reelVideo } from '../data/reels';
+interface Props {
+  /** Limit to these reel slugs, in this order. Defaults to all reels. */
+  only?: string[];
+}
+const { only } = Astro.props;
+const shown = only
+  ? only.map((slug) => reels.find((r) => r.slug === slug)!).filter(Boolean)
+  : reels;
+---
+
+<ul class:list={['reel-grid', { 'reel-grid-few': shown.length < 4 }]}>
+  {shown.map((r, i) => (
+    <li class="reel" data-reveal style={`--i:${i % 4}`}>
+      <video
+        data-autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster={reelPoster(r.slug)}
+        width="480"
+        height="480"
+        aria-label={`Silent clip: ${r.title} at North Bay`}
+      >
+        <source src={reelVideo(r.slug)} type="video/mp4" />
+      </video>
+      <div class="reel-body">
+        <h3>{r.title}</h3>
+        <p>{r.text}</p>
+      </div>
+    </li>
+  ))}
+</ul>

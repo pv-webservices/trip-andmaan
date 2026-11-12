@@ -5,6 +5,7 @@ import Gallery from '../components/Gallery.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import EnquiryBanner from '../components/EnquiryBanner.astro';
 import Icon from '../components/Icon.astro';
+import ReelGrid from '../components/ReelGrid.astro';
 ---
 
 <BaseLayout
@@ -36,9 +37,12 @@ import Icon from '../components/Icon.astro';
         eyebrow="Take a closer look"
         title="Beneath the"
         accent="blue"
-        text="Silent footage from the supplied travel collection. Press play to watch."
+        text="Silent clips of water sports at North Bay Coral Island, plus underwater footage from our travel collection."
+        href="/experiences/#water-sports"
+        label="Water Sports"
       />
-      <div class="film-pair">
+      <ReelGrid />
+      <div class="film-pair" style="margin-top:clamp(14px, 1.6vw, 24px)">
         <figure data-reveal>
           <video
             controls

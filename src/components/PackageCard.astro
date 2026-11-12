@@ -1,0 +1,42 @@
+---
+import Picture from './Picture.astro';
+import Icon from './Icon.astro';
+import { durationLabel, routeLabel, type TourPackage } from '../data/packages';
+interface Props {
+  tour: TourPackage;
+  index?: number;
+}
+const { tour, index = 0 } = Astro.props;
+---
+
+<a
+  class="package-card"
+  href={`/tour-packages/${tour.slug}/`}
+  data-reveal
+  style={`--i:${index % 3}`}
+>
+  <div class="package-media">
+    <Picture
+      name={tour.image}
+      alt=""
+      sizes="(max-width: 760px) 100vw, (max-width: 1120px) 50vw, 33vw"
+    />
+    <span class="package-duration">{durationLabel(tour)}</span>
+  </div>
+  <div class="package-body">
+    <h3>{tour.title}</h3>
+    <p class="package-route">
+      <Icon name="route" size={16} />
+      {routeLabel(tour)}
+    </p>
+    <p>{tour.overview}</p>
+    <ul class="package-tags" aria-label="Highlights">
+      {tour.tags.map((t) => (
+        <li>{t}</li>
+      ))}
+    </ul>
+    <span class="text-link">
+      View day-by-day itinerary <Icon size={16} />
+    </span>
+  </div>
+</a>

@@ -2,91 +2,144 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
-import PlanningCards from '../../components/PlanningCards.astro';
+import PackageCard from '../../components/PackageCard.astro';
 import EnquiryBanner from '../../components/EnquiryBanner.astro';
 import Picture from '../../components/Picture.astro';
 import Icon from '../../components/Icon.astro';
-import { packages } from '../../data/packages';
-const published = packages.filter((p) => p.published);
+import { packageGroups, publishedPackages } from '../../data/packages';
+const groups = packageGroups
+  .map((g) => ({ ...g, items: publishedPackages.filter(g.match) }))
+  .filter((g) => g.items.length > 0);
+const services = [
+  {
+    image: 'client-airport-welcome',
+    alt: 'Travellers welcomed with marigold garlands outside Port Blair airport',
+    title: 'Airport welcome',
+    text: 'Our representative meets you outside Port Blair airport and stays in touch for the whole trip.',
+  },
+  {
+    image: 'client-jetty-group',
+    alt: 'A group of travellers at the jetty in front of an inter-island ship',
+    title: 'Cruises & transfers',
+    text: 'Cruise tickets, jetty pick-ups and island transfers are arranged and coordinated for you.',
+  },
+  {
+    image: 'client-resort-stay',
+    alt: 'A group of travellers by the pool at their hotel',
+    title: 'Hand-picked stays',
+    text: 'Hotels and resorts in Port Blair, Havelock and Neil, chosen to suit your budget.',
+  },
+];
 const checks = [
   {
-    q: 'Ask for the complete itinerary',
-    a: 'Confirm the destinations, travel dates, transport arrangements and proposed accommodation in writing.',
+    q: 'What is included in the price?',
+    a: 'Every package is quoted on request for your dates, hotel category and group size. Your written quotation lists exactly what is included, such as hotels, cruises, transfers and sightseeing.',
   },
   {
-    q: 'Check what the quotation includes',
-    a: 'Ask for a clear total, all inclusions and exclusions, and any separately payable charges.',
+    q: 'Are water activities included?',
+    a: 'Activities such as scuba diving, sea walking, jet skis and parasailing at North Bay, Elephant Beach and Neil are paid on the spot, at your own cost, unless your quotation says otherwise.',
   },
   {
-    q: 'Read the applicable booking terms',
-    a: 'Request payment, amendment and cancellation terms for the specific arrangements before you agree to a booking.',
+    q: 'Can I change a package?',
+    a: 'Yes. Every itinerary can be lengthened, shortened or combined. Add Baratang, an extra night on Havelock or a trip to Diglipur, and we will rework the plan.',
+  },
+  {
+    q: 'What should I check before booking?',
+    a: 'Ask for the complete itinerary, the hotels proposed, the total price, and the payment, amendment and cancellation terms in writing before you confirm.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Andaman Tour Packages & Customised Holidays"
-  description="Find inspiration for an Andaman holiday and request a customised travel proposal. Share your dates, island preferences and travel interests with Trip Andaman."
+  title="Andaman Tour Packages — 4 to 10 Night Itineraries"
+  description="Browse 15 Andaman tour packages from 4 nights to 10 nights: Port Blair, Havelock, Neil, Ross, North Bay, Baratang and Diglipur, with day-by-day itineraries from Trip Andaman."
 >
   <PageHero
-    title="Your kind of Andaman"
+    title="Andaman tour packages"
     eyebrow="Tours, packages & possibilities"
-    description="A little inspiration. A few favourite places. A holiday conversation that starts with you."
+    description="Fifteen tried-and-tested itineraries, from a 4-night island escape to an 11-day journey from Port Blair to Diglipur. Every one can be tailored."
     image="ai-island-hopping"
     alt="View from the bow of a boat crossing turquoise water towards forested islands"
-  />
-  <section class="section">
-    <div class="wrap">
-      <SectionHeading
-        eyebrow="Let your island story begin"
-        title="Dream a little."
-        accent="Then let’s plan."
-        text="Pick a travel theme to start your enquiry. Each trip is tailored to your dates, group and interests, with arrangements confirmed in a written proposal."
-      />
-      {published.length > 0 && (
-        <div class="value-cards" style="margin-bottom:40px">
-          {published.map((p) => (
-            <a
-              class="value-card"
-              href={`/tour-packages/${p.slug}/`}
-              style="text-decoration:none"
-            >
-              <h3>{p.title}</h3>
-              <p>{p.overview}</p>
-              <span class="text-link" style="margin-top:16px">
-                View package details <Icon size={16} />
-              </span>
-            </a>
+  >
+    <nav class="xp-jump" aria-label="Jump to a package length">
+      {groups.map((g) => (
+        <a href={`#${g.id}`}>
+          <Icon name="route" size={16} /> {g.eyebrow}
+        </a>
+      ))}
+      <a href="/tour-packages/customized-trip/">
+        <Icon name="compass" size={16} /> Customised trip
+      </a>
+    </nav>
+  </PageHero>
+
+  {groups.map((g, gi) => (
+    <section
+      class:list={['section', { 'bg-mist': gi % 2 === 1 }]}
+      id={g.id}
+      aria-labelledby={`${g.id}-title`}
+    >
+      <div class="wrap">
+        <div class="package-group-head" data-reveal>
+          <p class="eyebrow">{g.eyebrow}</p>
+          <h2 id={`${g.id}-title`}>{g.title}</h2>
+          <p class="note">{g.items.length} itineraries · price on request</p>
+        </div>
+        <div
+          class:list={[
+            'package-grid',
+            { 'package-grid-two': g.items.length === 4 },
+          ]}
+        >
+          {g.items.map((tour, i) => (
+            <PackageCard tour={tour} index={i} />
           ))}
         </div>
-      )}
-      <PlanningCards />
-      <div class="notice" style="margin-top:32px" data-reveal>
-        <Icon name="bag" size={22} />
-        <p>
-          For current packages, prices, durations and inclusions, please request
-          a written proposal. No fixed tour or activity availability is
-          advertised here.
-        </p>
+      </div>
+    </section>
+  ))}
+
+  <section class="section bg-sand">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Looked after from arrival to departure"
+        title="What every package"
+        accent="takes care of"
+        text="Real moments from trips we have arranged: the welcome at the airport, the cruise between islands and the stay at the end of the day."
+      />
+      <div class="service-cards">
+        {services.map((s, i) => (
+          <article class="service-card" data-reveal style={`--i:${i}`}>
+            <div class="media-frame">
+              <Picture
+                name={s.image}
+                alt={s.alt}
+                sizes="(max-width: 760px) 100vw, 33vw"
+              />
+            </div>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
-  <section class="section bg-sand">
+
+  <section class="section">
     <div class="wrap split top">
       <div data-reveal>
-        <p class="eyebrow">What would your perfect trip feel like?</p>
+        <p class="eyebrow">Nothing quite right?</p>
         <h2>
-          A few details. <span class="accent">A world of possibilities.</span>
+          Start from a package. <span class="accent">Make it yours.</span>
         </h2>
         <p class="lead">
-          Let us know your intended dates, number of travellers and preferred
-          destinations. Mention any interests or practical needs you’d like to
-          discuss.
+          Tell us your dates, number of travellers and the islands you would
+          love to see. We will adapt any itinerary or build one from scratch.
         </p>
         <div class="media-frame" style="margin:32px 0">
           <Picture
-            name="ai-trip-planning"
-            alt="Travel planning flat lay with a notebook, sun hat and seashells"
+            name="client-group-beach"
+            alt="A group of travellers on a white-sand Andaman beach"
             sizes="(max-width: 1024px) 100vw, 45vw"
           />
         </div>
@@ -96,7 +149,7 @@ const checks = [
       </div>
       <div data-reveal style="--i:1">
         <h3 style="font-size:var(--fs-h3);margin-bottom:8px">
-          Before confirming any booking
+          Good to know before you book
         </h3>
         <div class="faq">
           {checks.map((c, i) => (

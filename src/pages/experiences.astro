@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import Picture from '../components/Picture.astro';
 import Icon from '../components/Icon.astro';
 import EnquiryBanner from '../components/EnquiryBanner.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ReelGrid from '../components/ReelGrid.astro';
 import { experiences } from '../data/site';
 ---
 
@@ -66,6 +68,28 @@ import { experiences } from '../data/site';
             </div>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+  <section class="section bg-ocean" id="water-sports" aria-label="Water sports at North Bay">
+    <div class="wrap">
+      <SectionHeading
+        eyebrow="Water sports at North Bay"
+        title="See it before"
+        accent="you dive in"
+        text="Short silent clips from North Bay Coral Island, where most of our packages spend a day. Activities are paid locally and depend on sea conditions."
+      />
+      <ReelGrid />
+      <div class="btn-row" style="margin-top:36px">
+        <a
+          class="btn btn-sun"
+          href={`/contact/?interest=${encodeURIComponent('Water sports at North Bay')}`}
+        >
+          Ask About Water Sports <Icon size={18} />
+        </a>
+        <a class="btn btn-glass" href="/tour-packages/">
+          Packages with North Bay
+        </a>
       </div>
     </div>
   </section>

@@ -8,6 +8,8 @@ import PlanningCards from '../components/PlanningCards.astro';
 import EnquiryBanner from '../components/EnquiryBanner.astro';
 import Gallery from '../components/Gallery.astro';
 import Testimonials from '../components/Testimonials.astro';
+import PackageCard from '../components/PackageCard.astro';
+import { publishedPackages } from '../data/packages';
 import { destinations } from '../data/destinations';
 import { experiences, promises, site } from '../data/site';
 const pillars = [
@@ -16,6 +18,14 @@ const pillars = [
   ['headset', 'Reliable support'],
   ['compass', 'Island inspiration'],
 ];
+const featuredSlugs = [
+  'andaman-island-escape-4n5d',
+  'andaman-classic-6n7d',
+  'north-to-south-andaman-10n11d',
+];
+const featured = featuredSlugs
+  .map((slug) => publishedPackages.find((p) => p.slug === slug))
+  .filter((p) => p !== undefined);
 const steps = [
   {
     title: 'Tell us your island wish list',
@@ -194,7 +204,7 @@ const steps = [
         label="All Destinations"
       />
       <div class="dest-bento">
-        {destinations.map((d, i) => (
+        {destinations.slice(0, 5).map((d, i) => (
           <DestinationCard
             destination={d}
             index={i}
@@ -277,14 +287,24 @@ const steps = [
   <section class="section">
     <div class="wrap">
       <SectionHeading
-        eyebrow="Handpicked for you"
+        eyebrow="Popular tour packages"
         title="Your island holiday,"
         accent="your way"
-        text="Start with what you love. Every Trip Andaman itinerary is shaped around your enquiry — no fixed templates."
+        text={`Choose from ${publishedPackages.length} day-by-day itineraries, from a 4-night escape to an 11-day journey north to Diglipur. Every one can be tailored.`}
         href="/tour-packages/"
-        label="Tours & Packages"
+        label="All Packages"
       />
-      <PlanningCards />
+      <div class="package-grid">
+        {featured.map((tour, i) => (
+          <PackageCard tour={tour} index={i} />
+        ))}
+      </div>
+      <div style="margin-top:clamp(40px,5vw,72px)">
+        <p class="eyebrow" style="margin-bottom:20px">
+          Or start with what you love
+        </p>
+        <PlanningCards />
+      </div>
     </div>
   </section>
 
@@ -332,18 +352,18 @@ const steps = [
         eyebrow="Real moments"
         title="Moments from"
         accent="the islands"
-        text="Photographs and footage from our supplied travel collection — kayaking at dusk, a famous natural bridge and a first dive beneath the waves."
+        text="Photographs and footage from trips we have arranged — a garland welcome at the airport, a beach day with friends, a walk through history and a sea walk at North Bay."
         href="/gallery/"
         label="View Gallery"
       />
       <div class="moments">
         <figure class="moment tall" data-reveal>
           <Picture
-            name="client-neil"
-            alt="Travellers at the natural rock bridge on Neil Island"
+            name="client-group-beach"
+            alt="A group of travellers on a white-sand beach with turquoise water behind"
             sizes="(max-width: 760px) 100vw, 30vw"
           />
-          <figcaption>Natural bridge, Neil Island</figcaption>
+          <figcaption>A beach day with friends</figcaption>
         </figure>
         <figure class="moment tall" data-reveal style="--i:1">
           <video
@@ -352,30 +372,30 @@ const steps = [
             loop
             playsinline
             preload="none"
-            poster="/images/client-scuba-848.webp"
-            aria-label="Silent clip of scuba divers above a coral reef"
+            poster="/images/reel-sea-walk-640.webp"
+            aria-label="Silent clip of travellers on a sea walk among fish and coral"
           >
-            <source src="/scuba-film.mp4" type="video/mp4" />
+            <source src="/videos/sea-walk.mp4" type="video/mp4" />
           </video>
           <figcaption>
-            <span class="live-dot"></span> Scuba diving
+            <span class="live-dot"></span> Sea walk, North Bay
           </figcaption>
         </figure>
         <figure class="moment" data-reveal style="--i:2">
           <Picture
-            name="client-kayak"
-            alt="Two travellers kayaking on calm water at dusk"
+            name="cellular-jail-corridor"
+            alt="A sunlit corridor of cells inside the Cellular Jail"
             sizes="(max-width: 760px) 50vw, 30vw"
           />
-          <figcaption>Kayaking at dusk</figcaption>
+          <figcaption>Cellular Jail</figcaption>
         </figure>
         <figure class="moment" data-reveal style="--i:3">
           <Picture
-            name="client-arrival"
-            alt="A travel group gathered together on arrival"
+            name="client-airport-welcome"
+            alt="Two travellers welcomed with marigold garlands at Port Blair airport"
             sizes="(max-width: 760px) 50vw, 30vw"
           />
-          <figcaption>Arrival day</figcaption>
+          <figcaption>Airport welcome</figcaption>
         </figure>
       </div>
     </div>

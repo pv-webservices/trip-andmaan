@@ -8,6 +8,28 @@ import DestinationCard from '../components/DestinationCard.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { destinations } from '../data/destinations';
 import { promises, site } from '../data/site';
+const strip = [
+  {
+    image: 'client-hotel-welcome',
+    alt: 'Travellers welcomed with garlands in a hotel lobby',
+    caption: 'Welcome on arrival',
+  },
+  {
+    image: 'client-beach-huts',
+    alt: 'A group of travellers relaxing under thatched beach huts',
+    caption: 'Beach-hut afternoons',
+  },
+  {
+    image: 'client-lagoon',
+    alt: 'A traveller wading in a calm, shallow lagoon',
+    caption: 'Into the lagoon',
+  },
+  {
+    image: 'client-rocky-cove',
+    alt: 'A couple resting on the rocks beside the sea',
+    caption: 'A quiet moment by the sea',
+  },
+];
 const values = [
   {
     title: 'The way you like to travel',
@@ -89,6 +111,33 @@ const values = [
             <Icon name="phone" size={18} /> {site.phone}
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-sand" aria-labelledby="hosted-title">
+    <div class="wrap">
+      <div class="package-group-head" data-reveal>
+        <p class="eyebrow">Travellers we’ve looked after</p>
+        <h2 id="hosted-title">
+          Families, friends and <span class="accent">groups of every size</span>
+        </h2>
+        <p class="lead" style="max-width:60ch">
+          From a garland welcome on arrival to the last sunset on the beach,
+          these are real moments from Andaman trips we have arranged.
+        </p>
+      </div>
+      <div class="photo-strip">
+        {strip.map((m, i) => (
+          <figure data-reveal style={`--i:${i}`}>
+            <Picture
+              name={m.image}
+              alt={m.alt}
+              sizes="(max-width: 760px) 50vw, 25vw"
+            />
+            <figcaption>{m.caption}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>

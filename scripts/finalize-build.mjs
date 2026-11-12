@@ -8,6 +8,11 @@ const originals = [
 ];
 for (const name of originals)
   await rm(path.join(output, name), { force: true });
+// Client source folder (raw photos, raw videos, itinerary Word/PDF files).
+// Optimized copies live in public/images and public/videos.
+const sourceFolders = ['new material'];
+for (const folder of sourceFolders)
+  await rm(path.join(output, folder), { recursive: true, force: true });
 console.log(
-  `Excluded ${originals.length} original source media files from dist; public originals remain intact.`,
+  `Excluded ${originals.length} original media files and ${sourceFolders.length} source folder from dist; public originals remain intact.`,
 );

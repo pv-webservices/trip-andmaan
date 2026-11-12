@@ -79,4 +79,21 @@ export const destinations = [
     note: 'Access arrangements and local restrictions can change. Confirm the route, permissions and visit conditions before travel.',
     source: 'https://tourism.andamannicobar.gov.in/plan-your-itinerary.php',
   },
+  {
+    slug: 'sri-vijaya-puram',
+    name: 'Sri Vijaya Puram',
+    official: 'Port Blair',
+    image: 'cellular-jail-wing',
+    short: 'Where every journey begins.',
+    intro: 'History, museums and sunsets at the gateway.',
+    text: 'Sri Vijaya Puram, formerly Port Blair, is the capital of the Andaman and Nicobar Islands and the starting point of every package. The Cellular Jail and its evening Light & Sound Show tell the story of India’s freedom struggle, while Corbyn’s Cove, Chidiyatapu and the city’s museums fill the days between island trips.',
+    highlights: [
+      'Cellular Jail and Light & Sound Show',
+      'Corbyn’s Cove Beach',
+      'Anthropological and Samudrika Naval Marine Museums',
+      'Chidiyatapu sunset and bird watching',
+    ],
+    note: 'Light & Sound Show timings and museum opening days can change. Confirm them when we plan your arrival day.',
+    source: 'https://tourism.andamannicobar.gov.in/plan-your-itinerary.php',
+  },
 ];

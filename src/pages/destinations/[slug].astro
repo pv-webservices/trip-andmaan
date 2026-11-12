@@ -8,6 +8,7 @@ import DestinationCard from '../../components/DestinationCard.astro';
 import EnquiryBanner from '../../components/EnquiryBanner.astro';
 import { destinations } from '../../data/destinations';
 import { site } from '../../data/site';
+import ReelGrid from '../../components/ReelGrid.astro';
 export function getStaticPaths() {
   return destinations.map((destination) => ({
     params: { slug: destination.slug },
@@ -27,6 +28,16 @@ const secondary: Record<
   'neil-island': {
     name: 'client-neil',
     alt: 'Travellers at the natural rock bridge on Neil Island — supplied photograph',
+    portrait: true,
+  },
+  'north-bay-island': {
+    name: 'client-speedboat',
+    alt: 'A traveller on a speed boat in the bay — supplied photograph',
+    portrait: true,
+  },
+  'sri-vijaya-puram': {
+    name: 'cellular-jail-corridor',
+    alt: 'A sunlit corridor of cells inside the Cellular Jail — supplied photograph',
     portrait: true,
   },
 };
@@ -124,6 +135,20 @@ const extra = secondary[d.slug];
       </aside>
     </div>
   </section>
+  {d.slug === 'north-bay-island' && (
+    <section class="section bg-ocean" aria-labelledby="nb-reels">
+      <div class="wrap">
+        <p class="eyebrow">Water sports at North Bay</p>
+        <h2 id="nb-reels" style="font-size:var(--fs-h2);margin-bottom:32px">
+          A taste of <span class="accent">the bay</span>
+        </h2>
+        <ReelGrid only={['sea-walk', 'semi-submarine', 'parasailing', 'snorkeling']} />
+        <a class="text-link" href="/experiences/#water-sports" style="margin-top:28px">
+          See all water sports <Icon size={16} />
+        </a>
+      </div>
+    </section>
+  )}
   <section class="section bg-mist">
     <div class="wrap">
       <SectionHeading

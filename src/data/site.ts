@@ -32,8 +32,8 @@ export const experiences = [
     title: 'Island hopping',
     icon: 'boat',
     text: 'Let the journey between islands become part of the holiday.',
-    image: 'ai-island-hopping',
-    alt: 'View from the bow of a boat crossing turquoise water towards forested islands',
+    image: 'client-jetty-group',
+    alt: 'Travellers at the jetty in front of an inter-island ship — supplied photograph',
   },
   {
     title: 'Beach relaxation',
@@ -45,16 +45,16 @@ export const experiences = [
   {
     title: 'Water activities',
     icon: 'waves',
-    text: 'Explore options to spend time on the water, subject to local availability.',
-    image: 'client-kayak',
-    alt: 'Two travellers kayaking on calm water — supplied travel photograph',
+    text: 'Sea walks, jet skis, parasailing and speed boats at North Bay and Havelock, subject to local availability.',
+    image: 'client-speedboat',
+    alt: 'A traveller enjoying a speed boat ride between islands — supplied photograph',
   },
   {
     title: 'Sightseeing & heritage',
     icon: 'compass',
-    text: 'Discover the islands’ stories, historic places and changing landscapes.',
-    image: 'ross',
-    alt: 'Tree roots growing over historic ruins on Ross Island',
+    text: 'Walk the corridors of the Cellular Jail, watch its Light & Sound Show and explore the ruins of Ross Island.',
+    image: 'cellular-jail-wing',
+    alt: 'A wing of the Cellular Jail and its courtyard — supplied photograph',
   },
   {
     title: 'Nature exploration',

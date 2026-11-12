@@ -95,6 +95,12 @@
   grid-column: span 3;
   min-height: 520px;
 }
+@media (min-width: 1025px) {
+  .dest-grid .destination-card:nth-child(6):last-child {
+    grid-column: span 6;
+    min-height: 420px;
+  }
+}
 .value-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
