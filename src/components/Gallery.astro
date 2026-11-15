@@ -143,9 +143,7 @@ const shown = compact
       'client-group-beach',
       'ross',
       'neil-reef-flats',
-    ].map(
-      (name) => images.find((i) => i.image === name)!,
-    )
+    ].map((name) => images.find((i) => i.image === name)!)
   : images;
 ---
 
@@ -177,7 +175,7 @@ const shown = compact
           alt={i.title}
           sizes="(max-width: 760px) 50vw, 33vw"
         />
-        <span class="gallery-hover">
+        <span class="gallery-hover" aria-hidden="true">
           <span>{i.title}</span>
           <Icon name="arrow-up-right" size={18} />
         </span>
@@ -205,7 +203,14 @@ const shown = compact
     >
       <Icon name="arrow-left" size={20} />
     </button>
-    <img src="/images/hero-1920.webp" alt="" width="1200" height="800" />
+    <img
+      src={largestImage('hero')}
+      alt=""
+      width="1600"
+      height="1200"
+      loading="lazy"
+      decoding="async"
+    />
     <button class="icon-button" data-gallery-next aria-label="Next photograph">
       <Icon size={20} />
     </button>

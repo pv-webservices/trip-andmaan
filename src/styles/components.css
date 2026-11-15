@@ -657,17 +657,17 @@
 .page-hero h1 {
   max-width: 15ch;
   font-size: var(--fs-h1);
-  animation: rise 900ms 150ms var(--ease-out) both;
+  animation: rise-in-place 700ms var(--ease-out) both;
 }
 .page-hero .lead {
   max-width: 50ch;
   margin-top: 20px;
   color: rgb(255 255 255 / 0.85);
-  animation: rise 900ms 280ms var(--ease-out) both;
+  animation: rise-in-place 700ms 80ms var(--ease-out) both;
 }
 .page-hero .eyebrow {
   color: var(--sun);
-  animation: rise 900ms 60ms var(--ease-out) both;
+  animation: rise-in-place 700ms var(--ease-out) both;
 }
 .breadcrumbs {
   display: flex;
@@ -694,6 +694,13 @@
   from {
     opacity: 0;
     transform: translateY(26px);
+  }
+}
+/* Above-the-fold text: motion only, no fade, so it paints (and counts for
+   Largest Contentful Paint) on the first frame. */
+@keyframes rise-in-place {
+  from {
+    transform: translateY(18px);
   }
 }
 
@@ -865,6 +872,9 @@
   gap: 8px 22px;
 }
 .footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   text-decoration: none;
 }
 .footer-bottom a:hover {
@@ -1007,18 +1017,50 @@
   background: var(--white);
   box-shadow: 0 0 0 4px rgb(8 101 178 / 0.14);
 }
-.field input:user-invalid,
-.field textarea:user-invalid {
-  border-color: #c2410c;
+.field [aria-invalid='true'] {
+  border-color: #b42318;
+  background: #fff8f7;
 }
-.honeypot {
-  position: absolute;
-  left: -9999px;
+.field-error {
+  color: #b42318;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.form-summary {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-left: 4px solid #b42318;
+  border-radius: var(--r-md);
+  background: #fff1f0;
+  color: #7a1a12;
+  font-weight: 700;
+}
+.form-summary:focus {
+  outline: 3px solid #b42318;
+  outline-offset: 2px;
+}
+html:not(.js) .needs-js {
+  display: none;
+}
+.form-fallback {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--lagoon-100);
+}
+.form-fallback a,
+.form-note a {
+  color: var(--brand);
+  font-weight: 700;
+}
+.consent-field {
+  margin: 20px 0;
+}
+.consent-field .field-error {
+  margin-top: 6px;
 }
 .consent {
   display: flex;
   gap: 12px;
-  margin: 20px 0;
   color: var(--ink-soft);
   font-size: var(--fs-sm);
 }
@@ -1036,7 +1078,9 @@
 .enquiry-form .btn {
   width: 100%;
 }
-.enquiry-form [data-draft-link] {
+.composer-actions {
+  display: grid;
+  gap: 10px;
   margin-top: 12px;
 }
 .form-status:not(:empty) {

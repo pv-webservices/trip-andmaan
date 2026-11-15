@@ -7,6 +7,7 @@ import EnquiryBanner from '../components/EnquiryBanner.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ReelGrid from '../components/ReelGrid.astro';
 import { experiences } from '../data/site';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 ---
 
 <BaseLayout
@@ -59,19 +60,22 @@ import { experiences } from '../data/site';
                 Confirm local availability, access, charges and any suitability
                 requirements before making arrangements.
               </p>
-              <a
-                class="btn"
-                href={`/contact/?interest=${encodeURIComponent(e.title)}`}
+              <WhatsAppButton
+                subject={`${e.title.toLowerCase()} in the Andamans`}
               >
-                Ask About This <Icon size={18} />
-              </a>
+                Ask About This on WhatsApp
+              </WhatsAppButton>
             </div>
           </article>
         ))}
       </div>
     </div>
   </section>
-  <section class="section bg-ocean" id="water-sports" aria-label="Water sports at North Bay">
+  <section
+    class="section bg-ocean"
+    id="water-sports"
+    aria-label="Water sports at North Bay"
+  >
     <div class="wrap">
       <SectionHeading
         eyebrow="Water sports at North Bay"
@@ -81,12 +85,9 @@ import { experiences } from '../data/site';
       />
       <ReelGrid />
       <div class="btn-row" style="margin-top:36px">
-        <a
-          class="btn btn-sun"
-          href={`/contact/?interest=${encodeURIComponent('Water sports at North Bay')}`}
-        >
-          Ask About Water Sports <Icon size={18} />
-        </a>
+        <WhatsAppButton subject="water sports at North Bay">
+          Ask About Water Sports
+        </WhatsAppButton>
         <a class="btn btn-glass" href="/tour-packages/">
           Packages with North Bay
         </a>

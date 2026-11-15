@@ -468,6 +468,31 @@
 .not-found .btn-row {
   justify-content: center;
 }
+.not-found-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  margin: 0 auto 28px;
+  padding: 0;
+  list-style: none;
+}
+.not-found-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 999px;
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+.not-found-links a:hover,
+.not-found-links a:focus-visible {
+  border-color: var(--sun);
+  color: var(--sun);
+}
 .page-hero .xp-jump a {
   border-color: rgb(255 255 255 / 0.3);
   background: rgb(255 255 255 / 0.1);

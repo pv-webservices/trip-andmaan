@@ -1,26 +1,34 @@
-const WHATSAPP_NUMBER = '919646969646';
+/** Canonical public origin. Non-www HTTPS; www redirects here (vercel.json). */
+export const SITE_URL = 'https://tripandaman.in';
+
+/**
+ * Client WhatsApp/phone number in international digits only (country code 91,
+ * no plus sign, spaces or dashes) — the format wa.me requires.
+ */
+export const WHATSAPP_NUMBER = '919646969646';
 
 /** wa.me chat link to the business number with a pre-filled message. */
-export const whatsappLink = (text: string) =>
+export const whatsappLink = (text: string): string =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
+/** Standard enquiry greeting: "Hello Trip Andaman, I would like to enquire about …". */
+export const enquiryText = (subject: string): string =>
+  `Hello Trip Andaman, I would like to enquire about ${subject}.`;
+
 export const site = {
-  name: 'TRIP ANDAMAN',
+  name: 'Trip Andaman',
+  legalName: 'TRIP ANDAMAN',
   phone: '+91 9646 96 9646',
-  tel: '+919646969646',
-  email: 'tripandamanin2026@gmail.com',
+  tel: `+${WHATSAPP_NUMBER}`,
   address:
     'Haddo, Sri Vijaya Puram, Andaman and Nicobar Islands — 744102, India',
   map: 'https://www.google.com/maps/search/?api=1&query=Haddo%2C+Sri+Vijaya+Puram%2C+Andaman+744102',
-  // WhatsApp uses the business phone number; confirm it is active on WhatsApp.
-  whatsapp: whatsappLink(
-    'Hi Trip Andaman, I would like to plan an Andaman trip.',
-  ),
+  whatsapp: whatsappLink(enquiryText('an Andaman trip')),
 };
 export const navigation = [
   ['Home', '/'],
   ['About', '/about/'],
-  ['Tours & Packages', '/tour-packages/'],
+  ['Tour Packages', '/tour-packages/'],
   ['Destinations', '/destinations/'],
   ['Experiences', '/experiences/'],
   ['Gallery', '/gallery/'],

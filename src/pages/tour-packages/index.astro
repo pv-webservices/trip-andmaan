@@ -48,11 +48,14 @@ const checks = [
     a: 'Ask for the complete itinerary, the hotels proposed, the total price, and the payment, amendment and cancellation terms in writing before you confirm.',
   },
 ];
+const schema = [faqSchema(checks)];
+import { faqSchema } from '../../data/seo';
 ---
 
 <BaseLayout
   title="Andaman Tour Packages — 4 to 10 Night Itineraries"
-  description="Browse 15 Andaman tour packages from 4 nights to 10 nights: Port Blair, Havelock, Neil, Ross, North Bay, Baratang and Diglipur, with day-by-day itineraries from Trip Andaman."
+  schema={schema}
+  description="Andaman tour packages from 4 to 10 nights covering Port Blair, Havelock, Neil, Ross, North Bay, Baratang and Diglipur, with day-by-day itineraries."
 >
   <PageHero
     title="Andaman tour packages"

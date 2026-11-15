@@ -1,3 +1,4 @@
+import { imageNear } from './images';
 // Short silent clips cut from the client's supplied North Bay water-sport
 // videos (Nov 2026). Third-party headers, captions and phone numbers were
 // cropped out; audio was removed.
@@ -61,4 +62,4 @@ export const reels: Reel[] = [
 
 export const reelVideo = (slug: string): string => `/videos/${slug}.mp4`;
 export const reelPoster = (slug: string): string =>
-  `/images/reel-${slug}-640.webp`;
+  imageNear(`reel-${slug}`, 640);

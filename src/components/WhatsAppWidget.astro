@@ -2,6 +2,11 @@
 import { site } from '../data/site';
 import Icon from './Icon.astro';
 import WhatsAppIcon from './WhatsAppIcon.astro';
+interface Props {
+  /** wa.me link with a message about the current page. */
+  href?: string;
+}
+const { href = site.whatsapp } = Astro.props;
 ---
 
 <!-- Desktop/tablet chat widget. The button is a real link, so it still opens WhatsApp without JavaScript. -->
@@ -31,18 +36,13 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
         to visit — we’ll help you plan your Andaman trip.
       </p>
     </div>
-    <a
-      class="wa-start"
-      href={site.whatsapp}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a class="wa-start" href={href} target="_blank" rel="noopener noreferrer">
       <WhatsAppIcon size={20} /> Start chat on WhatsApp
     </a>
   </div>
   <a
     class="wa-fab"
-    href={site.whatsapp}
+    href={href}
     target="_blank"
     rel="noopener noreferrer"
     aria-controls="wa-panel"

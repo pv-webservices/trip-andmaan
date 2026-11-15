@@ -1,13 +1,11 @@
 ---
-import { imageSrc, imageWidths } from '../data/images';
+import { imageInfo, imageSrc } from '../data/images';
 interface Props {
   name: string;
   alt: string;
   class?: string;
   eager?: boolean;
   sizes?: string;
-  width?: number;
-  height?: number;
 }
 const {
   name,
@@ -15,10 +13,9 @@ const {
   class: cls,
   eager = false,
   sizes = '(max-width: 700px) 100vw, 50vw',
-  width = 1200,
-  height = 800,
 } = Astro.props;
-const widths = imageWidths(name);
+const info = imageInfo(name);
+const widths = info.widths;
 const fallback = widths.find((w) => w >= 1200) ?? widths[widths.length - 1];
 ---
 
@@ -28,8 +25,8 @@ const fallback = widths.find((w) => w >= 1200) ?? widths[widths.length - 1];
   srcset={widths.map((w) => `${imageSrc(name, w)} ${w}w`).join(', ')}
   sizes={sizes}
   alt={alt}
-  width={width}
-  height={height}
+  width={info.width}
+  height={info.height}
   loading={eager ? 'eager' : 'lazy'}
   decoding="async"
   fetchpriority={eager ? 'high' : 'auto'}

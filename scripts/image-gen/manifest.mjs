@@ -45,16 +45,4 @@ export const imageTasks = [
     people: 2,
     prompt: `Two adult travellers seen from behind, walking hand in hand barefoot along the wet sand of a quiet tropical beach at golden hour, gentle waves washing in, a line of tall tropical forest and a few palms along the shore, warm low sunlight, long soft shadows, footprints in the sand. Faces not visible. Relaxed holiday clothing in white and soft blue. ${photo}`,
   },
-  {
-    name: 'logo-hd',
-    placement: 'Header, mobile menu and footer brand mark',
-    alt: 'Trip Andaman',
-    orientation: 'landscape',
-    priority: 'key',
-    reference: 'output/generated/logo-reference.png',
-    background: 'transparent',
-    postprocess: 'trim',
-    prompt:
-      'Faithfully restore this exact existing logo as a crisp, high-resolution version on a fully transparent background. Preserve the exact wording "Trip Andaman", letterforms, italic script style, colours (deep blue, turquoise and sky blue lettering, yellow sun, green palm tree, island and blue wave), layout and proportions precisely. Do not redesign, add, remove or restyle anything. Clean sharp edges, no background, no shadow, no extra text.',
-  },
 ];

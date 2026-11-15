@@ -1,0 +1,464 @@
+{
+  "baratang": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1200
+  },
+  "bridge": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067
+  },
+  "havelock": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067
+  },
+  "hero": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067
+  },
+  "neil": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067
+  },
+  "north-bay": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1200
+  },
+  "ross": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1200
+  },
+  "sunset": {
+    "folder": "editorial",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067
+  },
+  "cellular-jail-cell": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "cellular-jail-corridor": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "cellular-jail-gate": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "cellular-jail-view": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "cellular-jail-wing": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "client-airport-welcome": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "client-arrival": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200,
+      1472
+    ],
+    "width": 1472,
+    "height": 1072
+  },
+  "client-beach-huts": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800
+    ],
+    "width": 800,
+    "height": 1067
+  },
+  "client-beach-shade": {
+    "folder": "trips",
+    "widths": [
+      480,
+      675
+    ],
+    "width": 675,
+    "height": 1200
+  },
+  "client-boat-ride": {
+    "folder": "trips",
+    "widths": [
+      480,
+      738
+    ],
+    "width": 738,
+    "height": 1182
+  },
+  "client-group-beach": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 900
+  },
+  "client-hotel-welcome": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "client-jetty-group": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "client-kayak": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 900
+  },
+  "client-lagoon": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "client-natural-bridge": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "client-neil": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800
+    ],
+    "width": 800,
+    "height": 1133
+  },
+  "client-reef-shore": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 900
+  },
+  "client-resort-stay": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 675
+  },
+  "client-rocky-cove": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800
+    ],
+    "width": 800,
+    "height": 1067
+  },
+  "client-scuba": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800
+    ],
+    "width": 800,
+    "height": 415
+  },
+  "client-speedboat": {
+    "folder": "trips",
+    "widths": [
+      480,
+      738
+    ],
+    "width": 738,
+    "height": 986
+  },
+  "coastal-rocks": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 900
+  },
+  "handicraft-butterfly": {
+    "folder": "trips",
+    "widths": [
+      480,
+      738
+    ],
+    "width": 738,
+    "height": 1110
+  },
+  "handicraft-elephant": {
+    "folder": "trips",
+    "widths": [
+      480,
+      738
+    ],
+    "width": 738,
+    "height": 986
+  },
+  "neil-reef-flats": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "width": 1200,
+    "height": 900
+  },
+  "resort-palms": {
+    "folder": "trips",
+    "widths": [
+      480,
+      800,
+      1156
+    ],
+    "width": 1156,
+    "height": 651
+  },
+  "ai-beach-walk": {
+    "folder": "illustrations",
+    "widths": [
+      480,
+      800,
+      1024
+    ],
+    "width": 1024,
+    "height": 1536
+  },
+  "ai-island-hopping": {
+    "folder": "illustrations",
+    "widths": [
+      480,
+      800,
+      1200,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024
+  },
+  "ai-snorkel-reef": {
+    "folder": "illustrations",
+    "widths": [
+      480,
+      800,
+      1200,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024
+  },
+  "ai-trip-planning": {
+    "folder": "illustrations",
+    "widths": [
+      480,
+      800,
+      1200,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024
+  },
+  "reel-dolphin-ride": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-jet-ski-banana": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-kayaking": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-parasailing": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-scuba-dive": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-sea-walk": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-semi-submarine": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "reel-snorkeling": {
+    "folder": "video-posters",
+    "widths": [
+      480
+    ],
+    "width": 480,
+    "height": 480
+  },
+  "underwater": {
+    "folder": "video-posters",
+    "widths": [
+      480,
+      640
+    ],
+    "width": 640,
+    "height": 352
+  }
+}

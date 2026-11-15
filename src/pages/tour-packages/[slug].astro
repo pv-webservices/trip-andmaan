@@ -13,7 +13,8 @@ import {
   routeLabel,
   type TourPackage,
 } from '../../data/packages';
-import { site, whatsappLink } from '../../data/site';
+import { enquiryText, site, whatsappLink } from '../../data/site';
+import { clampDescription } from '../../data/seo';
 export function getStaticPaths() {
   return publishedPackages.map((tour) => ({
     params: { slug: tour.slug },
@@ -59,13 +60,16 @@ const related = publishedPackages
   .slice(0, 3);
 const interest = `${tour.title} (${durationLabel(tour)})`;
 const whatsapp = whatsappLink(
-  `Hi Trip Andaman, I'm interested in the ${interest} package. Please share a quote.`,
+  enquiryText(`the ${interest} package and would like a quote`),
 );
 ---
 
 <BaseLayout
   title={`${tour.title} — ${durationLabel(tour)} Andaman Tour`}
-  description={`${durationLabel(tour)}: ${routeLabel(tour)}. ${tour.overview}`}
+  description={clampDescription(
+    `${durationLabel(tour)} Andaman tour. ${tour.overview}`,
+  )}
+  enquirySubject={`the ${interest} package`}
 >
   <PageHero
     title={tour.title}
@@ -73,7 +77,7 @@ const whatsapp = whatsappLink(
     eyebrow={durationLabel(tour)}
     image={tour.image}
     alt={tour.alt}
-    crumbs={[['Tours & Packages', '/tour-packages/']]}
+    crumbs={[['Tour Packages', '/tour-packages/']]}
   >
     <ul class="route-chips" aria-label="Where you stay">
       {tour.stays.map((s) => (

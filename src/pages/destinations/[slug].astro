@@ -42,11 +42,13 @@ const secondary: Record<
   },
 };
 const extra = secondary[d.slug];
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
 ---
 
 <BaseLayout
   title={`${d.name} — ${d.official} Travel Guide`}
   description={`Discover ${d.name} (${d.official}). ${d.intro} Explore destination highlights and contact Trip Andaman to discuss your visit.`}
+  enquirySubject={`a trip to ${d.name}`}
 >
   <PageHero
     title={d.name}
@@ -122,6 +124,9 @@ const extra = secondary[d.slug];
         >
           Plan a Trip Here <Icon size={18} />
         </a>
+        <WhatsAppButton subject={`a trip to ${d.name}`}>
+          Ask on WhatsApp
+        </WhatsAppButton>
         <div class="divider"></div>
         <a class="call" href={`tel:${site.tel}`}>
           <span>
@@ -142,8 +147,14 @@ const extra = secondary[d.slug];
         <h2 id="nb-reels" style="font-size:var(--fs-h2);margin-bottom:32px">
           A taste of <span class="accent">the bay</span>
         </h2>
-        <ReelGrid only={['sea-walk', 'semi-submarine', 'parasailing', 'snorkeling']} />
-        <a class="text-link" href="/experiences/#water-sports" style="margin-top:28px">
+        <ReelGrid
+          only={['sea-walk', 'semi-submarine', 'parasailing', 'snorkeling']}
+        />
+        <a
+          class="text-link"
+          href="/experiences/#water-sports"
+          style="margin-top:28px"
+        >
           See all water sports <Icon size={16} />
         </a>
       </div>

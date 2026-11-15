@@ -52,13 +52,13 @@
 }
 .hero .eyebrow {
   color: var(--sun);
-  animation: rise 900ms 200ms var(--ease-out) both;
+  animation: rise-in-place 700ms var(--ease-out) both;
 }
 .hero h1 {
   font-size: var(--fs-display);
   line-height: 0.86;
   letter-spacing: -0.045em;
-  animation: rise 1s 300ms var(--ease-out) both;
+  animation: rise-in-place 800ms var(--ease-out) both;
 }
 .hero-tagline {
   margin-top: 14px;
@@ -66,7 +66,7 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  animation: rise 1s 420ms var(--ease-out) both;
+  animation: rise-in-place 800ms 60ms var(--ease-out) both;
 }
 .hero-tagline .script {
   color: var(--sun);
@@ -77,7 +77,7 @@
   margin: 24px 0 36px;
   color: rgb(255 255 255 / 0.86);
   font-size: var(--fs-lg);
-  animation: rise 1s 520ms var(--ease-out) both;
+  animation: rise-in-place 800ms 120ms var(--ease-out) both;
 }
 .hero .btn-row {
   animation: rise 1s 620ms var(--ease-out) both;

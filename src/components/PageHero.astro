@@ -1,5 +1,6 @@
 ---
 import Picture from './Picture.astro';
+import { breadcrumbSchema, jsonLd } from '../data/seo';
 interface Props {
   title: string;
   eyebrow: string;
@@ -16,6 +17,9 @@ const {
   alt = '',
   crumbs = [],
 } = Astro.props;
+const breadcrumbs = jsonLd([
+  breadcrumbSchema(crumbs, title, Astro.url.pathname),
+]);
 ---
 
 <section class="page-hero">
@@ -37,4 +41,5 @@ const {
     <p class="lead">{description}</p>
     <slot />
   </div>
+  <script type="application/ld+json" set:html={breadcrumbs} />
 </section>

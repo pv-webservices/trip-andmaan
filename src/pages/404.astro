@@ -2,11 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Picture from '../components/Picture.astro';
 import Icon from '../components/Icon.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import { enquiryText, navigation, site, whatsappLink } from '../data/site';
+const whatsapp = whatsappLink(
+  enquiryText('an Andaman trip (I reached a missing page on your website)'),
+);
 ---
 
 <BaseLayout
   title="Page Not Found"
-  description="This page has drifted off course. Return to Trip Andaman or explore the island destinations."
+  description="This page could not be found. Return to Trip Andaman's home page, tour packages or destinations, or contact us on WhatsApp or phone."
   noindex
 >
   <section class="not-found">
@@ -18,15 +23,32 @@ import Icon from '../components/Icon.astro';
       <p class="error-number">404</p>
       <h1>Let’s get you back to paradise.</h1>
       <p>
-        We couldn’t find this page. There’s still a whole island story waiting
-        to be explored.
+        We couldn’t find this page. It may have moved, or the link may be
+        mistyped. Try one of these instead:
       </p>
+      <nav aria-label="Helpful links" class="not-found-links">
+        <ul>
+          {navigation.map(([label, href]) => (
+            <li>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <div class="btn-row">
         <a class="btn btn-sun" href="/">
           Back to Home <Icon size={18} />
         </a>
-        <a class="btn btn-glass" href="/destinations/">
-          Explore the Islands <Icon size={18} />
+        <a
+          class="btn btn-whatsapp"
+          href={whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <WhatsAppIcon size={18} /> WhatsApp us
+        </a>
+        <a class="btn btn-glass" href={`tel:${site.tel}`}>
+          <Icon name="phone" size={18} /> Call {site.phone}
         </a>
       </div>
     </div>

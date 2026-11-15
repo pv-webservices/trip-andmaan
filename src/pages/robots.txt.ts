@@ -1,10 +1,9 @@
 import type { APIRoute } from 'astro';
-export const GET: APIRoute = () => {
-  const origin = import.meta.env.PUBLIC_SITE_URL;
-  return new Response(
-    origin
-      ? `User-agent: *\nAllow: /\nSitemap: ${new URL('/sitemap.xml', origin).href}\n`
-      : 'User-agent: *\nDisallow: /\n',
-    { headers: { 'Content-Type': 'text/plain' } },
+import { SITE_URL } from '../data/site';
+// Crawl everything; noindex pages carry their own robots meta and must stay
+// crawlable so search engines can see it.
+export const GET: APIRoute = () =>
+  new Response(
+    `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+    { headers: { 'Content-Type': 'text/plain; charset=utf-8' } },
   );
-};

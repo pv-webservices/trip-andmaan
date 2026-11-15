@@ -6,6 +6,7 @@ interface Props {
   image?: string;
 }
 const { image = 'sunset' } = Astro.props;
+import WhatsAppButton from './WhatsAppButton.astro';
 ---
 
 <section class="cta-band">
@@ -26,9 +27,9 @@ const { image = 'sunset' } = Astro.props;
         <a class="btn btn-sun" href="/tour-packages/customized-trip/">
           Plan My Trip <Icon size={18} />
         </a>
-        <a class="btn btn-glass" href="/contact/">
-          Contact Us <Icon size={18} />
-        </a>
+        <WhatsAppButton subject="planning an Andaman trip">
+          WhatsApp Us
+        </WhatsAppButton>
       </div>
     </div>
     <div class="cta-card on-dark" data-reveal style="--i:1">

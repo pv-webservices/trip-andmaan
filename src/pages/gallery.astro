@@ -6,6 +6,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import EnquiryBanner from '../components/EnquiryBanner.astro';
 import Icon from '../components/Icon.astro';
 import ReelGrid from '../components/ReelGrid.astro';
+import { imageNear } from '../data/images';
 ---
 
 <BaseLayout
@@ -48,10 +49,10 @@ import ReelGrid from '../components/ReelGrid.astro';
             controls
             playsinline
             preload="none"
-            poster="/images/underwater-640.webp"
+            poster={imageNear('underwater', 640)}
             aria-label="Silent film of fish swimming underwater"
           >
-            <source src="/underwater-film.mp4" type="video/mp4" />
+            <source src="/videos/underwater-film.mp4" type="video/mp4" />
           </video>
           <figcaption>
             <strong>Fish in turquoise water</strong>
@@ -63,10 +64,10 @@ import ReelGrid from '../components/ReelGrid.astro';
             controls
             playsinline
             preload="none"
-            poster="/images/client-scuba-848.webp"
+            poster={imageNear('client-scuba', 800)}
             aria-label="Silent clip of scuba divers above a coral reef"
           >
-            <source src="/scuba-film.mp4" type="video/mp4" />
+            <source src="/videos/scuba-film.mp4" type="video/mp4" />
           </video>
           <figcaption>
             <strong>A scuba dive above the coral</strong>

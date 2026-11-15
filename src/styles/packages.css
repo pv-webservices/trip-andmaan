@@ -209,7 +209,7 @@
   margin: 18px 0 22px;
 }
 .package-facts dt {
-  color: var(--muted);
+  color: rgb(255 255 255 / 0.72);
   font-size: var(--fs-xs);
   font-weight: 800;
   letter-spacing: 0.08em;

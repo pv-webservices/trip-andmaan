@@ -19,10 +19,11 @@ export const imageConfig = {
     landscape: '1536x1024',
     portrait: '1024x1536',
   },
-  // Responsive WebP widths written to public/images for each generated asset.
+  // Preview WebP widths; run `npm run images:optimize` afterwards to produce the
+  // deployed responsive set and update src/data/image-manifest.json.
   widths: [640, 1200, 1536],
   webpQuality: Number(env.IMAGE_WEBP_QUALITY || 80),
   timeoutMs: Number(env.OPENAI_IMAGE_TIMEOUT_MS || 240000),
-  rawDir: 'output/generated',
-  publicDir: 'public/images',
+  rawDir: 'source-files/illustrations',
+  publicDir: 'public/images/illustrations',
 };

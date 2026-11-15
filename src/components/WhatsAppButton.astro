@@ -1,0 +1,22 @@
+---
+// Direct link to the client's WhatsApp chat with a context-specific message.
+// A plain link (no JavaScript, no popup) so it works on desktop and mobile.
+import { enquiryText, whatsappLink } from '../data/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+interface Props {
+  /** Completes "I would like to enquire about …". */
+  subject: string;
+  class?: string;
+}
+const { subject, class: cls = 'btn btn-whatsapp' } = Astro.props;
+---
+
+<a
+  class={cls}
+  href={whatsappLink(enquiryText(subject))}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <WhatsAppIcon size={18} />
+  <slot />
+</a>

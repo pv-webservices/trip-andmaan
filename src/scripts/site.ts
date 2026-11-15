@@ -1,3 +1,4 @@
+import { initEnquiryComposer } from './enquiry';
 document.querySelectorAll<HTMLDialogElement>('dialog').forEach((dialog) => {
   dialog.addEventListener('keydown', (event) => {
     if (event.key !== 'Tab') return;
@@ -222,51 +223,8 @@ if (film) {
   film.addEventListener('close', () => film.querySelector('video')?.pause());
 }
 
-const form = document.querySelector<HTMLFormElement>('.enquiry-form');
-if (form) {
-  form.addEventListener('input', () => {
-    const draft = form.querySelector<HTMLAnchorElement>('[data-draft-link]');
-    if (draft) draft.hidden = true;
-    const status = form.querySelector<HTMLElement>('.form-status');
-    if (status) status.textContent = '';
-  });
-  const interest = new URLSearchParams(location.search).get('interest');
-  const interestField =
-    form.querySelector<HTMLInputElement>('[name="interest"]');
-  if (interest && interestField) interestField.value = interest.slice(0, 180);
-  const date = form.querySelector<HTMLInputElement>('[name="travelDate"]');
-  if (date) {
-    const now = new Date();
-    date.min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  }
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    const fields = new FormData(form);
-    if (fields.get('website')) return;
-    const status = form.querySelector<HTMLElement>('.form-status')!;
-    const link = form.querySelector<HTMLAnchorElement>('[data-draft-link]')!;
-    const value = (name: string) => String(fields.get(name) ?? '').trim();
-    const lines = [
-      'Hi Trip Andaman, I would like to enquire about an Andaman trip.',
-      '',
-      `Name: ${value('fullName')}`,
-      `Mobile: ${value('mobile')}`,
-      ...(value('email') ? [`Email: ${value('email')}`] : []),
-      `Travel date: ${value('travelDate') || 'To discuss'}`,
-      `Travellers: ${value('travellers') || 'To discuss'}`,
-      `Interested in: ${value('interest') || 'To discuss'}`,
-      '',
-      value('message'),
-    ];
-    const url = `https://wa.me/${form.dataset.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
-    link.href = url;
-    link.hidden = false;
-    status.textContent =
-      'WhatsApp is opening with your enquiry. Press send in WhatsApp to reach us. If it did not open, use the button below.';
-    window.open(url, '_blank', 'noopener');
-  });
-}
+const composer = document.querySelector<HTMLFormElement>('.whatsapp-composer');
+if (composer) initEnquiryComposer(composer);
 
 // WhatsApp widget: the floating link opens a chat card instead of leaving the page.
 const waFab = document.querySelector<HTMLAnchorElement>('.wa-fab');

@@ -40,10 +40,12 @@ const steps = [
     text: 'Request a written proposal and confirm every detail before booking.',
   },
 ];
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { imageNear } from '../data/images';
 ---
 
 <BaseLayout
-  title="Andaman Holidays, Island Escapes & Customised Trips"
+  title="Andaman Holidays & Customised Island Trips"
   description="Discover the Andaman Islands with Trip Andaman, based in Haddo, Sri Vijaya Puram. Explore Havelock, Neil, Ross, North Bay and Baratang, then plan a trip around you."
 >
   <section class="hero">
@@ -78,7 +80,11 @@ const steps = [
           <a class="btn btn-sun" href="/tour-packages/customized-trip/">
             Plan My Trip <Icon size={18} />
           </a>
-          <a class="btn btn-glass" href="/underwater-film.mp4" data-open-film>
+          <a
+            class="btn btn-glass"
+            href="/videos/underwater-film.mp4"
+            data-open-film
+          >
             <span class="play-dot">
               <Icon name="play" size={13} />
             </span>
@@ -315,10 +321,10 @@ const steps = [
       loop
       playsinline
       preload="none"
-      poster="/images/underwater-640.webp"
+      poster={imageNear('underwater', 640)}
       aria-hidden="true"
     >
-      <source src="/underwater-film.mp4" type="video/mp4" />
+      <source src="/videos/underwater-film.mp4" type="video/mp4" />
     </video>
     <div data-reveal>
       <p class="eyebrow">Beneath the blue</p>
@@ -330,18 +336,19 @@ const steps = [
         parts of an Andaman holiday. Ask about suitable options for your dates.
       </p>
       <div class="btn-row">
-        <a class="btn btn-glass" href="/underwater-film.mp4" data-open-film>
+        <a
+          class="btn btn-glass"
+          href="/videos/underwater-film.mp4"
+          data-open-film
+        >
           <span class="play-dot">
             <Icon name="play" size={13} />
           </span>
           Watch the Film
         </a>
-        <a
-          class="btn btn-sun"
-          href={`/contact/?interest=${encodeURIComponent('Snorkeling & scuba diving')}`}
-        >
-          Ask About Diving <Icon size={18} />
-        </a>
+        <WhatsAppButton subject="snorkelling and scuba diving in the Andamans">
+          Ask About Diving
+        </WhatsAppButton>
       </div>
     </div>
   </section>
@@ -372,7 +379,7 @@ const steps = [
             loop
             playsinline
             preload="none"
-            poster="/images/reel-sea-walk-640.webp"
+            poster={imageNear('reel-sea-walk', 640)}
             aria-label="Silent clip of travellers on a sea walk among fish and coral"
           >
             <source src="/videos/sea-walk.mp4" type="video/mp4" />
@@ -478,10 +485,10 @@ const steps = [
       controls
       playsinline
       preload="none"
-      poster="/images/underwater-640.webp"
+      poster={imageNear('underwater', 640)}
       aria-label="Silent underwater film showing fish swimming in turquoise water"
     >
-      <source src="/underwater-film.mp4" type="video/mp4" />
+      <source src="/videos/underwater-film.mp4" type="video/mp4" />
     </video>
     <p>Silent underwater footage from the supplied travel collection.</p>
   </dialog>

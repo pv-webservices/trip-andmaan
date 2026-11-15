@@ -5,81 +5,161 @@ import '@fontsource/manrope/600.css';
 import '@fontsource/manrope/700.css';
 import '@fontsource/manrope/800.css';
 import '@fontsource/caveat/500.css';
-import '@fontsource/cormorant-garamond/600.css';
 import '@fontsource/cormorant-garamond/700.css';
 import '@fontsource/cormorant-garamond/600-italic.css';
 import '../styles/global.css';
-import { navigation, site } from '../data/site';
+// Preload only the two fonts used above the fold (body text and headings).
+import bodyFont from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
+import headingFont from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-700-normal.woff2?url';
+import {
+  enquiryText,
+  navigation,
+  site,
+  SITE_URL,
+  whatsappLink,
+} from '../data/site';
 import ContactDetails from '../components/ContactDetails.astro';
 import Icon from '../components/Icon.astro';
 import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 import { destinations } from '../data/destinations';
+import { jsonLd, organizationId, websiteId } from '../data/seo';
 interface Props {
   title: string;
   description: string;
+  /** Utility pages (404, credits): noindex, follow and no canonical. */
   noindex?: boolean;
+  /** What the visitor is asking about, used in prefilled WhatsApp messages. */
+  enquirySubject?: string;
+  /** Extra JSON-LD nodes for this page (FAQPage, BreadcrumbList, …). */
+  schema?: Record<string, unknown>[];
 }
-const { title, description, noindex = false } = Astro.props;
+const {
+  title,
+  description,
+  noindex = false,
+  enquirySubject,
+  schema = [],
+} = Astro.props;
 const path = Astro.url.pathname;
-const publicUrl = import.meta.env.PUBLIC_SITE_URL;
-const canonical = publicUrl ? new URL(path, publicUrl).href : undefined;
+// "<title> | Trip Andaman", dropping the suffix when it would pass ~65 characters.
+const MAX_TITLE = 65;
+const branded = `${title} | Trip Andaman`;
+const fullTitle =
+  /trip andaman/i.test(title) || branded.length > MAX_TITLE ? title : branded;
+const canonical = new URL(path, SITE_URL).href;
+const ogImage = new URL('/images/brand/og-image-1200x630.jpg', SITE_URL).href;
+// Default WhatsApp message names the site section, e.g. "from your Gallery page".
+const section = navigation.find(
+  ([, href]) => href !== '/' && path.startsWith(href),
+)?.[0];
+const pageWhatsapp = whatsappLink(
+  enquiryText(
+    enquirySubject ??
+      (section
+        ? `an Andaman trip (from your ${section} page)`
+        : 'an Andaman trip'),
+  ),
+);
 const active = (href: string) =>
   href === '/' ? path === '/' : path.startsWith(href);
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'TravelAgency',
-  name: site.name,
-  telephone: site.tel,
-  email: site.email,
-  ...(publicUrl ? { url: publicUrl } : {}),
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Haddo',
-    addressLocality: 'Sri Vijaya Puram',
-    addressRegion: 'Andaman and Nicobar Islands',
-    postalCode: '744102',
-    addressCountry: 'IN',
+const graph = [
+  {
+    '@type': 'TravelAgency',
+    '@id': organizationId,
+    name: site.name,
+    url: `${SITE_URL}/`,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/images/brand/logo-800x221.png', SITE_URL).href,
+      width: 800,
+      height: 221,
+    },
+    image: ogImage,
+    telephone: site.tel,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Haddo',
+      addressLocality: 'Sri Vijaya Puram',
+      addressRegion: 'Andaman and Nicobar Islands',
+      postalCode: '744102',
+      addressCountry: 'IN',
+    },
+    areaServed: 'Andaman and Nicobar Islands',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: site.tel,
+      contactType: 'customer service',
+    },
   },
-};
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    url: `${SITE_URL}/`,
+    name: site.name,
+    inLanguage: 'en-IN',
+    publisher: { '@id': organizationId },
+  },
+  ...schema,
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | Trip Andaman</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0865b2" />
+    <meta name="theme-color" content="#0c2740" />
     <meta
       name="robots"
-      content={noindex || !publicUrl ? 'noindex, follow' : 'index, follow'}
-    />
-    {canonical && <link rel="canonical" href={canonical} />}
-    <meta property="og:title" content={`${title} | Trip Andaman`} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    {canonical && <meta property="og:url" content={canonical} />}
-    <meta
-      property="og:image"
       content={
-        publicUrl
-          ? new URL('/images/hero-1200.webp', publicUrl).href
-          : '/images/hero-1200.webp'
+        noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'
       }
     />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Turquoise lagoon and white sand on Havelock Island, Andaman"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link
       rel="preload"
-      href="/images/logo-light.webp"
-      as="image"
-      type="image/webp"
+      href={bodyFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={headingFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={jsonLd(graph)} />
   </head>
   <body>
     <a class="skip-link" href="#main">
@@ -89,9 +169,11 @@ const schema = {
       <div class="header-bar">
         <a class="brand" href="/" aria-label="Trip Andaman home">
           <img
-            src="/images/logo-light.webp"
-            width="800"
-            height="221"
+            src="/images/brand/logo-light-400.webp"
+            srcset="/images/brand/logo-light-240.webp 240w, /images/brand/logo-light-400.webp 400w"
+            sizes="200px"
+            width="400"
+            height="111"
             alt="Trip Andaman"
           />
         </a>
@@ -134,10 +216,11 @@ const schema = {
     <dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
       <div class="mobile-menu-top">
         <img
-          src="/images/logo-dark.webp"
-          width="800"
-          height="221"
+          src="/images/brand/logo-dark-400.webp"
+          width="400"
+          height="111"
           alt="Trip Andaman"
+          loading="lazy"
         />
         <button class="menu-close icon-button" aria-label="Close navigation">
           <Icon name="close" size={20} />
@@ -177,9 +260,9 @@ const schema = {
         <div class="footer-brand">
           <a href="/" aria-label="Trip Andaman home">
             <img
-              src="/images/logo-dark.webp"
-              width="800"
-              height="221"
+              src="/images/brand/logo-dark-400.webp"
+              width="400"
+              height="111"
               alt="Trip Andaman"
               loading="lazy"
             />
@@ -227,14 +310,14 @@ const schema = {
         </div>
       </div>
     </footer>
-    <WhatsAppWidget />
+    <WhatsAppWidget href={pageWhatsapp} />
     <nav class="quick-actions" aria-label="Quick contact">
       <a class="btn btn-glass" href={`tel:${site.tel}`}>
         <Icon name="phone" size={17} /> Call
       </a>
       <a
         class="btn btn-whatsapp"
-        href={site.whatsapp}
+        href={pageWhatsapp}
         target="_blank"
         rel="noopener noreferrer"
       >

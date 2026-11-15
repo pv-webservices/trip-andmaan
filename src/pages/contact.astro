@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import Icon from '../components/Icon.astro';
 import WhatsAppIcon from '../components/WhatsAppIcon.astro';
-import { site } from '../data/site';
+import { enquiryText, site, whatsappLink } from '../data/site';
 const cards = [
   {
     icon: 'phone',
@@ -15,15 +15,9 @@ const cards = [
   {
     icon: 'whatsapp',
     label: 'WhatsApp',
-    value: 'Chat with us on WhatsApp',
-    href: site.whatsapp,
+    value: site.phone,
+    href: whatsappLink(enquiryText('an Andaman trip (from your Contact page)')),
     external: true,
-  },
-  {
-    icon: 'mail',
-    label: 'Email us',
-    value: site.email,
-    href: `mailto:${site.email}`,
   },
   {
     icon: 'pin',
@@ -55,7 +49,7 @@ const cards = [
           <span class="accent">An island of possibilities.</span>
         </h2>
         <p class="lead">
-          Planning a visit to the Andaman Islands? Call, email or send your
+          Planning a visit to the Andaman Islands? Call, WhatsApp or send your
           details and we’ll talk through your travel requirements.
         </p>
         <div class="contact-cards">
@@ -90,7 +84,7 @@ const cards = [
         </p>
       </div>
       <div data-reveal style="--i:1">
-        <EnquiryForm />
+        <EnquiryForm source="Contact page" />
       </div>
     </div>
   </section>
