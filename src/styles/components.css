@@ -132,7 +132,8 @@
   transform: translateX(4px);
 }
 .on-dark .text-link,
-.bg-ocean .text-link {
+.bg-ocean .text-link,
+.info-panel .text-link {
   color: var(--sun);
 }
 
