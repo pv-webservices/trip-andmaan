@@ -1,15 +1,21 @@
+const WHATSAPP_NUMBER = '919646969646';
+
+/** wa.me chat link to the business number with a pre-filled message. */
+export const whatsappLink = (text: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
 export const site = {
   name: 'TRIP ANDAMAN',
-  phone: '9646 96 9646',
+  phone: '+91 9646 96 9646',
   tel: '+919646969646',
   email: 'tripandamanin2026@gmail.com',
   address:
     'Haddo, Sri Vijaya Puram, Andaman and Nicobar Islands — 744102, India',
   map: 'https://www.google.com/maps/search/?api=1&query=Haddo%2C+Sri+Vijaya+Puram%2C+Andaman+744102',
   // WhatsApp uses the business phone number; confirm it is active on WhatsApp.
-  whatsapp: `https://wa.me/919646969646?text=${encodeURIComponent(
+  whatsapp: whatsappLink(
     'Hi Trip Andaman, I would like to plan an Andaman trip.',
-  )}`,
+  ),
 };
 export const navigation = [
   ['Home', '/'],

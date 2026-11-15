@@ -27,59 +27,28 @@ async (page) => {
     .getByLabel('What do you have in mind?')
     .fill('Local QA only: an island trip for two, with beach walks.')
   await page.getByRole('checkbox').check()
-  await page.getByRole('button', { name: 'Prepare Email Enquiry' }).click()
-  const draft = page.getByRole('link', { name: 'Open Email Draft' })
-  await draft.waitFor({ state: 'visible' })
-  const href = await draft.getAttribute('href')
-  assert(
-    href.startsWith('mailto:tripandamanin2026@gmail.com?'),
-    'Correct mail recipient',
-  )
+  await page.evaluate(() => {
+    window.__opened = []
+    window.open = (url) => {
+      window.__opened.push(url)
+      return null
+    }
+  })
+  await page
+    .getByRole('button', { name: 'Send Enquiry on WhatsApp' })
+    .click()
+  const fallback = page.getByRole('link', { name: 'Open WhatsApp' })
+  await fallback.waitFor({ state: 'visible' })
+  const href = await fallback.getAttribute('href')
+  assert(href.startsWith('https://wa.me/919646969646?text='), 'WhatsApp recipient')
   assert(
     decodeURIComponent(href).includes('Neil Island'),
     'Enquiry includes selected interest',
   )
   assert(
-    (await page.getByRole('status').textContent()).includes(
-      'Nothing has been sent yet',
-    ),
-    'No false sent claim',
+    (await page.evaluate(() => window.__opened[0])) === href,
+    'Submit opens WhatsApp',
   )
-  await page.evaluate(
-    () => (document.querySelector('form').dataset.endpoint = '/__qa_form'),
-  )
-  await page.route('**/__qa_form', (route) =>
-    route.fulfill({ status: 500, contentType: 'application/json', body: '{}' }),
-  )
-  await page.getByRole('button', { name: 'Prepare Email Enquiry' }).click()
-  await page.waitForFunction(() =>
-    document
-      .querySelector('.form-status')
-      .textContent.includes('could not confirm'),
-  )
-  assert(
-    (await page.getByLabel('Full name').inputValue()) === 'QA Visitor',
-    'Failed request preserves fields',
-  )
-  await page.unroute('**/__qa_form')
-  await page.route('**/__qa_form', (route) =>
-    route.fulfill({
-      status: 200,
-      contentType: 'application/json',
-      body: '{"ok":true}',
-    }),
-  )
-  await page.getByRole('button', { name: 'Send Enquiry' }).click()
-  await page.waitForFunction(() =>
-    document
-      .querySelector('.form-status')
-      .textContent.includes('service accepted'),
-  )
-  assert(
-    (await page.getByLabel('Full name').inputValue()) === '',
-    'Accepted response clears fields',
-  )
-  await page.unroute('**/__qa_form')
   await page.getByRole('button', { name: 'Open navigation' }).click()
   assert(
     await page.getByRole('dialog', { name: 'Navigation' }).isVisible(),
@@ -108,9 +77,7 @@ async (page) => {
   return {
     validation: 'pass',
     interestPrefill: 'pass',
-    emailDraft: 'pass',
-    mockedProviderAccepted: 'pass',
-    mockedProviderFailure: 'pass',
+    whatsappEnquiry: 'pass',
     menuFocusAndEscape: 'pass',
     menuNavigation: 'pass',
     liveMessagesSent: 0,

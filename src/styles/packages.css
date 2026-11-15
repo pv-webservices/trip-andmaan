@@ -373,3 +373,8 @@
     grid-column: 1 / -1;
   }
 }
+
+/* Itinerary PDF download under the day-by-day heading. */
+.itinerary-download {
+  margin-top: 18px;
+}

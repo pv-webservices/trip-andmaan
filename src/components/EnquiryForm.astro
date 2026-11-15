@@ -1,15 +1,15 @@
 ---
 import { site } from '../data/site';
-const configured = import.meta.env.PUBLIC_ENQUIRY_ENDPOINT || '';
-const endpoint = configured.startsWith('https://') ? configured : '';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+// Digits only, e.g. 919646969646 — the wa.me chat link format.
+const whatsappNumber = site.tel.replace(/\D/g, '');
 ---
 
-<form class="enquiry-form" data-endpoint={endpoint} data-email={site.email}>
+<form class="enquiry-form" data-whatsapp={whatsappNumber}>
   <h2>Tell us about your dream trip</h2>
   <p>
-    {endpoint
-      ? 'Share a few details to send a travel enquiry.'
-      : 'Prepare an enquiry to send from your email app. You can also call or email us directly.'}
+    Share a few details and send your enquiry to us on WhatsApp. You can also
+    call us on {site.phone}.
   </p>
   <div class="form-grid">
     <div class="field">
@@ -37,13 +37,14 @@ const endpoint = configured.startsWith('https://') ? configured : '';
       />
     </div>
     <div class="field full">
-      <label for="email">Email address</label>
+      <label for="email">
+        Email address <span>(optional)</span>
+      </label>
       <input
         id="email"
         name="email"
         type="email"
         autocomplete="email"
-        required
         maxlength="180"
       />
     </div>
@@ -101,23 +102,26 @@ const endpoint = configured.startsWith('https://') ? configured : '';
       <a href="/privacy/">privacy & enquiries</a>.
     </span>
   </label>
-  <button class="btn" type="submit">
-    {endpoint ? 'Send Enquiry' : 'Prepare Email Enquiry'}{' '}
-    <span aria-hidden="true">→</span>
+  <button class="btn btn-whatsapp" type="submit">
+    <WhatsAppIcon size={20} /> Send Enquiry on WhatsApp
   </button>
   <p class="form-status" role="status" aria-live="polite"></p>
-  <a data-draft-link class="btn btn-sun on-light" hidden>
-    Open Email Draft <span aria-hidden="true">↗</span>
+  <a
+    data-draft-link
+    class="btn btn-ghost on-light"
+    target="_blank"
+    rel="noopener noreferrer"
+    hidden
+  >
+    <WhatsAppIcon size={18} /> Open WhatsApp
   </a>
   <p class="form-note">
-    {endpoint
-      ? 'Please avoid sending passport, payment or other sensitive information.'
-      : 'Direct form delivery is not enabled. An email app is required to send the prepared enquiry.'}
+    Your enquiry opens in WhatsApp, ready to send to {site.phone}. Please avoid
+    sending passport, payment or other sensitive information.
   </p>
   <noscript>
     <p>
-      To send an enquiry,{' '}
-      <a href={`mailto:${site.email}`}>email {site.email}</a> or{' '}
+      To send an enquiry, <a href={site.whatsapp}>message us on WhatsApp</a> or{' '}
       <a href={`tel:${site.tel}`}>call {site.phone}</a>.
     </p>
   </noscript>

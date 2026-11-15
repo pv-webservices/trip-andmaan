@@ -27,15 +27,15 @@ The homepage reference determines the brand direction; the October 2026 redesign
 
 ## Enquiries
 
-Without a form endpoint, the labelled form validates input and prepares an email draft. A second explicit action opens the user's email app. Nothing is submitted or described as sent. Phone and email links are always available.
+The enquiry form is WhatsApp-only. It validates input, then opens `wa.me` with the enquiry prefilled for the business number (`site.tel`); the visitor presses send in WhatsApp. Nothing is submitted to a server, and a fallback "Open WhatsApp" button appears in case the new tab is blocked. Email is optional.
 
-To enable direct delivery, set `PUBLIC_ENQUIRY_ENDPOINT` to an approved HTTPS form service accepting FormData POST requests with JSON responses and CORS support. Configure the recipient, provider-side validation, spam protection and rate limits at that provider. The UI has a honeypot, required consent, loading, timeout/error and accepted states. A successful HTTP response means the service accepted the request; it is not proof of inbox delivery. Verify actual delivery and privacy wording before launch. Never put a private API key in a `PUBLIC_` variable.
+Package pages show a "Download Itinerary (PDF)" button when the package sets `itineraryPdf` in `src/data/packages.ts`; PDFs live in `public/itineraries/`.
 
-WhatsApp links (`site.whatsapp` in `src/data/site.ts`) use the business number 9646 96 9646 with a prefilled greeting: a chat widget on desktop/tablet, a green button in the mobile bottom bar, and entries on the contact page and contact lists. Confirm the number is active on WhatsApp before launch. No social profiles were supplied.
+WhatsApp links (`site.whatsapp` in `src/data/site.ts`) use the business number +91 9646 96 9646 with a prefilled greeting: a chat widget on desktop/tablet, a green button in the mobile bottom bar, and entries on the contact page and contact lists. Confirm the number is active on WhatsApp before launch. No social profiles were supplied.
 
 ## Static hosting / Hostinger
 
-1. Copy `.env.example` to `.env`, set `PUBLIC_SITE_URL` to the confirmed HTTPS origin, and configure the enquiry endpoint if approved.
+1. Copy `.env.example` to `.env`, set `PUBLIC_SITE_URL` to the confirmed HTTPS origin.
 2. Run all local checks and rebuild. Without the public origin, pages use `noindex`, robots disallows crawling and the sitemap has no entries. This prevents accidental placeholder URLs. Set the real origin before indexing.
 3. Upload the **contents** of `dist/` to the domain's document root (usually `public_html`). Preserve route directories, `_astro/`, `images/` and video files. No Node server is needed for the built site.
 4. Configure the host to serve `404.html` for missing routes with a real 404 response. Test clean URLs, HTTPS and the preferred hostname on the deployed host.

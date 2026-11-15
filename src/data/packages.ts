@@ -22,6 +22,8 @@ export interface TourPackage {
   itinerary: ItineraryDay[];
   /** Supplied travel photographs that suit this route. */
   moments: string[];
+  /** Downloadable itinerary PDF supplied by the client, served from /public. */
+  itineraryPdf?: string;
 }
 
 const PB = 'Port Blair';
@@ -197,6 +199,8 @@ export const packages: TourPackage[] = [
       day.departure,
     ],
     moments: ['cellular-jail-gate', 'client-speedboat', 'coastal-rocks'],
+    itineraryPdf:
+      '/itineraries/tripandaman-6-nights-4n-1n-1n-andaman-tour-package.pdf',
   },
   {
     slug: 'havelock-holiday-baratang-6n7d',

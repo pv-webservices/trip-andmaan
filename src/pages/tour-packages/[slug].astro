@@ -13,7 +13,7 @@ import {
   routeLabel,
   type TourPackage,
 } from '../../data/packages';
-import { site } from '../../data/site';
+import { site, whatsappLink } from '../../data/site';
 export function getStaticPaths() {
   return publishedPackages.map((tour) => ({
     params: { slug: tour.slug },
@@ -58,9 +58,9 @@ const related = publishedPackages
   )
   .slice(0, 3);
 const interest = `${tour.title} (${durationLabel(tour)})`;
-const whatsapp = `https://wa.me/${site.tel.replace('+', '')}?text=${encodeURIComponent(
-  `Hi Trip Andaman, I'm interested in the ${interest} package.`,
-)}`;
+const whatsapp = whatsappLink(
+  `Hi Trip Andaman, I'm interested in the ${interest} package. Please share a quote.`,
+);
 ---
 
 <BaseLayout
@@ -91,6 +91,16 @@ const whatsapp = `https://wa.me/${site.tel.replace('+', '')}?text=${encodeURICom
           <h2 style="font-size:var(--fs-h2)">
             Your <span class="accent">itinerary</span>
           </h2>
+          {tour.itineraryPdf && (
+            <a
+              class="btn btn-ghost itinerary-download"
+              href={tour.itineraryPdf}
+              target="_blank"
+              rel="noopener"
+            >
+              <Icon name="download" size={18} /> Download Itinerary (PDF)
+            </a>
+          )}
         </div>
         <ol class="itinerary">
           {tour.itinerary.map((d, i) => (
@@ -159,20 +169,24 @@ const whatsapp = `https://wa.me/${site.tel.replace('+', '')}?text=${encodeURICom
           </div>
         </dl>
         <a
-          class="btn btn-sun"
-          href={`/contact/?interest=${encodeURIComponent(interest)}`}
-        >
-          Get a Quote <Icon size={18} />
-        </a>
-        <a
-          class="btn btn-ghost"
+          class="btn btn-whatsapp"
           href={whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          style="margin-top:10px"
         >
-          <WhatsAppIcon size={18} /> Ask on WhatsApp
+          <WhatsAppIcon size={18} /> Get a Quote on WhatsApp
         </a>
+        {tour.itineraryPdf && (
+          <a
+            class="btn btn-ghost"
+            href={tour.itineraryPdf}
+            target="_blank"
+            rel="noopener"
+            style="margin-top:10px"
+          >
+            <Icon name="download" size={18} /> Itinerary PDF
+          </a>
+        )}
         <div class="divider"></div>
         <a class="call" href={`tel:${site.tel}`}>
           <span>

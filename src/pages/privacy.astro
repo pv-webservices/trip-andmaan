@@ -2,9 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site';
-const configured = Boolean(
-  import.meta.env.PUBLIC_ENQUIRY_ENDPOINT?.startsWith('https://'),
-);
 ---
 
 <BaseLayout
@@ -24,25 +21,18 @@ const configured = Boolean(
         Your Enquiry <span class="accent">Details</span>
       </h2>
       <p>
-        The enquiry fields ask for your name, phone number, email address,
-        travel preferences and a message. Please share only the information
-        needed to discuss your holiday. Do not include passport details, payment
-        information or sensitive personal documents.
+        The enquiry fields ask for your name, phone number, an optional email
+        address, travel preferences and a message. Please share only the
+        information needed to discuss your holiday. Do not include passport
+        details, payment information or sensitive personal documents.
       </p>
-      {configured ? (
-        <p>
-          When you submit the form, your details are sent to the configured
-          external enquiry service. Submission status reflects the service
-          response. Contact TRIP ANDAMAN if you need to confirm receipt.
-        </p>
-      ) : (
-        <p>
-          The form prepares an email draft in your browser. It does not submit
-          your details to TRIP ANDAMAN. Use the “Open Email Draft” link to
-          review and send the message from your own email app. Your email
-          provider handles the message when you send it.
-        </p>
-      )}
+      <p>
+        The form prepares a WhatsApp message in your browser. It does not submit
+        your details to this website. Pressing “Send Enquiry on WhatsApp” opens
+        WhatsApp with the message addressed to TRIP ANDAMAN ({site.phone});
+        nothing is sent until you press send in WhatsApp. WhatsApp handles the
+        message under its own terms.
+      </p>
       <h2>
         Website <span class="accent">Storage</span>
       </h2>
@@ -60,7 +50,8 @@ const configured = Boolean(
         External <span class="accent">Links</span>
       </h2>
       <p>
-        Email, phone, WhatsApp and map links open the relevant app or external service. WhatsApp chats are handled by WhatsApp under its own terms.
+        Email, phone, WhatsApp and map links open the relevant app or external
+        service. WhatsApp chats are handled by WhatsApp under its own terms.
         Destination references and photo-credit links lead to third-party
         websites with their own privacy practices.
       </p>

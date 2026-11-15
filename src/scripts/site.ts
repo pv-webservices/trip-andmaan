@@ -239,46 +239,32 @@ if (form) {
     const now = new Date();
     date.min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   }
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const fields = new FormData(form);
     if (fields.get('website')) return;
     const status = form.querySelector<HTMLElement>('.form-status')!;
-    const button = form.querySelector<HTMLButtonElement>('[type="submit"]')!;
-    const endpoint = form.dataset.endpoint;
-    const values = Object.fromEntries(fields);
-    if (!endpoint) {
-      const message = `Andaman travel enquiry\n\nName: ${values.fullName}\nMobile: ${values.mobile}\nEmail: ${values.email}\nTravel date: ${values.travelDate || 'To discuss'}\nTravellers: ${values.travellers || 'To discuss'}\nInterested in: ${values.interest || 'To discuss'}\n\n${values.message}`;
-      const link = form.querySelector<HTMLAnchorElement>('[data-draft-link]')!;
-      link.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Andaman travel enquiry')}&body=${encodeURIComponent(message)}`;
-      link.hidden = false;
-      status.textContent =
-        'Your email draft is ready. Open it below, review it and send it from your email app. Nothing has been sent yet.';
-      link.focus();
-      return;
-    }
-    button.disabled = true;
-    button.textContent = 'Sending enquiry…';
-    status.textContent = '';
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        body: fields,
-        headers: { Accept: 'application/json' },
-        signal: AbortSignal.timeout(15000),
-      });
-      if (!response.ok) throw new Error('Submission failed');
-      status.textContent =
-        'The enquiry service accepted your message. You can also reach us by phone or email.';
-      form.reset();
-    } catch {
-      status.textContent =
-        'We could not confirm submission. Please try again, call us or use the email link. Your details are still here.';
-    } finally {
-      button.disabled = false;
-      button.textContent = 'Send Enquiry';
-    }
+    const link = form.querySelector<HTMLAnchorElement>('[data-draft-link]')!;
+    const value = (name: string) => String(fields.get(name) ?? '').trim();
+    const lines = [
+      'Hi Trip Andaman, I would like to enquire about an Andaman trip.',
+      '',
+      `Name: ${value('fullName')}`,
+      `Mobile: ${value('mobile')}`,
+      ...(value('email') ? [`Email: ${value('email')}`] : []),
+      `Travel date: ${value('travelDate') || 'To discuss'}`,
+      `Travellers: ${value('travellers') || 'To discuss'}`,
+      `Interested in: ${value('interest') || 'To discuss'}`,
+      '',
+      value('message'),
+    ];
+    const url = `https://wa.me/${form.dataset.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+    link.href = url;
+    link.hidden = false;
+    status.textContent =
+      'WhatsApp is opening with your enquiry. Press send in WhatsApp to reach us. If it did not open, use the button below.';
+    window.open(url, '_blank', 'noopener');
   });
 }
 
