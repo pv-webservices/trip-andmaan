@@ -4,16 +4,35 @@ Everything runs on one Hostinger web hosting account: PHP (Laravel), MySQL/Maria
 and the uploaded media. Production never runs Node.js; the CSS/JS is compiled into
 the release package.
 
-> **Not yet verified on the client's Hostinger account.** The Hostinger account
-> connected during development had no Trip Andaman website, so PHP version,
-> extensions, SSH access and limits below are Hostinger's usual Business/Cloud
-> plan capabilities, not checked values. Check each item in the "Before the first
-> deploy" list on the real account. Everything else here was rehearsed on Linux
-> with PHP 8.3 + Apache (`.htaccess`) + MariaDB 11.4 — see `VERIFICATION.md`.
+## Current production deployment (20 Nov 2026)
 
-> **Do not point tripandaman.in at Hostinger or replace the live site without the
-> owner's explicit go-ahead.** The live site is the Astro build on Vercel (DNS at
-> GoDaddy). Test on Hostinger's temporary domain first.
+| | |
+| --- | --- |
+| Hostinger account | `u213891471`, plan order `1010372147` ("Unlimited"), server `srv983` |
+| Website | `tripandaman.in` (folder `~/domains/tripandaman.in/`), PHP 8.3.37 |
+| Database | `u213891471_tripandaman`, user `u213891471_tripandaman`, host `127.0.0.1` |
+| SSL | Let's Encrypt, auto-renewing, HTTP→HTTPS redirect on |
+| CDN / cache | Hostinger CDN **on**; server (LiteSpeed) cache **off** |
+| First admin | `admin@tripandaman.in` (change the password after the first sign-in) |
+| Secrets | `~/domains/tripandaman.in/shared/.env` on the server only |
+
+Facts checked on this account: PHP 8.3 with intl, gd (WebP), zip, fileinfo,
+mbstring, exif and MySQL drivers enabled; upload limit 2 GB, memory 2 GB.
+**PHP's `symlink()`, `exec()` and `proc_open()` are disabled**, so `deploy-release.sh`
+creates the `public/storage` link with the shell, and `php artisan about` cannot run.
+
+The first deploy was done without SSH: files were uploaded through Hostinger's file
+API into `public_html` behind a deny-all `.htaccess`, and a temporary account cron job
+ran a one-time script that moved them outside the web root, ran `deploy-release.sh`,
+pointed `public_html` at `current/public`, ran `cms:import` and created the admin
+(from a password hash; the plain password never left the developer's computer). The
+cron job was deleted afterwards. Hostinger's placeholder is kept in
+`public_html.hostinger-default`. Later releases can use SSH (below) or the same method.
+
+With the CDN on, every visitor reaches PHP from a CDN address, so the admin
+login throttle counts attempts per CDN address rather than per person. That is
+safe (stricter, never looser). Do not set `TRUSTED_PROXIES=*` here: the origin
+server is also reachable directly, so forwarded headers could be spoofed.
 
 ## 1. Requirements
 

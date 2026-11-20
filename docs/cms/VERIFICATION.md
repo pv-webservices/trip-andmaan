@@ -1,7 +1,25 @@
 # Verification results (20 Nov 2026)
 
-Three environments were used. **Nothing has been run on the client's Hostinger
-account yet**, and the live site (Astro on Vercel, DNS at GoDaddy) was not changed.
+## Production on Hostinger (tripandaman.in, 20 Nov 2026)
+
+Deployed to Hostinger account `u213891471` (see `DEPLOYMENT-HOSTINGER.md`). The
+domain already resolved to Hostinger, so the site was public as soon as it was
+attached. Checked against the live site:
+
+| Check | Result |
+| --- | --- |
+| Setup: migrations, caches, `cms:import` (15 packages, 6 destinations, 74 sections, 59 media), first admin | ✓ |
+| `compare-with-astro.mjs` over HTTPS | ✓ 32/32 identical |
+| `browser-tests.mjs` over HTTPS (axe, layouts, 64 WhatsApp/tel links, composer) | ✓ 0 violations, all pass |
+| HTTP→HTTPS, `www`→apex, trailing slash, legacy `/images/…` 301, 404 page | ✓ |
+| `/.env` and `/storage/../.env` blocked (403); HSTS, `X-Frame-Options`; no visitor cookies | ✓ |
+| Let's Encrypt certificate active (expires 18 Feb 2027, auto-renews) | ✓ |
+| Admin sign-in, edit, preview, publish on production | Not done by the developer tool (production password); to be checked by the owner |
+| `cms-browser-checks.mjs` (announcement bar, popup) on production | Not run (it creates temporary records); passed locally and in the rehearsal |
+
+## Before production
+
+Three environments were used before the production deploy.
 
 | Environment | What it is |
 | --- | --- |
