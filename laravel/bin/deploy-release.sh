@@ -58,7 +58,8 @@ ln -s "$BASE/shared/storage" "$RELEASE/storage"
 ln -sfn "$BASE/shared/.env" "$RELEASE/.env"
 
 cd "$RELEASE"
-"$PHP_BIN" artisan storage:link --force >/dev/null
+# Shell link instead of `artisan storage:link`: Hostinger disables PHP's symlink().
+ln -sfn "$BASE/shared/storage/app/public" "$RELEASE/public/storage"
 echo "==> Database migrations"
 "$PHP_BIN" artisan migrate --force
 echo "==> Caches"
