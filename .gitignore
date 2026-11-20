@@ -5,3 +5,5 @@ dist/
 .env.local
 .playwright-cli/
 test-results/
+# Release archives built by laravel/bin/package-release.sh
+dist-release/

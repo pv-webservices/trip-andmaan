@@ -6,6 +6,12 @@
       "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
       "runtimeArgs": ["node_modules/astro/bin/astro.mjs", "dev"],
       "port": 4321
+    },
+    {
+      "name": "laravel-cms",
+      "runtimeExecutable": "C:\\Users\\hp\\AppData\\Local\\Microsoft\\WinGet\\Packages\\PHP.PHP.NTS.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe\\php.exe",
+      "runtimeArgs": ["laravel/artisan", "serve", "--host=127.0.0.1", "--port=8000"],
+      "port": 8000
     }
   ]
 }

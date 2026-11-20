@@ -1,0 +1,61 @@
+/* Trip Andaman design tokens — drawn from the logo's deep navy lettering and burnished gold arcs. */
+:root {
+  --ink: #0c2740;
+  --ink-soft: #384a5d;
+  --muted: #5f6d7c;
+  --ocean-950: #04203a;
+  --ocean-900: #082c4c;
+  --ocean-800: #0e3a62;
+  --brand: #0f3d66;
+  --brand-600: #0a2f52;
+  --brand-100: #e3ebf3;
+  --lagoon: #2f6f9a;
+  --lagoon-100: #e4eef5;
+  --sun: #d6a556;
+  --sun-600: #b9873e;
+  --sun-100: #f7ecd9;
+  --gold-ink: #8a6121;
+  --gold-gradient: linear-gradient(100deg, #97671e 0%, #deaa61 48%, #b9873e 100%);
+  --sand: #f4ede0;
+  --paper: #fbf9f4;
+  --white: #ffffff;
+  --line: #e6e0d4;
+  --line-dark: rgb(255 255 255 / 0.14);
+
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', cursive;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --fs-h2: clamp(2rem, 1.35rem + 2.6vw, 3.6rem);
+  --fs-h1: clamp(2.6rem, 1.6rem + 4.4vw, 5.4rem);
+  --fs-display: clamp(4rem, 1.5rem + 11vw, 11.5rem);
+
+  --gutter: clamp(16px, 4.5vw, 72px);
+  --wrap: min(1440px, 100% - 2 * var(--gutter));
+  --wrap-narrow: min(860px, 100% - 2 * var(--gutter));
+  --section: clamp(72px, 9vw, 140px);
+
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 26px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(8 44 76 / 0.06), 0 4px 12px rgb(8 44 76 / 0.06);
+  --shadow-md:
+    0 2px 6px rgb(8 44 76 / 0.06), 0 18px 40px -12px rgb(8 44 76 / 0.18);
+  --shadow-lg: 0 30px 70px -24px rgb(8 44 76 / 0.35);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 180ms;
+  --t-med: 380ms;
+  --t-slow: 900ms;
+  --header-h: 76px;
+}
