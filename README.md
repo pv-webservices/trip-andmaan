@@ -2,6 +2,12 @@
 
 Static Astro + TypeScript website for Trip Andaman, a travel business in Haddo, Sri Vijaya Puram. There is no database, user accounts, payment engine or backend, and **no email**: every enquiry goes to the client's WhatsApp or a phone call.
 
+> **New: Laravel CMS in [`laravel/`](laravel/README.md).** A server-rendered version of
+> this site with an admin panel (pages, sections, hero banners, announcements, popups,
+> packages, itineraries, pricing, media library) for Hostinger. It is not live yet; the
+> Astro site below remains the production site until cutover. See
+> [`docs/cms/`](docs/cms/DEPLOYMENT-HOSTINGER.md).
+
 - Live: https://tripandaman.in (canonical, non-www; `www` redirects here)
 - Hosting: Vercel, deployed from the GitHub repository (`main` → production)
 - DNS: GoDaddy (nameservers `ns61/ns62.domaincontrol.com`)
